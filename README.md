@@ -22,6 +22,8 @@
 ### If i get more Time
 
 ### Assets
+https://aamatniekss.itch.io/topdown-fantasy-forest
+https://zerie.itch.io/tiny-rpg-character-asset-pack
 
 ## Prototyping
 ### Prototype 1
