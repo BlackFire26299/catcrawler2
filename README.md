@@ -11,7 +11,11 @@
 
 ### How My game is Diffirent
 
-### Plan
+### Story Plan 
+
+### Gameplay Plan
+
+### Production Plan
 
 ### If i get more Time
 
