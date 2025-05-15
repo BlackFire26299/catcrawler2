@@ -9,6 +9,8 @@
 ## Preplanning
 ### History of Action RPG's
 
+### My Insparation
+
 ### How My game is Diffirent
 
 ### Story Plan 
