@@ -25,6 +25,11 @@
   	   	- [Issues](#issues)
   	   	- [Next Steps](#next-steps)
 - [Reflection](#reflection)
+  	- [How is the overall design](#how-is-the-overall-design)
+  	- [What changes could i make](#what-changes-could-i-make)
+  	- [What would i do diffirently](#what-would-i-do-diffirently)
+  	- [Major Issues](#major-issues)
+  	- [What have i learnt](#what-have-i-learnt)
 
 ## How to Play
 ### Controls
