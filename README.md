@@ -4,8 +4,7 @@
 	- [Controls](#controls)
    	- [How to Run](#how-to-run)
 - [Preplanning](#preplanning)
-  	- [History of Action RPG's](#history-of-action-rpg's)
-  	- [My Insparation](#my-insparation)
+  	- [History of Action Adventure RPG's](#history-of-action-rpg's)
   	- [How My Game Is Diffirent](#how-my-game-is-diffirent)
   	- [Story Plan](#story-plan)
   		- [Background](#background)
@@ -37,9 +36,7 @@
 ### How to Run
 
 ## Preplanning
-### History of Action RPG's
-
-### My Insparation
+### History of Action Adventure RPG's
 
 ### How My Game is Diffirent
 
@@ -65,11 +62,12 @@ The orks are led by the warlord Brokil the Flame-Eater, who broke the forest's m
 
 ### Assets
 https://aamatniekss.itch.io/topdown-fantasy-forest
+
 https://zerie.itch.io/tiny-rpg-character-asset-pack
 
 ## Prototyping
-### Prototype 1
-#### Important Additions
+### Prototype 1 
+#### Important Additions - Player Movement and Attack, Tilemap 
 
 #### Video of Functionality (link to youtube)
 
