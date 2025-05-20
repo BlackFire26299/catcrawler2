@@ -61,27 +61,32 @@ The orks are led by the warlord Brokil the Flame-Eater, who broke the forest's m
 
 #### Quest Ideas
 📜 Awakening in the Ash
+
 Objective: You wake in a grove scarred by flame. The air is thick with smoke, and the earth is charred.
 * Move through the grove learing basic movement.
 * Explore the enviroment.
 * Meet a dying guardian spirit.
 
 📜 First Blood on Burning Leaves
+
 Objective: Ork scouts are patrolling the outer grove. A test of steel and courage.
 * Engage in your first combat encounter and learn its mechanics.
 * Survive two short fights: one vs a lone ork, then a group with a ranged attacker.
 
 📜 Embers in the Roots
+
 Objective: The grove’s ancient trees are aflame. If not stopped, the warding magic here will collapse completely.
 * Redirect the nearby stream to put out the fire.
 * Activate an ancient ward node after extinguishing the fire.
 
 📜 The Beastmaster’s Trail
+
 Objective: A hulking ork known as Blazetooth is capturing corrupted beasts and razing key glades.
 * Track Blazetooth by following claw marks and broken trees.
 * Defeat any encountered patrols of orks.
 
 📜 Trial by Flame – Blazetooth
+
 Objective: Defeat Blazetooth, the ork beastmaster, and save the forest from complete destruction.
 * Enter the burning grove to face Blazetooth and his warped pets.
 * Use what you learned through the tutorial to defeat him.
