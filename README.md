@@ -61,7 +61,7 @@ The orks are led by the warlord Brokil the Flame-Eater, who broke the forest's m
 
 #### Quest Ideas
 📜 Awakening in the Ash <br>
-Objective: You wake in a grove scarred by flame. The air is thick with smoke, and the earth is charred.
+Objective: You wake in a grove scarred by flame. The air is thick with smoke, and the earth is charred. <br>
 * Move through the grove learning basic movement.
 * Explore the enviroment.
 * Meet a dying guardian spirit.
