@@ -49,15 +49,17 @@ The orks are led by the warlord Brokil the Flame-Eater, who broke the forest's m
 * Tutorial area. 
 * Ork raiders are burning the forest. 
 * Puzzle: Divert water to extinguish fires and activate protective wards. 
-* Boss: Blazetooth, an ork beastmaster. 
+* Boss: Blazetooth, an ork beastmaster.
+#### Level Map - Ashroot Glade
 
 #### Second level - Runestone Vale
 * Old ruins filled with pressure plate puzzles and shifting floors. 
 * Combat: Trapped rooms, enemy patrols, and mini-boss elite guards. 
 * Boss: Ironhowl, a possessed forest guardian — fight includes puzzle mechanics (break the soul chains while dodging attacks).
+#### Level Map - Runestone Vale
 
 #### Player Progression
-You start as a knight in the kingdom of Thornvail. 
+You start as a knight in the kingdom of Thornvail, during the tutorial you learn basic movement and your base attack and block, later you learn two special abilitys one slash heavy attack and a heavy fire attack you get after defeating the first boss. 
 
 #### Flowchart (Level plans)
 
