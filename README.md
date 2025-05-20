@@ -4,7 +4,7 @@
 	- [Controls](#controls)
    	- [How to Run](#how-to-run)
 - [Preplanning](#preplanning)
-  	- [What made the original game great](#hwhat-made-the-original-game-great)
+  	- [What made the original game great](#hwhat-made-the-original-a-game-great)
   	- [How My Game Is Diffirent](#how-my-game-is-diffirent)
   	- [Story Plan](#story-plan)
   		- [Background](#background)
@@ -36,7 +36,10 @@
 ### How to Run
 
 ## Preplanning
-### What Made the Original Game Great
+### What Made the Original a Game Great
+The Legend of Zelda revolutionized video game design with its expansive open world, non-linear exploration, and blend of action and puzzle-solving. Players controlled Link through the vast land of Hyrule, navigating forests, mountains, and hidden dungeons while collecting items, solving puzzles, and defeating enemies. Unlike most games of the time, Zelda encouraged free exploration, allowing players to tackle challenges in nearly any order and rewarding curiosity with secrets and upgrades. It also introduced a persistent inventory system that remixed the game for added challenge after completion.
+
+Zelda was groundbreaking—it was the first console game to use battery-backed memory, allowing players to save their progress without passwords. This, along with clever use of memory management, enabled a world much larger and deeper than what was typical for the NES. Critically acclaimed and commercially successful, The Legend of Zelda sold over 6.5 million copies worldwide and set the standard for action-adventure games. Its influence is still seen today in open-world design, and it remains one of gaming's most iconic and celebrated titles.
 
 ### How My Game is Diffirent
 
