@@ -55,7 +55,7 @@ The orks are led by the warlord Brokil the Flame-Eater, who broke the forest's m
 #### Second level - Runestone Vale
 * Old ruins filled with pressure plate puzzles and shifting floors. 
 * Combat: Trapped rooms, enemy patrols, and mini-boss elite guards. 
-* Boss: Ironhowl, a possessed forest guardian — fight includes puzzle mechanics (break the soul chains while dodging attacks).
+* Boss: Bjarni, a possessed forest guardian — fight includes puzzle mechanics (break the soul chains while dodging attacks).
 #### Level Map - Runestone Vale
 
 #### Player Progression
