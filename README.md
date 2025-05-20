@@ -63,28 +63,31 @@ The orks are led by the warlord Brokil the Flame-Eater, who broke the forest's m
 📜 Awakening in the Ash <br>
 Objective: You wake in a grove scarred by flame. The air is thick with smoke, and the earth is charred. <br> 
 You Must: <br>
-&nbsp; &nbsp; &nbsp; &nbsp; Move through the grove learning basic movement. <br>
-&nbsp; &nbsp; &nbsp; &nbsp; Explore the enviroment. <br>
-&nbsp; &nbsp; &nbsp; &nbsp; Meet a dying guardian spirit.
+* Move through the grove learning basic movement. <br>
+* Explore the enviroment. <br>
+* Meet a dying guardian spirit.
 
 📜 First Blood on Burning Leaves <br>
 Objective: Ork scouts are patrolling the outer grove. A test of steel and courage. <br>
 You Must: <br>
-&nbsp; &nbsp; &nbsp; &nbsp; Engage in your first combat encounter and learn its mechanics. <br>
-&nbsp; &nbsp; &nbsp; &nbsp; Survive two short fights: one vs a lone ork, then a group with a ranged attacker. <br>
+* Engage in your first combat encounter and learn its mechanics. <br>
+* Survive two short fights: one vs a lone ork, then a group with a ranged attacker. <br>
 
 📜 Embers in the Roots <br>
 Objective: The grove’s ancient trees are aflame. If not stopped, the warding magic here will collapse completely. <br>
-&nbsp; &nbsp; &nbsp; &nbsp; Redirect the nearby stream to put out the fire. <br>
-&nbsp; &nbsp; &nbsp; &nbsp; Activate an ancient ward node after extinguishing the fire. <br>
+You Must: <br>
+* Redirect the nearby stream to put out the fire. <br>
+* Activate an ancient ward node after extinguishing the fire. <br>
 
 📜 The Beastmaster’s Trail <br>
 Objective: A hulking ork known as Blazetooth is capturing corrupted beasts and razing key glades.
+You Must: <br>
 * Track Blazetooth by following claw marks and broken trees.
 * Defeat any encountered patrols of orks.
 
 📜 Trial by Flame – Blazetooth <br>
 Objective: Defeat Blazetooth, the ork beastmaster, and save the forest from complete destruction.
+You Must: <br>
 * Enter the burning grove to face Blazetooth and his warped pets.
 * Use what you learned through the tutorial to defeat him.
 * Unlock the way to Runestone Vale.
