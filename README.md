@@ -68,14 +68,15 @@ You Must: <br>
 &nbsp; &nbsp; &nbsp; &nbsp; Meet a dying guardian spirit.
 
 📜 First Blood on Burning Leaves <br>
-Objective: Ork scouts are patrolling the outer grove. A test of steel and courage.
-* Engage in your first combat encounter and learn its mechanics.
-* Survive two short fights: one vs a lone ork, then a group with a ranged attacker.
+Objective: Ork scouts are patrolling the outer grove. A test of steel and courage. <br>
+You Must: <br>
+&nbsp; &nbsp; &nbsp; &nbsp; Engage in your first combat encounter and learn its mechanics. <br>
+&nbsp; &nbsp; &nbsp; &nbsp; Survive two short fights: one vs a lone ork, then a group with a ranged attacker. <br>
 
 📜 Embers in the Roots <br>
-Objective: The grove’s ancient trees are aflame. If not stopped, the warding magic here will collapse completely.
-* Redirect the nearby stream to put out the fire.
-* Activate an ancient ward node after extinguishing the fire.
+Objective: The grove’s ancient trees are aflame. If not stopped, the warding magic here will collapse completely. <br>
+&nbsp; &nbsp; &nbsp; &nbsp; Redirect the nearby stream to put out the fire. <br>
+&nbsp; &nbsp; &nbsp; &nbsp; Activate an ancient ward node after extinguishing the fire. <br>
 
 📜 The Beastmaster’s Trail <br>
 Objective: A hulking ork known as Blazetooth is capturing corrupted beasts and razing key glades.
