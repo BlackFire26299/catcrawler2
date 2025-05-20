@@ -148,8 +148,6 @@ You start as a knight in the kingdom of Thornvail, during the tutorial you learn
 ### Flowcharts (Production plan)
 ![screenshot](Flowchart.png)
 
-### If i get more Time
-
 ### Assets
 I found my games assets on Itch.io.
 https://aamatniekss.itch.io/topdown-fantasy-forest
