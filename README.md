@@ -68,6 +68,7 @@ The orks are led by the warlord Brokil the Flame-Eater, who broke the forest's m
 ### If i get more Time
 
 ### Assets
+I found my games assets on Itch.io.
 https://aamatniekss.itch.io/topdown-fantasy-forest
 
 https://zerie.itch.io/tiny-rpg-character-asset-pack
