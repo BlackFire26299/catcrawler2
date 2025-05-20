@@ -4,7 +4,7 @@
 	- [Controls](#controls)
    	- [How to Run](#how-to-run)
 - [Preplanning](#preplanning)
-  	- [History of Action Adventure RPG's](#history-of-action-rpg's)
+  	- [What made the original game great](#hwhat-made-the-original-game-great)
   	- [How My Game Is Diffirent](#how-my-game-is-diffirent)
   	- [Story Plan](#story-plan)
   		- [Background](#background)
@@ -36,27 +36,34 @@
 ### How to Run
 
 ## Preplanning
-### History of Action Adventure RPG's
+### What Made the Original Game Great
 
 ### How My Game is Diffirent
 
-### Story Plan 
+### Story and Gameplay Plan 
 #### Background
 Thornvail a vast magical forest that once served as a natural barrier between human and ork lands, until some ancient force was lost. The forest is ancient and full of secrets, ruins, puzzles and mysteries. It is now under siege by an army of Orks. 
  
 The orks are led by the warlord Brokil the Flame-Eater, who broke the forest's magical barrier. In doing so they’ve unleashed wild magic, warping the environment and awakening dangerous creatures. Their goal, to conquer and claim the Heart of the Forest, a source of immense power. 
-#### First level
+#### First level - Ashroot Glade 
+* Tutorial area. 
+* Ork raiders are burning the forest. 
+* Puzzle: Divert water to extinguish fires and activate protective wards. 
+* Boss: Blazetooth, an ork beastmaster. 
 
-#### Second level
+#### Second level - Runestone Vale
+* Old ruins filled with pressure plate puzzles and shifting floors. 
+* Combat: Trapped rooms, enemy patrols, and mini-boss elite guards. 
+* Boss: Ironhowl, a possessed forest guardian — fight includes puzzle mechanics (break the soul chains while dodging attacks).
 
-### Gameplay Plan
-#### General
+#### Player Progression
 
-#### First Level
 
-#### Second Level
+#### Flowchart (Level plans)
 
-### Production Plan
+### Psuedocode 
+
+### Flowcharts (Production plan)
 
 ### If i get more Time
 
