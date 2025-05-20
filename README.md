@@ -142,10 +142,6 @@ You Must: <br>
 #### Player Progression
 You start as a knight in the kingdom of Thornvail, during the tutorial you learn basic movement and your base attack and block, later you learn two special abilitys one slash heavy attack and a heavy fire attack you get after defeating the first boss. 
 
-#### Flowchart (Level plans)
-
-### Psuedocode 
-
 ### Flowcharts (Production plan)
 
 ### If i get more Time
