@@ -66,26 +66,22 @@ Objective: You wake in a grove scarred by flame. The air is thick with smoke, an
 * Explore the enviroment.
 * Meet a dying guardian spirit.
 
-📜 First Blood on Burning Leaves
-
+📜 First Blood on Burning Leaves <br>
 Objective: Ork scouts are patrolling the outer grove. A test of steel and courage.
 * Engage in your first combat encounter and learn its mechanics.
 * Survive two short fights: one vs a lone ork, then a group with a ranged attacker.
 
-📜 Embers in the Roots
-
+📜 Embers in the Roots <br>
 Objective: The grove’s ancient trees are aflame. If not stopped, the warding magic here will collapse completely.
 * Redirect the nearby stream to put out the fire.
 * Activate an ancient ward node after extinguishing the fire.
 
-📜 The Beastmaster’s Trail
-
+📜 The Beastmaster’s Trail <br>
 Objective: A hulking ork known as Blazetooth is capturing corrupted beasts and razing key glades.
 * Track Blazetooth by following claw marks and broken trees.
 * Defeat any encountered patrols of orks.
 
-📜 Trial by Flame – Blazetooth
-
+📜 Trial by Flame – Blazetooth <br>
 Objective: Defeat Blazetooth, the ork beastmaster, and save the forest from complete destruction.
 * Enter the burning grove to face Blazetooth and his warped pets.
 * Use what you learned through the tutorial to defeat him.
