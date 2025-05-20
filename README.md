@@ -57,7 +57,7 @@ The orks are led by the warlord Brokil the Flame-Eater, who broke the forest's m
 * Boss: Ironhowl, a possessed forest guardian — fight includes puzzle mechanics (break the soul chains while dodging attacks).
 
 #### Player Progression
-
+You start as a knight in the kingdom of Thornvail. 
 
 #### Flowchart (Level plans)
 
