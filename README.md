@@ -139,6 +139,7 @@ You Must: <br>
 * Phase 3: Use the runeblade and the spirite shards to either - Cleanse his corruption (if all shards were collected) or 'end' his corruption 
 
 #### Level Map - Runestone Vale
+![screenshot](Runestone_Vale_Map.png)
 
 #### Player Progression
 You start as a knight in the kingdom of Thornvail, during the tutorial you learn basic movement and your base attack and block, later you learn two special abilitys one slash heavy attack and a heavy fire attack you get after defeating the first boss. 
