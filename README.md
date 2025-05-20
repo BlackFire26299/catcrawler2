@@ -42,6 +42,7 @@ The Legend of Zelda revolutionized video game design with its expansive open wor
 Zelda was groundbreaking—it was the first console game to use battery-backed memory, allowing players to save their progress without passwords. This, along with clever use of memory management, enabled a world much larger and deeper than what was typical for the NES. Critically acclaimed and commercially successful, The Legend of Zelda sold over 6.5 million copies worldwide and set the standard for action-adventure games. Its influence is still seen today in open-world design, and it remains one of gaming's most iconic and celebrated titles.
 
 ### How My Game is Diffirent
+It is not Zelda.
 
 ### Story and Gameplay Plan 
 #### Background
