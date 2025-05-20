@@ -101,6 +101,41 @@ You Must: <br>
 * Boss: Bjarni, a possessed forest guardian — fight includes puzzle mechanics (break the soul chains while dodging attacks).
 
 #### Quest Ideas
+📜 Behind Enemy Vines <br>
+Objective: You've breached the perimeter of Runestone Vale, a newly constructed ork fortresss. <br>
+You Must: <br>
+* Infiltrate the ork camp's perimeter.
+* Disable two watchtowers to prevent reinforcments.
+* Question a captured guardian to learn what the orks are doing in the vale.
+
+📜 Chains Beneath the Stones <br>
+Objective: Discover the source of corrupted magical surges. <br>
+You Must: <br>
+* Explore the lower mining pit where the orks are unearthing ancient wards.
+* Navigate the mines to reach the inner prison vault.
+* Witness the source of the magical surges.
+
+📜 The Warden's Remains <br>
+Objective: To weaken Bjarni's bindings, you must reclaim shards of his spirit to help free his mind.
+* Recover pieces of Bjarni's spirit (It is not required to recover all shards but it will make the boss fight easier)
+* Desecrated Grove - defend a guardians last stand to recieve shard
+* Ork Ritual Pit - Interrupt a dark ritual and steal back a shard.
+* Broken Shrine - Repair the shrine to collect a shard.
+
+📜 Camp of Iron and Flame <br>
+Objective: Strike at the heart of the ork operation, a forge where they're creating twisted weapons powered by stolen magic. <br>
+You Must: <br>
+* Destroy enchanted forges
+* Free prisoners
+* Collect runeblade fragments
+
+📜 The Corrupted Warden - Bjarni <br>
+Objective: Bjarni has been chained, tortured, and twisted by the orks. You now face him in a corrupted arena to stop his release. <br>
+You Must: <br>
+* Enter the central prison. Solve puzzles in combat and break his chains.
+* Phase 1: Bjarni in his corrupted state rampages through the room.
+* Phase 2: step on rune sigils and align lights to weaken him.
+* Phase 3: Use the runeblade and the spirite shards to either - Cleanse his corruption (if all shards were collected) or 'end' his corruption 
 
 #### Level Map - Runestone Vale
 
