@@ -45,6 +45,7 @@
 Thornvail a vast magical forest that once served as a natural barrier between human and ork lands, until some ancient force was lost. The forest is ancient and full of secrets, ruins, puzzles and mysteries. It is now under siege by an army of Orks. 
  
 The orks are led by the warlord Brokil the Flame-Eater, who broke the forest's magical barrier. In doing so they’ve unleashed wild magic, warping the environment and awakening dangerous creatures. Their goal, to conquer and claim the Heart of the Forest, a source of immense power. 
+
 #### First level - Ashroot Glade 
 * Tutorial area. 
 * Start in a area that teaches movement
@@ -53,11 +54,13 @@ The orks are led by the warlord Brokil the Flame-Eater, who broke the forest's m
 * Second combat teaches you your heavy attack
 * Ork raiders are burning the forest. 
 * Puzzle: Divert water to extinguish fires and activate protective wards. 
-* Boss: Blazetooth, an ork beastmaster. After kill you get your big attack 
+* Boss: Blazetooth, an ork beastmaster. After kill you get your big attack
+  
 #### Level Map - Ashroot Glade
 
 #### Second level - Runestone Vale
-* Old ruins filled with pressure plate puzzles and shifting floors. 
+* Old ruins filled with puzzles and challenges.
+* projectile/arrow traps.
 * Combat: Trapped rooms, enemy patrols, and mini-boss elite guards. 
 * Boss: Bjarni, a possessed forest guardian — fight includes puzzle mechanics (break the soul chains while dodging attacks).
 #### Level Map - Runestone Vale
