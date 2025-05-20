@@ -93,7 +93,7 @@ You Must: <br>
 * Unlock the way to Runestone Vale.
   
 #### Level Map - Ashroot Glade
-![screenshot]()
+![screenshot](Ashroot_Glade_Map.png)
 
 #### Second level - Runestone Vale
 * Old ruins filled with puzzles and challenges.
