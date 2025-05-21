@@ -60,6 +60,7 @@ The orks are led by the warlord Brokil the Flame-Eater, who broke the forest's m
 Brokil has sent his General, Blazetooth an ork beast warden to scout and raise the forest allowing the orks to advance into the heartland of thornvail. Your kigndom has sent you to stop his incersion and push back the ork threat. 
 
 #### First level - Ashroot Glade 
+##### Over view
 * Tutorial area. 
 * Start in a area that teaches movement
 * Move to a place that introduces combat and then blocking
@@ -69,7 +70,7 @@ Brokil has sent his General, Blazetooth an ork beast warden to scout and raise t
 * Puzzle: Divert water to extinguish fires and activate protective wards. 
 * Boss: Blazetooth, an ork beastmaster. After kill you get your big attack
 
-#### Quest Ideas
+##### Detailed Quest Ideas
 📜 Awakening in the Ash <br>
 Objective: You arrive in a grove scarred by flame. The air is thick with smoke, and the earth is charred. <br> 
 You Must: <br>
@@ -102,16 +103,17 @@ You Must: <br>
 * Use what you learned through the tutorial to defeat him.
 * Unlock the way to Runestone Vale.
   
-#### Level Map - Ashroot Glade
+##### Level Map - Ashroot Glade
 ![screenshot](Ashroot_Glade_Map.png)
 
 #### Second level - Runestone Vale
+##### Overview 
 * Old ruins filled with puzzles and challenges.
 * projectile/arrow traps.
 * Combat: Trapped rooms, enemy patrols, and mini-boss elite guards. 
 * Boss: Bjarni, a possessed forest guardian — fight includes puzzle mechanics (break the soul chains while dodging attacks).
 
-#### Quest Ideas
+##### Detailed Quest Ideas
 📜 Behind Enemy Vines <br>
 Objective: You've breached the perimeter of Runestone Vale, a newly constructed ork fortresss. <br>
 You Must: <br>
@@ -148,7 +150,7 @@ You Must: <br>
 * Phase 2: step on rune sigils and align lights to weaken him.
 * Phase 3: Use the runeblade and the spirite shards to either - Cleanse his corruption (if all shards were collected) or 'end' his corruption 
 
-#### Level Map - Runestone Vale
+##### Level Map - Runestone Vale
 ![screenshot](Runestone_Vale_map.png)
 
 #### Player Progression
