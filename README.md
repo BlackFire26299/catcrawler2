@@ -33,14 +33,13 @@
 ## How to Play
 ### Controls
 W, A, S, D for movement. <br>
-Q is your basic attack. <br>
-Space is Block.        Maybe change <br>
-ESC to enter the menu <br>
-1 slash attack. Maybe chanage all attack controls <br>
-2 Heavy attack. <br>
-E Eat food. <br>
+Left Click is your basic attack. <br>
+Right Click is Block. <br>
+E Slash Attack
+R Heavy Attack
 F interact.  <br>
 Left shift for dash. <br>
+ESC to enter the menu <br>
 
 ## Preplanning
 ### What Made the Original a Game Great
