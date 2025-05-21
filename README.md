@@ -92,7 +92,7 @@ You Must: <br>
 * Unlock the way to Runestone Vale.
   
 #### Level Map - Ashroot Glade
-![screenshot](documentation_images/Ashroot_Glade_Map.png)
+![screenshot](documentation images/Ashroot_Glade_Map.png)
 
 #### Second level - Runestone Vale
 📜 Behind Enemy Vines <br>
