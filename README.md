@@ -150,7 +150,7 @@ Font https://mounirtohami.itch.io/minimalpixel-font <br>
 
 ## Prototyping
 ### Prototype 1 - Core Systems
-#### Important Additions 
+#### Important Additions - Player Controller, Base combat (player and enemy), Enemie patrol (basic)
 
 #### Video of Functionality (link to youtube)
 
