@@ -32,15 +32,15 @@
 
 ## How to Play
 ### Controls
-W, A, S, D for movement.
-Q is your basic attack.
-Space is Block.        Maybe change
-ESC to enter the menu
-1 slash attack. Maybe chanage all attack controls
-2 Heavy attack.
-E Eat food.
-F interact. 
-Left shift for dash.
+W, A, S, D for movement. <br>
+Q is your basic attack. <br>
+Space is Block.        Maybe change <br>
+ESC to enter the menu <br>
+1 slash attack. Maybe chanage all attack controls <br>
+2 Heavy attack. <br>
+E Eat food. <br>
+F interact.  <br>
+Left shift for dash. <br>
 
 ## Preplanning
 ### What Made the Original a Game Great
