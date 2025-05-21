@@ -57,6 +57,8 @@ Thornvail a vast magical forest that once served as a natural barrier between hu
  
 The orks are led by the warlord Brokil the Flame-Eater, who broke the forest's magical barrier. In doing so they’ve unleashed wild magic, warping the environment and awakening dangerous creatures. Their goal, to conquer and claim the Heart of the Forest, a source of immense power. 
 
+Brokil has sent his General, Blazetooth an ork beast warden to scout and raise the forest allowing the orks to advance into the heartland of thornvail. Your kigndom has sent you to stop his incersion and push back the ork threat. 
+
 #### First level - Ashroot Glade 
 * Tutorial area. 
 * Start in a area that teaches movement
@@ -69,7 +71,7 @@ The orks are led by the warlord Brokil the Flame-Eater, who broke the forest's m
 
 #### Quest Ideas
 📜 Awakening in the Ash <br>
-Objective: You wake in a grove scarred by flame. The air is thick with smoke, and the earth is charred. <br> 
+Objective: You arrive in a grove scarred by flame. The air is thick with smoke, and the earth is charred. <br> 
 You Must: <br>
 * Move through the grove learning basic movement. <br>
 * Explore the enviroment. <br>
