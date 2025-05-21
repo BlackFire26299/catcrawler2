@@ -149,8 +149,8 @@ More GUI https://greatdocbrown.itch.io/gamepad-ui <br>
 Font https://mounirtohami.itch.io/minimalpixel-font <br>
 
 ## Prototyping
-### Prototype 1 
-#### Important Additions - Player Controller, Base combat system
+### Prototype 1 - Core Systems
+#### Important Additions 
 
 #### Video of Functionality (link to youtube)
 
@@ -158,16 +158,58 @@ Font https://mounirtohami.itch.io/minimalpixel-font <br>
 
 #### Next Steps
 
-### Prototype 2
-#### Important Additions - Enviromental Systems, Base Enemy, Base UI
+### Prototype 2 - Ashroot Glade Part 1
+#### Important Additions 
 #### Video of Functionality (link to youtube)
 
 #### Issues 
 
 #### Next Steps
 
-### Prototype 3
-#### Important Additions - 
+### Prototype 3 - Ashroot Glade Part 2
+#### Important Additions 
+
+#### Video of Functionality (link to youtube)
+
+#### Issues 
+
+#### Next Steps
+
+### Prototype 4 - Runestone Vale Part 1
+#### Important Additions 
+
+#### Video of Functionality (link to youtube)
+
+#### Issues 
+
+#### Next Steps
+
+### Prototype 5 - Runestone Vale Part 2
+#### Important Additions 
+
+#### Video of Functionality (link to youtube)
+
+#### Issues 
+
+#### Next Steps
+
+### Prototype 6 - Runestone Vale Part 3
+#### Important Additions 
+
+#### Video of Functionality (link to youtube)
+
+#### Issues 
+
+#### Next Steps
+
+### Prototype 7 - Boss Fight
+#### Important Additions 
+
+#### Video of Functionality (link to youtube)
+
+#### Issues 
+
+#### Next Steps
 
 ## Reflection 
 ### How is the overall design 
