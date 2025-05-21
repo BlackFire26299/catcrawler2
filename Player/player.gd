@@ -6,7 +6,7 @@ var dash_speed: float = 300.0
 var dash_duration: float = 0.2
 var dash_cooldown: float = 0.5
 
-var simulate_updown_angle = 7
+var simulate_updown_angle = 15
 
 var is_dashing = false
 var dash_timer = 0.0
@@ -95,7 +95,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 # ------------------
-# COMBAT FUNCTIONS
+# COMBAT a
 # ------------------
 
 func perform_light_attack():

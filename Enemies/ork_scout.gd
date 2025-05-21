@@ -67,4 +67,8 @@ func _on_lost_aggro_timeout():
 func move_towards(target_position: Vector2, delta: float):
 	var direction = (target_position - global_position).normalized()
 	velocity = direction * speed
+	velocity.normalized()
 	move_and_slide()
+	
+func take_damage(dmg):
+	pass

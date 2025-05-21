@@ -31,4 +31,5 @@ target_desired_distance = 25.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 
 [node name="LostAggroTimer" type="Timer" parent="."]
+wait_time = 2.5
 one_shot = true
