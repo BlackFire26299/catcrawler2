@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://n0gkxlci8e8d"]
+
+[ext_resource type="Script" path="res://ork_scout.gd" id="1_s1b84"]
+[ext_resource type="Script" path="res://health.gd" id="2_x0dsl"]
+[ext_resource type="Texture2D" uid="uid://cjd8ig2wanhma" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Orc/Orc/Orc.png" id="3_2wfyt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vwljc"]
+radius = 6.0
+height = 16.0
+
+[node name="OrkScout" type="CharacterBody2D"]
+script = ExtResource("1_s1b84")
+
+[node name="Health" type="Node2D" parent="."]
+script = ExtResource("2_x0dsl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_2wfyt")
+hframes = 8
+vframes = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_vwljc")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]

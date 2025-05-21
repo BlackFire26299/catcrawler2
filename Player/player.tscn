@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6t5cfj5tmylk"]
+[gd_scene load_steps=6 format=3 uid="uid://b6t5cfj5tmylk"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_pop16"]
+[ext_resource type="Script" path="res://health.gd" id="2_dkxc0"]
 [ext_resource type="Texture2D" uid="uid://xm1lywro01wn" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Knight/Knight/Knight.png" id="2_stawd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qkwgi"]
@@ -13,6 +14,9 @@ height = 24.0
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_pop16")
 
+[node name="Health" type="Node2D" parent="."]
+script = ExtResource("2_dkxc0")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
 rotation = 3.14159
@@ -23,15 +27,14 @@ shape = SubResource("CapsuleShape2D_qkwgi")
 texture = ExtResource("2_stawd")
 hframes = 11
 vframes = 8
-frame = 25
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="AttackArea" type="Area2D" parent="."]
 position = Vector2(13, -3)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AttackArea"]
 shape = SubResource("CapsuleShape2D_sp7fq")
