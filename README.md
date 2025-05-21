@@ -35,8 +35,8 @@
 W, A, S, D for movement. <br>
 Left Click is your basic attack. <br>
 Right Click is Block. <br>
-E Slash Attack
-R Heavy Attack
+E Slash Attack <br>
+R Heavy Attack <br>
 F interact.  <br>
 Left shift for dash. <br>
 ESC to enter the menu <br>
