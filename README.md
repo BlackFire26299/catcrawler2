@@ -32,8 +32,15 @@
 
 ## How to Play
 ### Controls
-
-### How to Run
+W, A, S, D for movement.
+Q is your basic attack.
+Space is Block.        Maybe change
+ESC to enter the menu
+1 slash attack. Maybe chanage all attack controls
+2 Heavy attack.
+E Eat food.
+F interact. 
+Left shift for dash.
 
 ## Preplanning
 ### What Made the Original a Game Great
@@ -149,10 +156,9 @@ You start as a knight in the kingdom of Thornvail, during the tutorial you learn
 ![screenshot](Flowchart.png)
 
 ### Assets
-I found my games assets on Itch.io.
-https://aamatniekss.itch.io/topdown-fantasy-forest
-
-https://zerie.itch.io/tiny-rpg-character-asset-pack
+Below are the links to all the itch.io pages where i found my assets. <br>
+Used for the game ennviroment and terrain, https://aamatniekss.itch.io/topdown-fantasy-forest <br>
+Most of the NPC's can be found here, https://zerie.itch.io/tiny-rpg-character-asset-pack
 
 ## Prototyping
 ### Prototype 1 
