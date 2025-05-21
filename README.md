@@ -148,13 +148,24 @@ Most of the NPC's can be found here, https://zerie.itch.io/tiny-rpg-character-as
 
 ## Prototyping
 ### Prototype 1 
-#### Important Additions - Player Movement and Attack, Tilemap 
+#### Important Additions - Player Controller, Base combat system
 
 #### Video of Functionality (link to youtube)
 
 #### Issues 
 
 #### Next Steps
+
+### Prototype 2
+#### Important Additions - Enviromental Systems, Base Enemy, Base UI
+#### Video of Functionality (link to youtube)
+
+#### Issues 
+
+#### Next Steps
+
+### Prototype 3
+#### Important Additions - 
 
 ## Reflection 
 ### How is the overall design 
