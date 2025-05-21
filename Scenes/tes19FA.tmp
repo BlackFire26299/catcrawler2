@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://gffqtc11hnc"]
+
+[ext_resource type="Texture2D" uid="uid://bag4m00fdt1b4" path="res://icon.svg" id="1_a4fj8"]
+[ext_resource type="PackedScene" uid="uid://b6t5cfj5tmylk" path="res://Player/player.tscn" id="2_s1jpa"]
+[ext_resource type="PackedScene" uid="uid://chha38au6j6ev" path="res://Enemies/ork_scout.tscn" id="3_41ibi"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(139, 72)
+texture = ExtResource("1_a4fj8")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(-114, 252)
+texture = ExtResource("1_a4fj8")
+
+[node name="Player" parent="." instance=ExtResource("2_s1jpa")]
+position = Vector2(-8, 12)
+
+[node name="OrkScout" parent="." instance=ExtResource("3_41ibi")]
+position = Vector2(18, -17)

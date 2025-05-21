@@ -14,11 +14,12 @@ var dash_cooldown_timer = 0.0
 
 var is_blocking = false
 var can_attack = true
-var attack_cooldown = 0.3
 var attack_timer = 0.0
 
 @onready var sprite: Sprite2D = $"Knight Sprite"
-@onready var attack_area = $AttackArea
+@onready var base_attack = $base_attack
+@onready var base_attack_shape = $base_attack/base_attack_shape
+@onready var attack_cooldown_timer = $AttackCooldown
 
 var nearby_interactables = []
 
@@ -42,12 +43,6 @@ func _process(delta):
 	if dash_cooldown_timer > 0:
 		dash_cooldown_timer -= delta
 
-	# ATTACK TIMER
-	if not can_attack:
-		attack_timer -= delta
-		if attack_timer <= 0:
-			can_attack = true
-
 	# INPUTS
 	var direction: Vector2 = Vector2.ZERO
 	direction.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
@@ -57,21 +52,17 @@ func _process(delta):
 	# -- BLOCKING --
 	is_blocking = Input.is_action_pressed("block") #Right Mouse
 
-	# -- ATTACKING --
-	if Input.is_action_just_pressed("attack_light") and can_attack and not is_blocking:
-		attack_area.set_deferred("monitoring", true)
-		$AttackArea/CollisionShape2D.disabled = false
-		await get_tree().create_timer(0.2).timeout
-		attack_area.set_deferred("monitoring", false)
-		$AttackArea/CollisionShape2D.disabled = true
+	# -- ATTACKING -
+	if Input.is_action_just_pressed("attack_light") and can_attack:
+		perform_light_attack()
+		print("Light Attack")
 
 	# -- INTERACT --
 	if Input.is_action_just_pressed("interact"):
-		# Emit signal or call nearby Area2D
-		if Input.is_action_just_pressed("interact"):
-			for i in nearby_interactables:
-				i.interact()
-		print("Interact")
+		var obj = get_meta("interactable")
+		if obj:
+			obj.emit_signal("interacted")
+			print("Interact")
 
 	# -- DASH --
 	if Input.is_action_just_pressed("dash") and not is_dashing and dash_cooldown_timer <= 0:
@@ -94,7 +85,7 @@ func _process(delta):
 
 	if direction.x != 0:
 		sprite.flip_h = direction.x < 0
-		attack_area.position.x = abs(attack_area.position.x) * (-1 if direction.x < 0 else 1)
+		base_attack.position.x = abs(base_attack.position.x) * (-1 if direction.x < 0 else 1)
 
 func _physics_process(delta):
 	if is_dashing:
@@ -103,14 +94,24 @@ func _physics_process(delta):
 			is_dashing = false
 	move_and_slide()
 	
-
 # ------------------
 # COMBAT FUNCTIONS
 # ------------------
 
 func perform_light_attack():
 	can_attack = false
-	attack_timer = attack_cooldown
-	print("Light Attack!")
-	# Play animation
-	# Check hit with Area2D
+	base_attack_shape.disabled = false  # Enable hitbox
+
+	await get_tree().create_timer(0.1).timeout  # Small delay for hit detection
+
+	for body in base_attack.get_overlapping_bodies():
+		if body.is_in_group("enemies"):
+			body.take_damage(10)
+
+	base_attack_shape.disabled = true  # Disable hitbox again
+
+	await get_tree().create_timer(0.6).timeout  # Cooldown delay
+	can_attack = true
+
+func _on_AttackCooldown_timeout():
+	can_attack = true

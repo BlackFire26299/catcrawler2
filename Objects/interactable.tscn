@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcqc4bpgc7a63"]
+
+[ext_resource type="Script" path="res://Objects/interactable.gd" id="1_855f7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5oomk"]
+radius = 16.0312
+
+[node name="Interactable" type="Area2D"]
+script = ExtResource("1_855f7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5oomk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Press F to interact"

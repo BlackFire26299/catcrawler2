@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d22hxwubo1pcn"
-path="res://.godot/imported/Ashroot_Glade_Map.png-900768672d3f76310bb3fbcf3973f30a.ctex"
+path="res://.godot/imported/Ashroot_Glade_Map.png-3aea09b1db2692d7f37e9be878a292b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://documentation images/Ashroot_Glade_Map.png"
-dest_files=["res://.godot/imported/Ashroot_Glade_Map.png-900768672d3f76310bb3fbcf3973f30a.ctex"]
+source_file="res://documentation_images/Ashroot_Glade_Map.png"
+dest_files=["res://.godot/imported/Ashroot_Glade_Map.png-3aea09b1db2692d7f37e9be878a292b4.ctex"]
 
 [params]
 

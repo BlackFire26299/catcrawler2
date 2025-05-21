@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djsd47kr12jbq"
-path="res://.godot/imported/Runestone_Vale_map.png-6366aa53a46b69249512faee4ebda572.ctex"
+path="res://.godot/imported/Runestone_Vale_map.png-e566443123d5ba1cae04a45a6e54ea9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://documentation images/Runestone_Vale_map.png"
-dest_files=["res://.godot/imported/Runestone_Vale_map.png-6366aa53a46b69249512faee4ebda572.ctex"]
+source_file="res://documentation_images/Runestone_Vale_map.png"
+dest_files=["res://.godot/imported/Runestone_Vale_map.png-e566443123d5ba1cae04a45a6e54ea9a.ctex"]
 
 [params]
 

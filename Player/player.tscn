@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b6t5cfj5tmylk"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_pop16"]
-[ext_resource type="Script" path="res://health.gd" id="2_dkxc0"]
+[ext_resource type="Script" path="res://universal scripts/health.gd" id="2_dkxc0"]
 [ext_resource type="Texture2D" uid="uid://xm1lywro01wn" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Knight/Knight/Knight.png" id="2_stawd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qkwgi"]
@@ -33,8 +33,14 @@ zoom = Vector2(4, 4)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
-[node name="AttackArea" type="Area2D" parent="."]
+[node name="base_attack" type="Area2D" parent="."]
 position = Vector2(13, -3)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="AttackArea"]
+[node name="base_attack_shape" type="CollisionShape2D" parent="base_attack"]
 shape = SubResource("CapsuleShape2D_sp7fq")
+
+[node name="AttackCooldown" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="body_entered" from="base_attack" to="." method="_on_base_attack_body_entered"]

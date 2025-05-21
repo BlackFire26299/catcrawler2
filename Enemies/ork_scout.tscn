@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://chha38au6j6ev"]
 
-[ext_resource type="Script" path="res://ork_scout.gd" id="1_s1b84"]
-[ext_resource type="Script" path="res://health.gd" id="2_x0dsl"]
+[ext_resource type="Script" path="res://Enemies/ork_scout.gd" id="1_s1b84"]
+[ext_resource type="Script" path="res://universal scripts/health.gd" id="2_x0dsl"]
 [ext_resource type="Texture2D" uid="uid://cjd8ig2wanhma" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Orc/Orc/Orc.png" id="3_2wfyt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vwljc"]
 radius = 6.0
 height = 16.0
 
-[node name="OrkScout" type="CharacterBody2D"]
+[node name="OrkScout" type="CharacterBody2D" groups=["enemies"]]
 script = ExtResource("1_s1b84")
 
 [node name="Health" type="Node2D" parent="."]
@@ -23,7 +23,12 @@ vframes = 6
 shape = SubResource("CapsuleShape2D_vwljc")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 10.0
+target_desired_distance = 25.0
 
 [node name="AttackArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+
+[node name="LostAggroTimer" type="Timer" parent="."]
+one_shot = true
