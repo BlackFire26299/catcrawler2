@@ -143,7 +143,10 @@ You start as a knight in the kingdom of Thornvail, during the tutorial you learn
 ### Assets
 Below are the links to all the itch.io pages where i found my assets. <br>
 Used for the game ennviroment and terrain, https://aamatniekss.itch.io/topdown-fantasy-forest <br>
-Most of the NPC's can be found here, https://zerie.itch.io/tiny-rpg-character-asset-pack
+Most of the NPC's can be found here, https://zerie.itch.io/tiny-rpg-character-asset-pack <br>
+GUI https://mounirtohami.itch.io/pixel-art-gui-elements <br>
+More GUI https://greatdocbrown.itch.io/gamepad-ui <br>
+Font https://mounirtohami.itch.io/minimalpixel-font <br>
 
 ## Prototyping
 ### Prototype 1 
