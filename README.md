@@ -150,7 +150,31 @@ Font https://mounirtohami.itch.io/minimalpixel-font <br>
 
 ## Prototyping
 ### Prototype 1 - Core Systems
-#### Important Additions - Player Controller, Base combat (player and enemy), Enemie patrol (basic)
+#### Important Additions - Player Controller, Base combat (player and enemie), Enemie patrol (basic)
+##### Player Controller
+
+##### Combat - Player and Enemie 
+
+`	var direction: Vector2 = Vector2.ZERO
+	direction.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
+	direction.y = Input.get_action_strength("Back") - Input.get_action_strength("Forward")
+	direction = direction.normalized()`
+ 
+`if Input.is_action_just_pressed("dash") and not is_dashing and dash_cooldown_timer <= 0:
+	is_dashing = true
+	dash_timer = dash_duration
+	dash_cooldown_timer = dash_cooldown
+	velocity = direction * dash_speed 
+  `
+  `	if direction.y < 0:
+		sprite.rotation_degrees = flip_adjusted_angle(-simulate_updown_angle)
+	elif direction.y > 0:
+		sprite.rotation_degrees = flip_adjusted_angle(simulate_updown_angle)
+	else:
+		sprite.rotation_degrees = 0`
+
+
+##### Enemie Patrol
 
 #### Video of Functionality (link to youtube)
 
