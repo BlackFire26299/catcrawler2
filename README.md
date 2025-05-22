@@ -155,10 +155,12 @@ Font https://mounirtohami.itch.io/minimalpixel-font <br>
 
 ##### Combat - Player and Enemie 
 
-`	var direction: Vector2 = Vector2.ZERO
+```gd
+	var direction: Vector2 = Vector2.ZERO
 	direction.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
 	direction.y = Input.get_action_strength("Back") - Input.get_action_strength("Forward")
-	direction = direction.normalized()`
+	direction = direction.normalized()
+ ```
  
 `if Input.is_action_just_pressed("dash") and not is_dashing and dash_cooldown_timer <= 0:
 	is_dashing = true
