@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var speed: float = 100.0
 @export var aggro_range: float = 100.0
+@export var health := 15
 
 var player: Node2D
 var is_aggroed := false
@@ -71,4 +72,19 @@ func move_towards(target_position: Vector2, delta: float):
 	move_and_slide()
 	
 func take_damage(dmg):
+	print("Ork took dmg: ", dmg)
+	health -= dmg
+	
+	if health <= 0:
+		die()
+		
+func die():
+	print("Ork died")
+	self.queue_free()
+
+func gain_health(heal):
 	pass
+	
+func apply_knockback(strength):
+	pass
+	

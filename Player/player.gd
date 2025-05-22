@@ -1,10 +1,11 @@
 class_name Player extends CharacterBody2D
 
 var cardinal_direction: Vector2 = Vector2.DOWN
-var move_speed: float = 100.0
-var dash_speed: float = 300.0
-var dash_duration: float = 0.2
-var dash_cooldown: float = 0.5
+@export var move_speed: float = 100.0
+@export var dash_speed: float = 300.0
+@export var dash_duration: float = 0.2
+@export var dash_cooldown: float = 0.5
+@export var health: int = 100
 
 var simulate_updown_angle = 15
 
@@ -106,7 +107,7 @@ func perform_light_attack():
 
 	for body in base_attack.get_overlapping_bodies():
 		if body.is_in_group("enemies"):
-			body.take_damage(10)
+			body.take_damage(5)
 
 	base_attack_shape.disabled = true  # Disable hitbox again
 
@@ -115,3 +116,20 @@ func perform_light_attack():
 
 func _on_AttackCooldown_timeout():
 	can_attack = true
+	
+func take_damage(dmg):
+	print("Player took dmg: ", dmg)
+	health -= dmg
+	
+	if health <= 0:
+		die()
+	
+func die():
+	pass
+	
+func gain_health(heal):
+	pass
+	
+func apply_knockback(strength):
+	pass
+	
