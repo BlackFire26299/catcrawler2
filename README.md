@@ -162,18 +162,20 @@ Font https://mounirtohami.itch.io/minimalpixel-font <br>
 	direction = direction.normalized()
  ```
  
-`if Input.is_action_just_pressed("dash") and not is_dashing and dash_cooldown_timer <= 0:
+```gd
+if Input.is_action_just_pressed("dash") and not is_dashing and dash_cooldown_timer <= 0:
 	is_dashing = true
 	dash_timer = dash_duration
 	dash_cooldown_timer = dash_cooldown
 	velocity = direction * dash_speed 
-  `
-  `	if direction.y < 0:
+  
+  	if direction.y < 0:
 		sprite.rotation_degrees = flip_adjusted_angle(-simulate_updown_angle)
 	elif direction.y > 0:
 		sprite.rotation_degrees = flip_adjusted_angle(simulate_updown_angle)
 	else:
-		sprite.rotation_degrees = 0`
+		sprite.rotation_degrees = 0
+```
 
 
 ##### Enemie Patrol
