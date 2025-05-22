@@ -1,12 +1,23 @@
+class_name Ork 
 extends CharacterBody2D
 
 @export var speed: float = 100.0
 @export var aggro_range: float = 100.0
 @export var health := 15
 
+@export var attack_range: float = 20.0
+@export var attack_damage: int = 10
+@export var attack_cooldown: float = 2.5
+
+var can_attack := true
+
+@onready var attack_cooldown_timer := $AttackCooldown
+
 var player: Node2D
 var is_aggroed := false
 var is_returning_to_patrol := false
+
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 @onready var navigation_agent := $NavigationAgent2D
 @onready var lost_aggro_timer := $LostAggroTimer
@@ -15,6 +26,7 @@ var is_returning_to_patrol := false
 func _ready():
 	player = $"../Player"
 	lost_aggro_timer.timeout.connect(_on_lost_aggro_timeout)
+	attack_cooldown_timer.timeout.connect(_on_attack_cooldown_timeout)
 
 func _physics_process(delta):
 	# Check distance to player to toggle aggro
@@ -28,10 +40,18 @@ func _physics_process(delta):
 
 	# AGGRO: Chase player
 	if is_aggroed:
-		navigation_agent.set_target_position(player.global_position)
-		if not navigation_agent.is_navigation_finished():
-			var next_path = navigation_agent.get_next_path_position()
-			move_towards(next_path, delta)
+		
+		face_player()
+		
+		var distance = player.global_position.distance_to(global_position)
+		
+		if distance <= attack_range and can_attack:
+			attack()
+		else:
+			navigation_agent.set_target_position(player.global_position)
+			if not navigation_agent.is_navigation_finished():
+				var next_path = navigation_agent.get_next_path_position()
+				move_towards(next_path, delta)
 
 	# RETURNING: Move back to nearest patrol point
 	elif is_returning_to_patrol:
@@ -49,6 +69,19 @@ func _physics_process(delta):
 			patrol_path_follow.progress += speed * delta
 		else:
 			move_towards(patrol_target, delta)
+			
+	if is_aggroed:
+		if global_position.distance_to(player.global_position) <= attack_range:
+			animated_sprite.play("Attack1")
+		elif velocity.length() > 0:
+			animated_sprite.play("Walk")
+		else:
+			animated_sprite.play("Idle")
+	elif is_returning_to_patrol or patrol_path_follow:
+		if velocity.length() > 0:
+			animated_sprite.play("Walk")
+		else:
+			animated_sprite.play("Idle")
 
 func _on_lost_aggro_timeout():
 	is_aggroed = false
@@ -88,3 +121,21 @@ func gain_health(heal):
 func apply_knockback(strength):
 	pass
 	
+
+func _on_attack_cooldown_timeout():
+	can_attack = true
+
+func attack(): 
+	can_attack = false
+	attack_cooldown_timer.start(attack_cooldown)
+	
+	if player.global_position.distance_to(global_position) <= attack_range:
+		player.take_damage(attack_damage)
+		print("Enemy attacked player")
+
+func face_player():
+	var direction = player.global_position - global_position
+
+	# Only flip horizontally for left/right movement
+	if abs(direction.x) > abs(direction.y):
+		animated_sprite.flip_h = direction.x < 0

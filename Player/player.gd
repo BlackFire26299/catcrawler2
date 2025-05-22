@@ -17,7 +17,7 @@ var is_blocking = false
 var can_attack = true
 var attack_timer = 0.0
 
-@onready var sprite: Sprite2D = $"Knight Sprite"
+@onready var sprite = $AnimatedSprite2D
 @onready var base_attack = $base_attack
 @onready var base_attack_shape = $base_attack/base_attack_shape
 @onready var attack_cooldown_timer = $AttackCooldown
@@ -39,6 +39,7 @@ func _ready():
 	pass
 
 func _process(delta):
+
 
 	# DASH COOLDOWN
 	if dash_cooldown_timer > 0:
@@ -87,6 +88,16 @@ func _process(delta):
 	if direction.x != 0:
 		sprite.flip_h = direction.x < 0
 		base_attack.position.x = abs(base_attack.position.x) * (-1 if direction.x < 0 else 1)
+		
+	# Animation Control
+	if sprite.animation == "Attack1" and sprite.is_playing():
+		pass  # Let it finish
+	elif is_blocking:
+		sprite.play("Block")
+	elif velocity.length() > 0:
+		sprite.play("Walk")
+	else:
+		sprite.play("Idle")
 
 func _physics_process(delta):
 	if is_dashing:
@@ -102,6 +113,8 @@ func _physics_process(delta):
 func perform_light_attack():
 	can_attack = false
 	base_attack_shape.disabled = false  # Enable hitbox
+	
+	sprite.play("Attack1")
 
 	await get_tree().create_timer(0.1).timeout  # Small delay for hit detection
 
