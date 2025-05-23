@@ -56,7 +56,7 @@ func _process(delta):
 
 	# -- ATTACKING -
 	if Input.is_action_just_pressed("attack_light") and can_attack:
-		perform_light_attack()
+		light_attack()
 		print("Light Attack")
 
 	# -- INTERACT --
@@ -110,7 +110,7 @@ func _physics_process(delta):
 # COMBAT a
 # ------------------
 
-func perform_light_attack():
+func light_attack():
 	can_attack = false
 	base_attack_shape.disabled = false  # Enable hitbox
 	

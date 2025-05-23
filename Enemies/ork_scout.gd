@@ -129,9 +129,8 @@ func attack():
 	can_attack = false
 	attack_cooldown_timer.start(attack_cooldown)
 	
-	if player.global_position.distance_to(global_position) <= attack_range:
-		player.take_damage(attack_damage)
-		print("Enemy attacked player")
+	player.take_damage(attack_damage)
+	print("Enemy attacked player")
 
 func face_player():
 	var direction = player.global_position - global_position
