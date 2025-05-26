@@ -82,6 +82,34 @@ func move_towards(target_position: Vector2, delta: float):
 	var direction = (target_position - global_position).normalized()
 	velocity = direction * speed
 	move_and_slide()
+	
+func take_damage(dmg):
+	print("Ork took dmg: ", dmg)
+	health -= dmg
+	
+	if health <= 0:
+		die()
+		
+func die():
+	print("Ork died")
+	self.queue_free()
+
+func gain_health(heal):
+	pass
+	
+func apply_knockback(strength):
+	pass
+	
+
+func _on_attack_cooldown_timeout():
+	can_attack = true
+
+func attack(): 
+	can_attack = false
+	attack_cooldown_timer.start(attack_cooldown)
+	
+	player.take_damage(attack_damage)
+	print("Enemy attacked player")
 
 func face_player():
 	var direction = player.global_position - global_position

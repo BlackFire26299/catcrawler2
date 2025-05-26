@@ -152,28 +152,65 @@ Font https://mounirtohami.itch.io/minimalpixel-font <br>
 ### Prototype 1 - Core Systems
 #### Important Additions - Player Controller, Base combat (player and enemie), Enemie patrol (basic)
 ##### Player Controller
-
-##### Combat - Player and Enemie 
-
-`	var direction: Vector2 = Vector2.ZERO
+```gd
+	var direction: Vector2 = Vector2.ZERO
 	direction.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
 	direction.y = Input.get_action_strength("Back") - Input.get_action_strength("Forward")
-	direction = direction.normalized()`
+	direction = direction.normalized()
+ ```
  
-`if Input.is_action_just_pressed("dash") and not is_dashing and dash_cooldown_timer <= 0:
+```gd
+if Input.is_action_just_pressed("dash") and not is_dashing and dash_cooldown_timer <= 0:
 	is_dashing = true
 	dash_timer = dash_duration
 	dash_cooldown_timer = dash_cooldown
 	velocity = direction * dash_speed 
-  `
-  `	if direction.y < 0:
+  
+  	if direction.y < 0:
 		sprite.rotation_degrees = flip_adjusted_angle(-simulate_updown_angle)
 	elif direction.y > 0:
 		sprite.rotation_degrees = flip_adjusted_angle(simulate_updown_angle)
 	else:
-		sprite.rotation_degrees = 0`
+		sprite.rotation_degrees = 0
+```
 
+##### Combat - Player and Enemie 
+```gd
+if Input.is_action_just_pressed("attack_light") and can_attack:
+	light_attack()
+	print("Light Attack")
 
+func light_attack():
+	can_attack = false
+	base_attack_shape.disabled = false  # Enable hitbox
+	
+	sprite.play("Attack1")
+
+	await get_tree().create_timer(0.1).timeout  # Small delay for hit detection
+
+	for body in base_attack.get_overlapping_bodies():
+		if body.is_in_group("enemies"):
+			body.take_damage(5)
+
+	base_attack_shape.disabled = true  # Disable hitbox again
+
+	await get_tree().create_timer(0.6).timeout  # Cooldown delay
+	can_attack = true
+
+```
+```gd
+if distance <= attack_range and can_attack:
+	attack()
+func _on_attack_cooldown_timeout():
+	can_attack = true
+
+func attack(): 
+	can_attack = false
+	attack_cooldown_timer.start(attack_cooldown)
+	
+	player.take_damage(attack_damage)
+	print("Enemy attacked player")
+```
 ##### Enemie Patrol
 
 #### Video of Functionality (link to youtube)
