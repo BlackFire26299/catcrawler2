@@ -21,10 +21,13 @@ var is_returning_to_patrol := false
 
 @onready var navigation_agent := $NavigationAgent2D
 @onready var lost_aggro_timer := $LostAggroTimer
-@onready var patrol_path_follow := get_node("../EnemyPath/PathFollow2D") # Update path as needed
+@export var follow_path_path: NodePath
+@onready var patrol_path_follow := get_node(follow_path_path) # Update path as needed
+
+@export var player_path : NodePath
 
 func _ready():
-	player = $"../Player"
+	player = get_node(player_path)
 	lost_aggro_timer.timeout.connect(_on_lost_aggro_timeout)
 	attack_cooldown_timer.timeout.connect(_on_attack_cooldown_timeout)
 
