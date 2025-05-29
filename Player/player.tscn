@@ -437,10 +437,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sp7fq"]
-radius = 9.0
+radius = 7.0
 height = 24.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
 script = ExtResource("1_pop16")
 dash_cooldown = 1.5
 
@@ -455,7 +456,7 @@ shape = SubResource("CapsuleShape2D_qkwgi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_soeee")
-animation = &"Attack1"
+animation = &"Death"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
@@ -464,7 +465,14 @@ zoom = Vector2(4, 4)
 position = Vector2(13, -3)
 
 [node name="base_attack_shape" type="CollisionShape2D" parent="base_attack"]
+position = Vector2(-3, 0)
 shape = SubResource("CapsuleShape2D_sp7fq")
+disabled = true
+
+[node name="base_attack_shape2" type="CollisionShape2D" parent="base_attack"]
+position = Vector2(-23, 0)
+shape = SubResource("CapsuleShape2D_sp7fq")
+disabled = true
 
 [node name="AttackCooldown" type="Timer" parent="."]
 wait_time = 0.5
