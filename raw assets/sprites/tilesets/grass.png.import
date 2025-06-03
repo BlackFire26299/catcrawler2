@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f6ba8nf2lhxj"
-path="res://.godot/imported/Arrow02(32x32).png-97a01fc6e901a6e8321f0bc704e39317.ctex"
+uid="uid://dwxs16eu6ig7k"
+path="res://.godot/imported/grass.png-848cb7f37b8cc7e6ac9fb5e146be8a5c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://raw assets/Tiny RPG Character Pack/Arrow(Projectile)/Arrow02(32x32).png"
-dest_files=["res://.godot/imported/Arrow02(32x32).png-97a01fc6e901a6e8321f0bc704e39317.ctex"]
+source_file="res://raw assets/sprites/tilesets/grass.png"
+dest_files=["res://.godot/imported/grass.png-848cb7f37b8cc7e6ac9fb5e146be8a5c.ctex"]
 
 [params]
 

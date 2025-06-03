@@ -4,16 +4,6 @@ extends CharacterBody2D
 @export var speed: float = 100.0
 @export var aggro_range: float = 100.0
 @export var health := 15
-
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 @export var attack_range: float = 20.0
 @export var attack_damage: int = 10
 @export var attack_cooldown: float = 2.5
@@ -25,33 +15,10 @@ var can_attack := true
 var player: Node2D
 var is_aggroed := false
 var is_returning_to_patrol := false
-
-<<<<<<< Updated upstream
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2
 @onready var attack_area: Area2D = $attack_area
 @onready var attack_shape_right: CollisionShape2D = $attack_area/baseAttack
 @onready var attack_shape_left: CollisionShape2D = $attack_area/baseAttack2
->>>>>>> Stashed changes
 
 @onready var navigation_agent := $NavigationAgent2D
 @onready var lost_aggro_timer := $LostAggroTimer

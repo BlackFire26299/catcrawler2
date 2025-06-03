@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Assingment Action RPG"
-run/main_scene="uid://cvtl3x8sdu0xs"
+run/main_scene="uid://b41lqhbxhiqf2"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
