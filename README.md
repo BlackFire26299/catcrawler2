@@ -147,6 +147,7 @@ Most of the NPC's can be found here, https://zerie.itch.io/tiny-rpg-character-as
 GUI https://mounirtohami.itch.io/pixel-art-gui-elements <br>
 More GUI https://greatdocbrown.itch.io/gamepad-ui <br>
 Font https://mounirtohami.itch.io/minimalpixel-font <br>
+https://tekilor.itch.io/2d-fires-pack-2
 
 ## Prototyping
 ### Prototype 1 - Core Systems
