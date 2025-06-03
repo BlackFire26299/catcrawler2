@@ -3,11 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bfxt3rv6uo24u" path="res://raw assets/Sheets/Fire01/Fire-01_64x32_Sheet.png" id="1_o6wmu"]
 [ext_resource type="Texture2D" uid="uid://encga3l4ha3j" path="res://raw assets/Sheets/Fire02/Fire-02_64x32_Sheet.png" id="2_ol1wb"]
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://dg0fwka5uhxb0" path="res://raw assets/Fire-03_32x32_Sheet.png" id="3_c6h4s"]
-=======
-[ext_resource type="Texture2D" uid="uid://dg0fwka5uhxb0" path="res://raw assets/Sheets/Fire03/Fire-03_32x32_Sheet.png" id="3_c6h4s"]
->>>>>>> Stashed changes
 =======
 [ext_resource type="Texture2D" uid="uid://dg0fwka5uhxb0" path="res://raw assets/Sheets/Fire03/Fire-03_32x32_Sheet.png" id="3_c6h4s"]
 >>>>>>> Stashed changes
