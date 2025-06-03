@@ -346,9 +346,9 @@ terrain_set_0/terrain_2/color = Color(0.46875, 0.5, 0.25, 1)
 sources/1 = SubResource("TileSetAtlasSource_tqrrj")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ebm2f"]
-vertices = PackedVector2Array(566.18, -92.1328, 610.609, 213.227, 286.547, 250.289, 161.75, 21.6484, 242.594, -93.9609, 317.422, -126.703)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(316, -137, 575, -101, 622, 222, 281, 261, 150, 21, 236, -102)])
+vertices = PackedVector2Array(675.906, 336.844, 317.344, 117.672, 249.258, -93.4375, 691.383, -143.859, 849.438, 342.039, 1284.64, -1.89844, 1127.81, 415.039, 546.648, 521.344, 149.656, 333.453, 189.5, 171.273)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(3, 5, 6, 4), PackedInt32Array(1, 0, 7, 8, 9)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(692, -154, 1298, -9, 1134, 427, 848, 352, 681, 347, 550, 534, 138, 339, 181, 164, 305, 112, 236, -102)])
 
 [sub_resource type="Curve2D" id="Curve2D_a6noi"]
 _data = {
@@ -385,6 +385,7 @@ navigation_polygon = SubResource("NavigationPolygon_ebm2f")
 [node name="pack1" type="Node2D" parent="Enimies"]
 
 [node name="PathPack1" type="Path2D" parent="Enimies/pack1"]
+visible = false
 curve = SubResource("Curve2D_a6noi")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Enimies/pack1/PathPack1"]
