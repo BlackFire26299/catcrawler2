@@ -17,7 +17,14 @@ var player: Node2D
 var is_aggroed := false
 var is_returning_to_patrol := false
 
+<<<<<<< Updated upstream
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+=======
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2
+@onready var attack_area: Area2D = $attack_area
+@onready var attack_shape_right: CollisionShape2D = $attack_area/baseAttack
+@onready var attack_shape_left: CollisionShape2D = $attack_area/baseAttack2
+>>>>>>> Stashed changes
 
 @onready var navigation_agent := $NavigationAgent2D
 @onready var lost_aggro_timer := $LostAggroTimer
