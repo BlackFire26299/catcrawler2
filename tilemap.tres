@@ -137,10 +137,13 @@ texture = ExtResource("1_q3qn3")
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.24824, 1.25901, 2.42809, -8, 8, -8, 2.96767, 1.79859, -8, 8, -8, 3.95689)
 7:3/0 = 0
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.24824, 1.25901, -2.42809, -8, -8, -8, -2.96767, 1.79859, 8, 8, 8, 3.95689)
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -180,10 +183,13 @@ texture = ExtResource("1_q3qn3")
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.34894, 8, 5.84541, 8, 5.84541, 0.539577, 2.78781, -5.93534, -8, -5.2159, -8, 4.85619)
 7:4/0 = 0
 7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.34894, 8, -5.84541, 8, -5.84541, 0.539577, -2.78781, -5.93534, 8, -5.2159, 8, 4.85619)
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
