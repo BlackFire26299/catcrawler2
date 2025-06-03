@@ -12,6 +12,7 @@ extends CharacterBody2D
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 @export var attack_range: float = 20.0
 @export var attack_damage: int = 10
 @export var attack_cooldown: float = 2.5
@@ -27,6 +28,8 @@ var is_returning_to_patrol := false
 <<<<<<< Updated upstream
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
