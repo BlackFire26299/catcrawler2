@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://b41lqhbxhiqf2"]
+[gd_scene load_steps=26 format=4 uid="uid://b41lqhbxhiqf2"]
 
 [ext_resource type="Texture2D" uid="uid://clhdhfsqcbh7h" path="res://raw assets/TopDownFantasy-Forest/Tiles/Tileset.png" id="1_8gq75"]
 [ext_resource type="Texture2D" uid="uid://qng0rr8386lc" path="res://raw assets/TopDownFantasy-Forest/Decorations/Decorations.png" id="2_ks2kl"]
@@ -654,9 +654,14 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/1 = SubResource("TileSetAtlasSource_2igke")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_2igke"]
-vertices = PackedVector2Array(-37.7891, 94.25, -82.2813, -182.133, 832.102, -193.008, 196.688, 259.891, 942.008, 644.242, 714.039, 761.242, 300.172, 635.031, 1146.3, -259.422, 1661.18, 38.2969, 1584.83, 601.203, 1149.26, 800.422)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 3, 2, 7, 8), PackedInt32Array(4, 8, 9, 10)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-94, -192, 831, -203, 1148, -270, 1672, 33, 1594, 608, 1148, 812, 941, 656, 715, 772, 292, 643, 188, 266, -47, 100)])
+vertices = PackedVector2Array(853.688, 425.102, 196.688, 259.891, -37.7891, 94.25, -82.2813, -182.133, 832.102, -193.008, 1156.06, 363.391, 1659.32, 37.2188, 1534.01, 331.188, 1401.48, 263, 1146.3, -259.422, 712.297, 718.648, 300, 634.422, 888.859, 657.281)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(9, 8, 5, 4), PackedInt32Array(10, 11, 1, 0, 12)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-94, -192, 831, -203, 1148, -270, 1672, 33, 1539, 345, 1401, 274, 1159, 373, 865, 433, 900, 664, 713, 729, 292, 643, 188, 266, -47, 100)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_nhbju"]
+vertices = PackedVector2Array(1448.59, 349.773, 1509.96, 429.453, 1321.4, 636.289, 1103.08, 706.461, 1138.62, 402.742, 1266.95, 350.188, 901.531, 637.688, 890.453, 472.43, 1014.68, 419.719, 1390.01, 294.852)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(3, 6, 7, 8, 4), PackedInt32Array(9, 0, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(880, 466, 1012, 410, 1136, 393, 1263, 341, 1392, 283, 1456, 343, 1523, 430, 1327, 645, 1103, 717, 892, 645)])
 
 [sub_resource type="Curve2D" id="Curve2D_j6o6x"]
 _data = {
@@ -719,8 +724,10 @@ tile_map_data = PackedByteArray("AAAHAAwAAQAIAAQAAAAHAAsAAQAIAAQAAAAHAAoAAQAIAAQ
 tile_set = SubResource("TileSet_j6o6x")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-visible = false
 navigation_polygon = SubResource("NavigationPolygon_2igke")
+
+[node name="NavigationRegion2D2" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_nhbju")
 
 [node name="Enemies" type="Node2D" parent="."]
 
