@@ -1,6 +1,7 @@
-[gd_scene load_steps=63 format=3 uid="uid://cr6r5oyh7sl1j"]
+[gd_scene load_steps=64 format=3 uid="uid://cr6r5oyh7sl1j"]
 
 [ext_resource type="Texture2D" uid="uid://cf4p74hkygf8t" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Elite Orc/Elite Orc/Elite Orc-Attack01.png" id="1_4ah1s"]
+[ext_resource type="Script" uid="uid://cn4n1srk0rh3l" path="res://Enemies/ork_elite.gd" id="1_st2md"]
 [ext_resource type="Texture2D" uid="uid://ctesq5i2q8qvc" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Elite Orc/Elite Orc/Elite Orc-Attack02.png" id="2_st2md"]
 [ext_resource type="Texture2D" uid="uid://cvs63sgfga6em" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Elite Orc/Elite Orc/Elite Orc-Attack03.png" id="3_blgpg"]
 [ext_resource type="Texture2D" uid="uid://bhn3axkd1ssmx" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Elite Orc/Elite Orc/Elite Orc-Death.png" id="4_ij7sy"]
@@ -416,7 +417,11 @@ height = 58.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ah1s"]
 radius = 7.0
 
-[node name="OrkElite" type="CharacterBody2D"]
+[node name="OrkElite" type="CharacterBody2D" groups=["enemies"]]
+collision_mask = 3
+script = ExtResource("1_st2md")
+health = 35
+attack_cooldown = 3.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hfdof")
@@ -429,15 +434,15 @@ shape = SubResource("CapsuleShape2D_av2wt")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
-[node name="Attack1 Area" type="Area2D" parent="."]
+[node name="attack_area" type="Area2D" parent="."]
 visible = false
 
-[node name="A1R" type="CollisionShape2D" parent="Attack1 Area"]
+[node name="baseAttack" type="CollisionShape2D" parent="attack_area"]
 position = Vector2(15, 5)
 rotation = 0.888373
 shape = SubResource("CapsuleShape2D_4ah1s")
 
-[node name="A1L" type="CollisionShape2D" parent="Attack1 Area"]
+[node name="baseAttack2" type="CollisionShape2D" parent="attack_area"]
 position = Vector2(-15, 5)
 rotation = -0.872665
 shape = SubResource("CapsuleShape2D_4ah1s")
@@ -461,3 +466,7 @@ shape = SubResource("CircleShape2D_4ah1s")
 [node name="A3L" type="CollisionShape2D" parent="Attack3 Area3"]
 position = Vector2(-22, 2)
 shape = SubResource("CircleShape2D_4ah1s")
+
+[node name="AttackCooldown" type="Timer" parent="."]
+
+[node name="LostAggroTimer" type="Timer" parent="."]

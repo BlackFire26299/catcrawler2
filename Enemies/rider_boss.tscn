@@ -1,5 +1,6 @@
-[gd_scene load_steps=68 format=3 uid="uid://cxvxavf0u2vwj"]
+[gd_scene load_steps=69 format=3 uid="uid://cxvxavf0u2vwj"]
 
+[ext_resource type="Script" uid="uid://dmmoj7qwp5ct7" path="res://Enemies/rider_boss.gd" id="1_blgf3"]
 [ext_resource type="Texture2D" uid="uid://dbvvlvucnekwn" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Orc rider/Orc rider/Orc rider-Attack01.png" id="1_ra7t4"]
 [ext_resource type="Texture2D" uid="uid://b2ha0vxd785x4" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Orc rider/Orc rider/Orc rider-Attack02.png" id="2_blgf3"]
 [ext_resource type="Texture2D" uid="uid://bnjn37wt4otrg" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Orc rider/Orc rider/Orc rider-Attack03.png" id="3_105xr"]
@@ -444,7 +445,8 @@ height = 48.0
 radius = 12.0
 height = 86.0
 
-[node name="RiderBoss" type="CharacterBody2D"]
+[node name="RiderBoss" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_blgf3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mdkkc")
@@ -457,19 +459,17 @@ shape = SubResource("CircleShape2D_jx0rv")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
-[node name="Attack1" type="Area2D" parent="."]
-visible = false
+[node name="attack_area" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack1"]
+[node name="baseAttack" type="CollisionShape2D" parent="attack_area"]
 position = Vector2(17, -3)
 shape = SubResource("CircleShape2D_ra7t4")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Attack1"]
+[node name="baseAttack2" type="CollisionShape2D" parent="attack_area"]
 position = Vector2(-17, -3)
 shape = SubResource("CircleShape2D_ra7t4")
 
 [node name="Attack2" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack2"]
 position = Vector2(37, -1)
@@ -480,9 +480,12 @@ position = Vector2(-37, -1)
 shape = SubResource("CapsuleShape2D_blgf3")
 
 [node name="Attack3" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack3"]
 position = Vector2(0, -3)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_105xr")
+
+[node name="AttackCooldown" type="Timer" parent="."]
+
+[node name="LostAggroTimer" type="Timer" parent="."]
