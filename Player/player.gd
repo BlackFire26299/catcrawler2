@@ -21,6 +21,8 @@ var can_attack: bool = true
 @onready var hitbox_right: CollisionShape2D = $base_attack/base_attack_shape
 @onready var hitbox_left: CollisionShape2D = $base_attack/base_attack_shape2
 
+@onready var ui = $UI
+
 func _ready():
 	hitbox_left.disabled = true
 	hitbox_right.disabled = true
@@ -98,6 +100,8 @@ func take_damage(dmg: int):
 	print("Player took damage:", dmg)
 	if health <= 0:
 		die()
+	
+	ui.update_health_bar(health)
 
 func die():
 	is_dead = true
