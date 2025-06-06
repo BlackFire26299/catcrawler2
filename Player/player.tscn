@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://b6t5cfj5tmylk"]
+[gd_scene load_steps=77 format=4 uid="uid://b6t5cfj5tmylk"]
 
 [ext_resource type="Script" uid="uid://b1ercubrfme7w" path="res://Player/player.gd" id="1_pop16"]
 [ext_resource type="Script" uid="uid://075kvhb341iy" path="res://universal scripts/health.gd" id="2_dkxc0"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://c0nkclvgehkd8" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Knight/Knight/Knight-Hurt.png" id="8_dkpta"]
 [ext_resource type="Texture2D" uid="uid://u6bbqwrlcuhi" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Knight/Knight/Knight-Idle.png" id="9_lfmf2"]
 [ext_resource type="Texture2D" uid="uid://nsbcadfltbv5" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Knight/Knight/Knight-Walk.png" id="10_pisgm"]
+[ext_resource type="FontFile" uid="uid://lvx5enj6u36a" path="res://MinimalPixel v2.ttf" id="11_apopc"]
+[ext_resource type="Texture2D" uid="uid://bqpxm3pluoojh" path="res://raw assets/GUI.png" id="12_5htga"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qkwgi"]
 radius = 6.0
@@ -440,6 +442,484 @@ animations = [{
 radius = 7.0
 height = 24.0
 
+[sub_resource type="LabelSettings" id="LabelSettings_5htga"]
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_apopc"]
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_p5o4e"]
+font_size = 10
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gu6f8"]
+texture = ExtResource("12_5htga")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+11:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/next_alternative_id = 2
+8:14/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+11:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+10:15/0 = 0
+11:15/0 = 0
+0:16/0 = 0
+1:16/0 = 0
+2:16/0 = 0
+3:16/0 = 0
+4:16/0 = 0
+5:16/0 = 0
+6:16/0 = 0
+7:16/0 = 0
+8:16/0 = 0
+9:16/0 = 0
+10:16/0 = 0
+11:16/0 = 0
+0:17/0 = 0
+1:17/0 = 0
+2:17/0 = 0
+3:17/0 = 0
+4:17/0 = 0
+5:17/0 = 0
+6:17/0 = 0
+7:17/0 = 0
+8:17/0 = 0
+9:17/0 = 0
+10:17/0 = 0
+11:17/0 = 0
+0:18/0 = 0
+1:18/0 = 0
+2:18/0 = 0
+3:18/0 = 0
+4:18/0 = 0
+5:18/0 = 0
+6:18/0 = 0
+7:18/0 = 0
+8:18/0 = 0
+9:18/0 = 0
+10:18/0 = 0
+11:18/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_dkpta"]
+sources/1 = SubResource("TileSetAtlasSource_gu6f8")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5htga"]
+texture = ExtResource("12_5htga")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+11:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+11:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+10:15/0 = 0
+11:15/0 = 0
+0:16/0 = 0
+1:16/0 = 0
+2:16/0 = 0
+3:16/0 = 0
+4:16/0 = 0
+5:16/0 = 0
+6:16/0 = 0
+7:16/0 = 0
+8:16/0 = 0
+9:16/0 = 0
+10:16/0 = 0
+11:16/0 = 0
+0:17/0 = 0
+1:17/0 = 0
+2:17/0 = 0
+3:17/0 = 0
+4:17/0 = 0
+5:17/0 = 0
+6:17/0 = 0
+7:17/0 = 0
+8:17/0 = 0
+9:17/0 = 0
+10:17/0 = 0
+11:17/0 = 0
+0:18/0 = 0
+1:18/0 = 0
+2:18/0 = 0
+3:18/0 = 0
+4:18/0 = 0
+5:18/0 = 0
+6:18/0 = 0
+7:18/0 = 0
+8:18/0 = 0
+9:18/0 = 0
+10:18/0 = 0
+11:18/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_p5o4e"]
+sources/0 = SubResource("TileSetAtlasSource_5htga")
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_pop16")
@@ -477,5 +957,204 @@ disabled = true
 [node name="AttackCooldown" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -143.0
+offset_top = -80.0
+offset_right = 143.0
+offset_bottom = 80.0
+
+[node name="Tutorial Tooltips" type="Control" parent="UI"]
+visible = false
+anchors_preset = 0
+offset_left = 143.0
+offset_top = 80.0
+offset_right = 143.0
+offset_bottom = 80.0
+
+[node name="Movement Tooltip" type="Control" parent="UI/Tutorial Tooltips"]
+anchors_preset = 0
+
+[node name="WelcomeText" type="Label" parent="UI/Tutorial Tooltips/Movement Tooltip"]
+offset_left = -58.0
+offset_top = -60.0
+offset_right = 58.0
+offset_bottom = -37.0
+theme_override_fonts/font = ExtResource("11_apopc")
+text = "Welcome to Thornvail"
+label_settings = SubResource("LabelSettings_5htga")
+
+[node name="MovementText" type="Label" parent="UI/Tutorial Tooltips/Movement Tooltip"]
+offset_left = -58.0
+offset_top = 21.0
+offset_right = 58.0
+offset_bottom = 44.0
+theme_override_fonts/font = ExtResource("11_apopc")
+text = "Use W,A,S,D to move"
+label_settings = SubResource("LabelSettings_5htga")
+
+[node name="Navigate Tooltip" type="Control" parent="UI/Tutorial Tooltips"]
+anchors_preset = 0
+
+[node name="Label" type="Label" parent="UI/Tutorial Tooltips/Navigate Tooltip"]
+offset_left = -64.0
+offset_top = -58.0
+offset_right = 65.0
+offset_bottom = -35.0
+text = "Navigate through the cave"
+label_settings = SubResource("LabelSettings_apopc")
+
+[node name="MovementText2" type="Label" parent="UI/Tutorial Tooltips/Navigate Tooltip"]
+offset_left = -82.0
+offset_top = 20.0
+offset_right = 83.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("11_apopc")
+text = "You can dash by using left shift"
+label_settings = SubResource("LabelSettings_5htga")
+
+[node name="Combat Tooltip" type="Control" parent="UI/Tutorial Tooltips"]
+anchors_preset = 0
+
+[node name="Label" type="Label" parent="UI/Tutorial Tooltips/Combat Tooltip"]
+offset_left = -62.0
+offset_top = -58.0
+offset_right = 63.0
+offset_bottom = -35.0
+text = "You have entered combat"
+label_settings = SubResource("LabelSettings_p5o4e")
+
+[node name="Label2" type="Label" parent="UI/Tutorial Tooltips/Combat Tooltip"]
+offset_left = -83.0
+offset_top = 23.0
+offset_right = 85.0
+offset_bottom = 46.0
+text = "Press left click to do a basic attack."
+label_settings = SubResource("LabelSettings_p5o4e")
+
+[node name="Advanced Combat" type="Control" parent="UI/Tutorial Tooltips"]
+anchors_preset = 0
+
+[node name="Bars" type="Control" parent="UI"]
+anchors_preset = 0
+offset_left = 143.0
+offset_top = 80.0
+offset_right = 143.0
+offset_bottom = 80.0
+
+[node name="Bars" type="TileMapLayer" parent="UI/Bars"]
+position = Vector2(-143, -80)
+tile_map_data = PackedByteArray("AAABAAgAAQAIAAEAAAACAAgAAQAJAAEAAAADAAgAAQAJAAEAAAAEAAgAAQAJAAEAAAAFAAgAAQAJAAEAAAAGAAgAAQALAAEAAAABAAkAAQAIAAAAAAACAAkAAQAJAAAAAAADAAkAAQAJAAAAAAAEAAkAAQAKAAAAAAAFAAkAAQALAAAAAAAAAAgAAQAHAAQAAAAAAAkAAQADAAQAAAA=")
+tile_set = SubResource("TileSet_dkpta")
+
+[node name="health" type="Control" parent="UI/Bars"]
+anchors_preset = 0
+
+[node name="FullHealth" type="TileMapLayer" parent="UI/Bars/health"]
+position = Vector2(-143, -80)
+tile_map_data = PackedByteArray("AAABAAgAAQAEAAEAAAACAAgAAQAFAAEAAAADAAgAAQAFAAEAAAAEAAgAAQAFAAEAAAAFAAgAAQAGAAEAAAAGAAgAAQAHAAEAAAA=")
+tile_set = SubResource("TileSet_dkpta")
+
+[node name="90health" type="TileMapLayer" parent="UI/Bars/health"]
+position = Vector2(-143, -80)
+tile_map_data = PackedByteArray("AAAFAAgAAQAGAAEAAAAEAAgAAQAFAAEAAAABAAgAAQAEAAEAAAADAAgAAQAGAAEAAAACAAgAAQAGAAEAAAA=")
+tile_set = SubResource("TileSet_dkpta")
+
+[node name="80health" type="TileMapLayer" parent="UI/Bars/health"]
+position = Vector2(-143, -80)
+tile_map_data = PackedByteArray("AAAFAAgAAQAEAAEAABAEAAgAAQAGAAEAAAADAAgAAQAGAAEAAAACAAgAAQAGAAEAAAABAAgAAQAEAAEAAAA=")
+tile_set = SubResource("TileSet_dkpta")
+
+[node name="70health" type="TileMapLayer" parent="UI/Bars/health"]
+position = Vector2(-143, -80)
+tile_map_data = PackedByteArray("AAAEAAgAAQAGAAEAAAADAAgAAQAGAAEAAAACAAgAAQAGAAEAAAABAAgAAQAEAAEAAAA=")
+tile_set = SubResource("TileSet_dkpta")
+
+[node name="60health" type="TileMapLayer" parent="UI/Bars/health"]
+position = Vector2(-143, -80)
+tile_map_data = PackedByteArray("AAAEAAgAAQAEAAEAABADAAgAAQAGAAEAAAACAAgAAQAGAAEAAAABAAgAAQAEAAEAAAA=")
+tile_set = SubResource("TileSet_dkpta")
+
+[node name="50health" type="TileMapLayer" parent="UI/Bars/health"]
+position = Vector2(-143, -80)
+tile_map_data = PackedByteArray("AAADAAgAAQAGAAEAAAACAAgAAQAGAAEAAAABAAgAAQAEAAEAAAA=")
+tile_set = SubResource("TileSet_dkpta")
+
+[node name="40health" type="TileMapLayer" parent="UI/Bars/health"]
+position = Vector2(-143, -80)
+tile_map_data = PackedByteArray("AAADAAgAAQAEAAEAABACAAgAAQAGAAEAAAABAAgAAQAEAAEAAAA=")
+tile_set = SubResource("TileSet_dkpta")
+
+[node name="30health" type="TileMapLayer" parent="UI/Bars/health"]
+position = Vector2(-143, -80)
+tile_map_data = PackedByteArray("AAACAAgAAQAGAAEAAAABAAgAAQAEAAEAAAA=")
+tile_set = SubResource("TileSet_dkpta")
+
+[node name="20health" type="TileMapLayer" parent="UI/Bars/health"]
+position = Vector2(-143, -80)
+tile_map_data = PackedByteArray("AAACAAgAAQAEAAEAABABAAgAAQAEAAEAAAA=")
+tile_set = SubResource("TileSet_dkpta")
+
+[node name="10health" type="TileMapLayer" parent="UI/Bars/health"]
+position = Vector2(-143, -80)
+tile_map_data = PackedByteArray("AAABAAgAAQAEAAEAAAA=")
+tile_set = SubResource("TileSet_dkpta")
+
+[node name="nohealth" type="TileMapLayer" parent="UI/Bars/health"]
+position = Vector2(-143, -80)
+tile_set = SubResource("TileSet_dkpta")
+
+[node name="energy" type="Control" parent="UI/Bars"]
+anchors_preset = 0
+
+[node name="fullenergy" type="TileMapLayer" parent="UI/Bars/energy"]
+position = Vector2(-143, -80)
+tile_map_data = PackedByteArray("AAABAAkAAQAAAAAAAAACAAkAAQABAAAAAAADAAkAAQABAAAAAAAEAAkAAQABAAAAAAAFAAkAAQADAAAAAAA=")
+tile_set = SubResource("TileSet_dkpta")
+
+[node name="6energy" type="TileMapLayer" parent="UI/Bars/energy"]
+position = Vector2(-143, -80)
+tile_map_data = PackedByteArray("AAABAAkAAQAAAAAAAAACAAkAAQABAAAAAAADAAkAAQABAAAAAAAEAAkAAQAAAAAAABA=")
+tile_set = SubResource("TileSet_dkpta")
+
+[node name="5energy" type="TileMapLayer" parent="UI/Bars/energy"]
+position = Vector2(-143, -80)
+tile_map_data = PackedByteArray("AAABAAkAAQAAAAAAAAACAAkAAQABAAAAAAADAAkAAQABAAAAAAA=")
+tile_set = SubResource("TileSet_dkpta")
+
+[node name="4energy" type="TileMapLayer" parent="UI/Bars/energy"]
+position = Vector2(-143, -80)
+tile_map_data = PackedByteArray("AAABAAkAAQAAAAAAAAACAAkAAQABAAAAAAADAAkAAQAAAAAAABA=")
+tile_set = SubResource("TileSet_dkpta")
+
+[node name="3energy" type="TileMapLayer" parent="UI/Bars/energy"]
+position = Vector2(-143, -80)
+tile_map_data = PackedByteArray("AAABAAkAAQAAAAAAAAACAAkAAQABAAAAAAA=")
+tile_set = SubResource("TileSet_dkpta")
+
+[node name="2energy" type="TileMapLayer" parent="UI/Bars/energy"]
+position = Vector2(-143, -80)
+tile_map_data = PackedByteArray("AAABAAkAAQAAAAAAAAACAAkAAQAAAAAAABA=")
+tile_set = SubResource("TileSet_dkpta")
+
+[node name="1energy" type="TileMapLayer" parent="UI/Bars/energy"]
+position = Vector2(-143, -80)
+tile_map_data = PackedByteArray("AAABAAkAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_dkpta")
+
+[node name="noernergy" type="TileMapLayer" parent="UI/Bars/energy"]
+position = Vector2(-143, -80)
+tile_set = SubResource("TileSet_dkpta")
+
+[node name="Menu button" type="TileMapLayer" parent="UI"]
+tile_map_data = PackedByteArray("AAAAAAAAAAAIAA4AAAA=")
+tile_set = SubResource("TileSet_p5o4e")
+
+[node name="Button" type="Button" parent="UI/Menu button"]
+show_behind_parent = true
+offset_right = 16.0
+offset_bottom = 16.0
 
 [connection signal="body_entered" from="base_attack" to="." method="_on_base_attack_body_entered"]
