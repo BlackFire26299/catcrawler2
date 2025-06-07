@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://b41lqhbxhiqf2"]
+[gd_scene load_steps=32 format=4 uid="uid://b41lqhbxhiqf2"]
 
 [ext_resource type="Texture2D" uid="uid://clhdhfsqcbh7h" path="res://raw assets/TopDownFantasy-Forest/Tiles/Tileset.png" id="1_8gq75"]
 [ext_resource type="Texture2D" uid="uid://qng0rr8386lc" path="res://raw assets/TopDownFantasy-Forest/Decorations/Decorations.png" id="2_ks2kl"]
@@ -683,15 +683,33 @@ point_count = 10
 
 [sub_resource type="Curve2D" id="Curve2D_nhbju"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 271, 374, 0, 0, 0, 0, 294, 324, 0, 0, 0, 0, 367, 267, 0, 0, 0, 0, 442, 298, 0, 0, 0, 0, 471, 380, 0, 0, 0, 0, 456, 431, 0, 0, 0, 0, 419, 459, 0, 0, 0, 0, 400, 386, 0, 0, 0, 0, 339, 378, 0, 0, 0, 0, 327, 420, 0, 0, 0, 0, 294, 407, 0, 0, 0, 0, 271, 374)
+"points": PackedVector2Array(0, 0, 0, 0, 285, 367, 0, 0, 0, 0, 294, 324, 0, 0, 0, 0, 328, 305, 0, 0, 0, 0, 372, 309, 0, 0, 0, 0, 387, 347, 0, 0, 0, 0, 378, 374, 0, 0, 0, 0, 331, 392, 0, 0, 0, 0, 285, 367)
 }
-point_count = 12
+point_count = 8
 
 [sub_resource type="Curve2D" id="Curve2D_4o7g3"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 1445, 180, 0, 0, 0, 0, 1466, 197, 0, 0, 0, 0, 1547, 180, 0, 0, 0, 0, 1547, 160, 0, 0, 0, 0, 1445, 179)
 }
 point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_asxyi"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 732, 460, 0, 0, 0, 0, 673, 464, 0, 0, 0, 0, 665, 499, 0, 0, 0, 0, 624, 477, 0, 0, 0, 0, 602, 506, 0, 0, 0, 0, 607, 555, 0, 0, 0, 0, 641, 584, 0, 0, 0, 0, 699, 581, 0, 0, 0, 0, 725, 543, 0, 0, 0, 0, 732, 460)
+}
+point_count = 10
+
+[sub_resource type="Curve2D" id="Curve2D_5anbi"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 866, 361, 0, 0, 0, 0, 947, 400, 0, 0, 0, 0, 973, 382, 0, 0, 0, 0, 982, 328, 0, 0, 0, 0, 949, 322, 0, 0, 0, 0, 926, 351, 0, 0, 0, 0, 866, 361)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_3ivw4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1325, 129, 0, 0, 0, 0, 1318, 81, 0, 0, 0, 0, 1291, 50, 0, 0, 0, 0, 1245, 51, 0, 0, 0, 0, 1189, 71, 0, 0, 0, 0, 1143, 81, 0, 0, 0, 0, 1101, 44, 0, 0, 0, 0, 1063, 32, 0, 0, 0, 0, 1048, 64, 0, 0, 0, 0, 1061, 90, 0, 0, 0, 0, 1061, 129, 0, 0, 0, 0, 1072, 148, 0, 0, 0, 0, 1098, 142, 0, 0, 0, 0, 1108, 116, 0, 0, 0, 0, 1123, 102, 0, 0, 0, 0, 1155, 116, 0, 0, 0, 0, 1136, 167, 0, 0, 0, 0, 1136, 204, -10.5148, -19.6277, 10.5148, 19.6277, 1150, 258, 0, 0, 0, 0, 1187, 287, 0, 0, 0, 0, 1231, 270, 0, 0, 0, 0, 1289, 238, 0, 0, 0, 0, 1289, 238, 0, 0, 0, 0, 1322, 193, 0, 0, 0, 0, 1325, 129)
+}
+point_count = 25
 
 [sub_resource type="Curve2D" id="Curve2D_nbpr0"]
 _data = {
@@ -845,8 +863,8 @@ player_path = NodePath("../../../Player")
 curve = SubResource("Curve2D_nhbju")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Pack4/Path2D"]
-position = Vector2(271, 374)
-rotation = -1.13966
+position = Vector2(285, 367)
+rotation = -1.36447
 
 [node name="OrkElite" parent="Enemies/Pack4" instance=ExtResource("5_4o7g3")]
 position = Vector2(286, 366)
@@ -878,6 +896,84 @@ position = Vector2(1553, 156)
 aggro_range = 50.0
 follow_path_path = NodePath("../Path2D/PathFollow2D2")
 player_path = NodePath("../../../Player")
+
+[node name="Pack6" type="Node2D" parent="Enemies"]
+
+[node name="Path2D" type="Path2D" parent="Enemies/Pack6"]
+curve = SubResource("Curve2D_asxyi")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Pack6/Path2D"]
+position = Vector2(732, 460)
+rotation = 3.0739
+
+[node name="ArcherOrk" parent="Enemies/Pack6" instance=ExtResource("4_j6o6x")]
+position = Vector2(701, 467)
+follow_path_path = NodePath("../Path2D/PathFollow2D")
+player_path = NodePath("../../../Player")
+
+[node name="ArcherOrk2" parent="Enemies/Pack6" instance=ExtResource("4_j6o6x")]
+position = Vector2(735, 504)
+follow_path_path = NodePath("../Path2D/PathFollow2D")
+player_path = NodePath("../../../Player")
+
+[node name="OrkScout" parent="Enemies/Pack6" instance=ExtResource("3_j45go")]
+position = Vector2(731, 469)
+follow_path_path = NodePath("../Path2D/PathFollow2D")
+player_path = NodePath("../../../Player")
+
+[node name="Pack7" type="Node2D" parent="Enemies"]
+
+[node name="OrkElite" parent="Enemies/Pack7" instance=ExtResource("5_4o7g3")]
+position = Vector2(896, 358)
+follow_path_path = NodePath("../Path2D/PathFollow2D")
+player_path = NodePath("../../../Player")
+
+[node name="Path2D" type="Path2D" parent="Enemies/Pack7"]
+curve = SubResource("Curve2D_5anbi")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Pack7/Path2D"]
+position = Vector2(866, 361)
+rotation = 0.448723
+
+[node name="Pack8" type="Node2D" parent="Enemies"]
+
+[node name="OrkElite" parent="Enemies/Pack8" instance=ExtResource("5_4o7g3")]
+position = Vector2(1268, 247)
+follow_path_path = NodePath("../Path2D/PathFollow2D")
+player_path = NodePath("../../../Player")
+
+[node name="OrkElite2" parent="Enemies/Pack8" instance=ExtResource("5_4o7g3")]
+position = Vector2(1217, 73)
+follow_path_path = NodePath("../../Pack2/Path2D/PathFollow2D2")
+player_path = NodePath("../../../Player")
+
+[node name="OrkScout" parent="Enemies/Pack8" instance=ExtResource("3_j45go")]
+position = Vector2(1210, 277)
+follow_path_path = NodePath("../Path2D/PathFollow2D")
+player_path = NodePath("../../../Player")
+
+[node name="OrkScout2" parent="Enemies/Pack8" instance=ExtResource("3_j45go")]
+position = Vector2(1305, 225)
+follow_path_path = NodePath("../Path2D/PathFollow2D")
+player_path = NodePath("../../../Player")
+
+[node name="ArcherOrk" parent="Enemies/Pack8" instance=ExtResource("4_j6o6x")]
+position = Vector2(1180, 68)
+follow_path_path = NodePath("../Path2D/PathFollow2D2")
+player_path = NodePath("../../../Player")
+
+[node name="Path2D" type="Path2D" parent="Enemies/Pack8"]
+curve = SubResource("Curve2D_3ivw4")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Pack8/Path2D"]
+position = Vector2(1267.54, 249.842)
+rotation = -0.504166
+progress = 857.645
+
+[node name="PathFollow2D2" type="PathFollow2D" parent="Enemies/Pack8/Path2D"]
+position = Vector2(1194.18, 69.1486)
+rotation = 2.79857
+progress = 189.586
 
 [node name="Boss" type="Node2D" parent="Enemies"]
 
@@ -911,7 +1007,7 @@ position = Vector2(1401, 366)
 scale = Vector2(1, 0.84375)
 
 [node name="Fire26" parent="Fires" instance=ExtResource("5_2igke")]
-position = Vector2(1233, 289)
+position = Vector2(1236, 284)
 scale = Vector2(1, 0.84375)
 
 [node name="Fire27" parent="Fires" instance=ExtResource("5_2igke")]
