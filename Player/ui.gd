@@ -3,6 +3,8 @@ extends Control
 @onready var firstTooltip = $"Tutorial Tooltips/Movement Tooltip"
 @onready var secondTooltip = $"Tutorial Tooltips/Navigate Tooltip"
 @onready var thirdTooltip = $"Tutorial Tooltips/Combat Tooltip"
+@onready var heavyAttkTooltip = $"Tutorial Tooltips/Advanced Combat"
+@onready var leaveCaveTooltip = $"Tutorial Tooltips/Leave cave"
 
 @onready var fullEnergy = $Bars/energy/fullenergy
 @onready var energy6 = $"Bars/energy/6energy"
@@ -13,23 +15,61 @@ extends Control
 @onready var energy1 = $"Bars/energy/1energy"
 @onready var energy0 = $Bars/energy/energy0
 
+@onready var health_bar = $Bars/health/ProgressBar
+
+var wasd_seen = false
+var w_seen = false
+var a_seen = false
+var s_seen = false
+var d_seen = false
+
+var click_seen_num = 0
+
+var heavyClick = false
+
 var activeHealth
 var activeEnergy
 
 func _ready() -> void:
+	health_bar.value = 100
 	
 	fullEnergy.visible = true
 	activeEnergy = fullEnergy
 	
-func _physics_process(delta: float) -> void:
-	pass
+	firstTooltip.visible = true
+	
+func _physics_process(delta: float):
+	if !wasd_seen:
+		if Input.is_action_just_pressed("Forward"):
+			w_seen = true
+		if Input.is_action_just_pressed("Left"):
+			a_seen = true
+		if Input.is_action_just_pressed("Back"):
+			s_seen = true
+		if Input.is_action_just_pressed("Right"):
+			d_seen = true
+			
+		if w_seen and a_seen and s_seen and d_seen:
+			firstTooltip.visible = false
+			wasd_seen = true
+	if wasd_seen and click_seen_num < 5:
+		if Input.is_action_just_pressed("attack_light"):
+			click_seen_num += 1
+		if click_seen_num == 5:
+			thirdTooltip.visible = false
+			heavyAttkTooltip.visible = true
+	if heavyClick == false:
+		if Input.is_action_just_pressed("attack_heavy"):
+			heavyClick = true
+			await get_tree().create_timer(2).timeout
+			heavyAttkTooltip.visible = false
 
 func update_health_bar(health):
-	activeHealth.visible = false
+	health_bar.value = health
 	
 	
 func update_energy_bar(energy):
-	activeEnergy.visivle = false
+	activeEnergy.visible = false
 	
 	if energy == 7:
 		fullEnergy.visible = true
@@ -48,7 +88,7 @@ func update_energy_bar(energy):
 		activeEnergy = energy4
 		
 	elif energy == 3:
-		energy3.visivle = true
+		energy3.visible = true
 		activeEnergy = energy3
 		
 	elif energy == 2:

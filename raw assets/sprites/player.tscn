@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=4 uid="uid://b6t5cfj5tmylk"]
+[gd_scene load_steps=86 format=4 uid="uid://b6t5cfj5tmylk"]
 
 [ext_resource type="Script" uid="uid://b1ercubrfme7w" path="res://Player/player.gd" id="1_pop16"]
 [ext_resource type="Script" uid="uid://075kvhb341iy" path="res://universal scripts/health.gd" id="2_dkxc0"]
@@ -13,10 +13,12 @@
 [ext_resource type="FontFile" uid="uid://lvx5enj6u36a" path="res://MinimalPixel v2.ttf" id="11_apopc"]
 [ext_resource type="Script" uid="uid://c17rguu5cy2hf" path="res://Player/ui.gd" id="11_p5o4e"]
 [ext_resource type="Texture2D" uid="uid://bqpxm3pluoojh" path="res://raw assets/GUI.png" id="12_5htga"]
+[ext_resource type="Script" uid="uid://cevp2y6iqmo55" path="res://raw assets/sprites/questlogPanel.gd" id="14_ko42m"]
+[ext_resource type="Script" uid="uid://bgwkdlmpxejtu" path="res://raw assets/sprites/v_box_container.gd" id="15_mveel"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qkwgi"]
 radius = 6.0
-height = 20.0597
+height = 30.0896
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b1ygp"]
 atlas = ExtResource("3_x3vf3")
@@ -443,6 +445,12 @@ animations = [{
 radius = 7.0
 height = 24.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_p5o4e"]
+radius = 17.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gu6f8"]
+radius = 20.0
+
 [sub_resource type="LabelSettings" id="LabelSettings_5htga"]
 font_size = 12
 
@@ -450,6 +458,15 @@ font_size = 12
 font_size = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_p5o4e"]
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_gu6f8"]
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_dkpta"]
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_lfmf2"]
 font_size = 10
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gu6f8"]
@@ -686,6 +703,9 @@ texture = ExtResource("12_5htga")
 
 [sub_resource type="TileSet" id="TileSet_dkpta"]
 sources/1 = SubResource("TileSetAtlasSource_gu6f8")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p5o4e"]
+bg_color = Color(1, 0, 0, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5htga"]
 texture = ExtResource("12_5htga")
@@ -930,19 +950,21 @@ dash_cooldown = 1.5
 script = ExtResource("2_dkxc0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(0, -2)
 rotation = 3.14159
 scale = Vector2(1, -0.598214)
 shape = SubResource("CapsuleShape2D_qkwgi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_soeee")
-animation = &"Death"
+animation = &"Attack3"
+frame = 7
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
 [node name="base_attack" type="Area2D" parent="."]
+visible = false
 position = Vector2(13, -3)
 
 [node name="base_attack_shape" type="CollisionShape2D" parent="base_attack"]
@@ -955,17 +977,47 @@ position = Vector2(-23, 0)
 shape = SubResource("CapsuleShape2D_sp7fq")
 disabled = true
 
+[node name="heavy_attack" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="heavy_attack"]
+position = Vector2(14, -6)
+shape = SubResource("CircleShape2D_p5o4e")
+disabled = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="heavy_attack"]
+position = Vector2(-14, -6)
+shape = SubResource("CircleShape2D_p5o4e")
+disabled = true
+
+[node name="fire_attack" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fire_attack"]
+position = Vector2(22, -6)
+shape = SubResource("CircleShape2D_gu6f8")
+disabled = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="fire_attack"]
+position = Vector2(-22, -6)
+shape = SubResource("CircleShape2D_gu6f8")
+disabled = true
+
 [node name="AttackCooldown" type="Timer" parent="."]
 wait_time = 0.5
+one_shot = true
+
+[node name="EnergyReplenish" type="Timer" parent="."]
+wait_time = 1.5
 one_shot = true
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -143.0
-offset_top = -80.0
+offset_top = -81.0
 offset_right = 143.0
-offset_bottom = 80.0
+offset_bottom = 79.0
 script = ExtResource("11_p5o4e")
 
 [node name="Tutorial Tooltips" type="Control" parent="UI"]
@@ -980,6 +1032,7 @@ visible = false
 anchors_preset = 0
 
 [node name="WelcomeText" type="Label" parent="UI/Tutorial Tooltips/Movement Tooltip"]
+layout_mode = 0
 offset_left = -58.0
 offset_top = -60.0
 offset_right = 58.0
@@ -989,6 +1042,7 @@ text = "Welcome to Thornvail"
 label_settings = SubResource("LabelSettings_5htga")
 
 [node name="MovementText" type="Label" parent="UI/Tutorial Tooltips/Movement Tooltip"]
+layout_mode = 0
 offset_left = -58.0
 offset_top = 21.0
 offset_right = 58.0
@@ -1002,14 +1056,17 @@ visible = false
 anchors_preset = 0
 
 [node name="Label" type="Label" parent="UI/Tutorial Tooltips/Navigate Tooltip"]
-offset_left = -64.0
-offset_top = -58.0
-offset_right = 65.0
-offset_bottom = -35.0
+layout_mode = 0
+offset_left = -67.0
+offset_top = -59.0
+offset_right = 67.0
+offset_bottom = -36.0
+theme_override_fonts/font = ExtResource("11_apopc")
 text = "Navigate through the cave"
 label_settings = SubResource("LabelSettings_apopc")
 
 [node name="MovementText2" type="Label" parent="UI/Tutorial Tooltips/Navigate Tooltip"]
+layout_mode = 0
 offset_left = -82.0
 offset_top = 20.0
 offset_right = 83.0
@@ -1023,23 +1080,64 @@ visible = false
 anchors_preset = 0
 
 [node name="Label" type="Label" parent="UI/Tutorial Tooltips/Combat Tooltip"]
+layout_mode = 0
 offset_left = -62.0
 offset_top = -58.0
 offset_right = 63.0
 offset_bottom = -35.0
+theme_override_fonts/font = ExtResource("11_apopc")
 text = "You have entered combat"
 label_settings = SubResource("LabelSettings_p5o4e")
 
 [node name="Label2" type="Label" parent="UI/Tutorial Tooltips/Combat Tooltip"]
+layout_mode = 0
 offset_left = -83.0
 offset_top = 23.0
 offset_right = 85.0
 offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("11_apopc")
 text = "Press left click to do a basic attack."
 label_settings = SubResource("LabelSettings_p5o4e")
 
 [node name="Advanced Combat" type="Control" parent="UI/Tutorial Tooltips"]
+visible = false
 anchors_preset = 0
+
+[node name="Label" type="Label" parent="UI/Tutorial Tooltips/Advanced Combat"]
+layout_mode = 0
+offset_left = -91.0
+offset_top = 23.0
+offset_right = 93.0
+offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("11_apopc")
+text = "Press right click to use heavy attack"
+label_settings = SubResource("LabelSettings_gu6f8")
+
+[node name="Leave cave" type="Control" parent="UI/Tutorial Tooltips"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI/Tutorial Tooltips/Leave cave"]
+layout_mode = 0
+offset_left = -51.0
+offset_top = -58.0
+offset_right = 50.0
+offset_bottom = -35.0
+theme_override_fonts/font = ExtResource("11_apopc")
+text = "Now leave the cave"
+label_settings = SubResource("LabelSettings_dkpta")
+
+[node name="Label2" type="Label" parent="UI/Tutorial Tooltips/Leave cave"]
+layout_mode = 0
+offset_left = -54.0
+offset_top = 23.0
+offset_right = 55.0
+offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("11_apopc")
+text = "and follow the quests"
+label_settings = SubResource("LabelSettings_lfmf2")
 
 [node name="Bars" type="Control" parent="UI"]
 anchors_preset = 0
@@ -1055,6 +1153,16 @@ tile_set = SubResource("TileSet_dkpta")
 
 [node name="health" type="Control" parent="UI/Bars"]
 anchors_preset = 0
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/Bars/health"]
+layout_mode = 0
+offset_left = -119.0
+offset_top = 54.0
+offset_right = -38.0
+offset_bottom = 58.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_p5o4e")
+value = 50.0
+show_percentage = false
 
 [node name="energy" type="Control" parent="UI/Bars"]
 anchors_preset = 0
@@ -1115,4 +1223,23 @@ show_behind_parent = true
 offset_right = 16.0
 offset_bottom = 16.0
 
+[node name="Questlog" type="CanvasLayer" parent="UI"]
+
+[node name="Panel" type="Panel" parent="UI/Questlog"]
+offset_left = 104.0
+offset_top = -81.0
+offset_right = 144.0
+offset_bottom = -19.0
+script = ExtResource("14_ko42m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Questlog/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 62.0
+script = ExtResource("15_mveel")
+
+[node name="Label" type="Label" parent="UI/Questlog/Panel/VBoxContainer"]
+layout_mode = 2
+
 [connection signal="body_entered" from="base_attack" to="." method="_on_base_attack_body_entered"]
+[connection signal="timeout" from="EnergyReplenish" to="." method="_on_energy_replenish_timeout"]

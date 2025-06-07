@@ -1,8 +1,8 @@
-[gd_scene load_steps=26 format=4 uid="uid://b41lqhbxhiqf2"]
+[gd_scene load_steps=29 format=4 uid="uid://b41lqhbxhiqf2"]
 
 [ext_resource type="Texture2D" uid="uid://clhdhfsqcbh7h" path="res://raw assets/TopDownFantasy-Forest/Tiles/Tileset.png" id="1_8gq75"]
 [ext_resource type="Texture2D" uid="uid://qng0rr8386lc" path="res://raw assets/TopDownFantasy-Forest/Decorations/Decorations.png" id="2_ks2kl"]
-[ext_resource type="PackedScene" uid="uid://b6t5cfj5tmylk" path="res://Player/player.tscn" id="3_1pww4"]
+[ext_resource type="PackedScene" uid="uid://b6t5cfj5tmylk" path="res://raw assets/sprites/player.tscn" id="3_1pww4"]
 [ext_resource type="PackedScene" uid="uid://chha38au6j6ev" path="res://Enemies/ork_scout.tscn" id="3_j45go"]
 [ext_resource type="PackedScene" uid="uid://bbed807yovvci" path="res://Enemies/archer_ork.tscn" id="4_j6o6x"]
 [ext_resource type="PackedScene" uid="uid://b58rr4vjdmcr" path="res://Objects/fire.tscn" id="5_2igke"]
@@ -703,6 +703,15 @@ point_count = 1
 radius = 26.0
 height = 134.31
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhbju"]
+size = Vector2(69, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbpr0"]
+size = Vector2(57, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_asxyi"]
+size = Vector2(48.5, 39.5)
+
 [node name="Ashefootglade" type="Node2D"]
 
 [node name="Tilemaps" type="Node2D" parent="."]
@@ -865,14 +874,14 @@ aggro_range = 50.0
 follow_path_path = NodePath("../Path2D/PathFollow2D2")
 player_path = NodePath("../../../Player")
 
-[node name="Node2D" type="Node2D" parent="Enemies"]
+[node name="Boss" type="Node2D" parent="Enemies"]
 
-[node name="Path2D" type="Path2D" parent="Enemies/Node2D"]
+[node name="Path2D" type="Path2D" parent="Enemies/Boss"]
 curve = SubResource("Curve2D_nbpr0")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Node2D/Path2D"]
+[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Boss/Path2D"]
 
-[node name="RiderBoss" parent="Enemies/Node2D" instance=ExtResource("6_nhbju")]
+[node name="RiderBoss" parent="Enemies/Boss" instance=ExtResource("6_nhbju")]
 position = Vector2(1060, 546)
 scale = Vector2(1.7, 1.7)
 speed = 80.0
@@ -988,10 +997,6 @@ rotation = -1.79594
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fires/StaticBody2D"]
 shape = SubResource("CapsuleShape2D_2igke")
 
-[node name="Player" parent="." instance=ExtResource("3_1pww4")]
-position = Vector2(-31, -3)
-collision_layer = 3
-
 [node name="Cave Shadows" type="Node2D" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="Cave Shadows"]
@@ -1029,3 +1034,31 @@ offset_right = 612.0
 offset_bottom = 788.0
 rotation = 0.13439
 color = Color(0.0784314, 0.0784314, 0.0784314, 0.443137)
+
+[node name="Player" parent="." instance=ExtResource("3_1pww4")]
+position = Vector2(-31, -3)
+collision_layer = 3
+
+[node name="tutorialsections" type="Node2D" parent="."]
+
+[node name="Navigate area" type="Area2D" parent="tutorialsections"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tutorialsections/Navigate area"]
+position = Vector2(86, 74.5)
+shape = SubResource("RectangleShape2D_nhbju")
+
+[node name="firstcombat" type="Area2D" parent="tutorialsections"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tutorialsections/firstcombat"]
+position = Vector2(322, -67)
+shape = SubResource("RectangleShape2D_nbpr0")
+
+[node name="leave cave" type="Area2D" parent="tutorialsections"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tutorialsections/leave cave"]
+position = Vector2(638, -22)
+shape = SubResource("RectangleShape2D_asxyi")
+
+[connection signal="area_entered" from="tutorialsections/Navigate area" to="Player" method="_on_navigate_area_area_entered"]
+[connection signal="area_entered" from="tutorialsections/firstcombat" to="Player" method="_on_firstcombat_area_entered"]
+[connection signal="area_entered" from="tutorialsections/leave cave" to="Player" method="_on_leave_cave_area_entered"]

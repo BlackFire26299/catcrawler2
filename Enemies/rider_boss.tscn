@@ -459,33 +459,35 @@ shape = SubResource("CircleShape2D_jx0rv")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
-[node name="attack_area" type="Area2D" parent="."]
-
-[node name="baseAttack" type="CollisionShape2D" parent="attack_area"]
-position = Vector2(17, -3)
-shape = SubResource("CircleShape2D_ra7t4")
-
-[node name="baseAttack2" type="CollisionShape2D" parent="attack_area"]
-position = Vector2(-17, -3)
-shape = SubResource("CircleShape2D_ra7t4")
-
-[node name="Attack2" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack2"]
-position = Vector2(37, -1)
-shape = SubResource("CapsuleShape2D_blgf3")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Attack2"]
-position = Vector2(-37, -1)
-shape = SubResource("CapsuleShape2D_blgf3")
-
-[node name="Attack3" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack3"]
-position = Vector2(0, -3)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_105xr")
-
 [node name="AttackCooldown" type="Timer" parent="."]
 
 [node name="LostAggroTimer" type="Timer" parent="."]
+
+[node name="attack_areas" type="Node2D" parent="."]
+
+[node name="attack_area" type="Area2D" parent="attack_areas"]
+
+[node name="baseAttack" type="CollisionShape2D" parent="attack_areas/attack_area"]
+position = Vector2(17, -3)
+shape = SubResource("CircleShape2D_ra7t4")
+
+[node name="baseAttack2" type="CollisionShape2D" parent="attack_areas/attack_area"]
+position = Vector2(-17, -3)
+shape = SubResource("CircleShape2D_ra7t4")
+
+[node name="Attack2" type="Area2D" parent="attack_areas"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_areas/Attack2"]
+position = Vector2(37, -1)
+shape = SubResource("CapsuleShape2D_blgf3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="attack_areas/Attack2"]
+position = Vector2(-37, -1)
+shape = SubResource("CapsuleShape2D_blgf3")
+
+[node name="Attack3" type="Area2D" parent="attack_areas"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_areas/Attack3"]
+position = Vector2(0, -3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_105xr")

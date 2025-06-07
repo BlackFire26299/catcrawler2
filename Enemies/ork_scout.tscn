@@ -307,21 +307,23 @@ shape = SubResource("CapsuleShape2D_vwljc")
 path_desired_distance = 10.0
 target_desired_distance = 25.0
 
-[node name="attack_area" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="baseAttack" type="CollisionShape2D" parent="attack_area"]
-position = Vector2(13, 0)
-shape = SubResource("CircleShape2D_jit7v")
-
-[node name="baseAttack2" type="CollisionShape2D" parent="attack_area"]
-position = Vector2(-13, 0)
-shape = SubResource("CircleShape2D_jit7v")
-
 [node name="LostAggroTimer" type="Timer" parent="."]
 wait_time = 2.5
 one_shot = true
 
 [node name="AttackCooldown" type="Timer" parent="."]
 wait_time = 2.5
+
+[node name="attack_areas" type="Node2D" parent="."]
+
+[node name="attack_area" type="Area2D" parent="attack_areas"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="baseAttack" type="CollisionShape2D" parent="attack_areas/attack_area"]
+position = Vector2(13, 0)
+shape = SubResource("CircleShape2D_jit7v")
+
+[node name="baseAttack2" type="CollisionShape2D" parent="attack_areas/attack_area"]
+position = Vector2(-13, 0)
+shape = SubResource("CircleShape2D_jit7v")

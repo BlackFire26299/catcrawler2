@@ -434,39 +434,38 @@ shape = SubResource("CapsuleShape2D_av2wt")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
-[node name="attack_area" type="Area2D" parent="."]
-visible = false
+[node name="AttackCooldown" type="Timer" parent="."]
 
-[node name="baseAttack" type="CollisionShape2D" parent="attack_area"]
+[node name="LostAggroTimer" type="Timer" parent="."]
+
+[node name="attack_areas" type="Node2D" parent="."]
+
+[node name="attack_area" type="Area2D" parent="attack_areas"]
+
+[node name="baseAttack" type="CollisionShape2D" parent="attack_areas/attack_area"]
 position = Vector2(15, 5)
 rotation = 0.888373
 shape = SubResource("CapsuleShape2D_4ah1s")
 
-[node name="baseAttack2" type="CollisionShape2D" parent="attack_area"]
+[node name="baseAttack2" type="CollisionShape2D" parent="attack_areas/attack_area"]
 position = Vector2(-15, 5)
 rotation = -0.872665
 shape = SubResource("CapsuleShape2D_4ah1s")
 
-[node name="Attack2 Area2" type="Area2D" parent="."]
-visible = false
+[node name="Attack2 Area2" type="Area2D" parent="attack_areas"]
 
-[node name="A2" type="CollisionShape2D" parent="Attack2 Area2"]
+[node name="A2" type="CollisionShape2D" parent="attack_areas/Attack2 Area2"]
 position = Vector2(0, 2)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_st2md")
 
-[node name="Attack3 Area3" type="Area2D" parent="."]
-visible = false
+[node name="Attack3 Area3" type="Area2D" parent="attack_areas"]
 position = Vector2(0, 1)
 
-[node name="A3R" type="CollisionShape2D" parent="Attack3 Area3"]
+[node name="A3R" type="CollisionShape2D" parent="attack_areas/Attack3 Area3"]
 position = Vector2(22, 2)
 shape = SubResource("CircleShape2D_4ah1s")
 
-[node name="A3L" type="CollisionShape2D" parent="Attack3 Area3"]
+[node name="A3L" type="CollisionShape2D" parent="attack_areas/Attack3 Area3"]
 position = Vector2(-22, 2)
 shape = SubResource("CircleShape2D_4ah1s")
-
-[node name="AttackCooldown" type="Timer" parent="."]
-
-[node name="LostAggroTimer" type="Timer" parent="."]

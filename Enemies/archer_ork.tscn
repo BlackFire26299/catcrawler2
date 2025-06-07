@@ -279,46 +279,42 @@ shape = SubResource("CapsuleShape2D_ilggg")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
-[node name="attack_area" type="Node2D" parent="."]
+[node name="attack_areas" type="Node2D" parent="."]
 
-[node name="baseAttack" type="Area2D" parent="attack_area"]
+[node name="attack_area" type="Node2D" parent="attack_areas"]
 
-[node name="baseAttack" type="CollisionShape2D" parent="attack_area/baseAttack"]
+[node name="baseAttack" type="Area2D" parent="attack_areas/attack_area"]
+
+[node name="baseAttack" type="CollisionShape2D" parent="attack_areas/attack_area/baseAttack"]
 position = Vector2(75, 0)
 rotation = -1.57013
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_e22ig")
 
-[node name="baseAttack2" type="CollisionShape2D" parent="attack_area/baseAttack"]
+[node name="baseAttack2" type="CollisionShape2D" parent="attack_areas/attack_area/baseAttack"]
 position = Vector2(74, -11)
 rotation = -1.74533
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_e22ig")
 
-[node name="baseAttack3" type="CollisionShape2D" parent="attack_area/baseAttack"]
+[node name="baseAttack3" type="CollisionShape2D" parent="attack_areas/attack_area/baseAttack"]
 position = Vector2(74, 10)
 rotation = 1.74533
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_e22ig")
 
-[node name="baseAttack2" type="Area2D" parent="attack_area"]
+[node name="baseAttack2" type="Area2D" parent="attack_areas/attack_area"]
 
-[node name="baseAttack2" type="CollisionShape2D" parent="attack_area/baseAttack2"]
+[node name="baseAttack2" type="CollisionShape2D" parent="attack_areas/attack_area/baseAttack2"]
 position = Vector2(-75, 3.72529e-09)
 rotation = -1.57013
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_e22ig")
 
-[node name="baseAttack3" type="CollisionShape2D" parent="attack_area/baseAttack2"]
+[node name="baseAttack3" type="CollisionShape2D" parent="attack_areas/attack_area/baseAttack2"]
 position = Vector2(-76, 11)
 rotation = -1.74533
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_e22ig")
 
-[node name="baseAttack4" type="CollisionShape2D" parent="attack_area/baseAttack2"]
+[node name="baseAttack4" type="CollisionShape2D" parent="attack_areas/attack_area/baseAttack2"]
 position = Vector2(-75, -11)
 rotation = 1.74533
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_e22ig")
 
 [node name="RightArrow" type="Sprite2D" parent="."]

@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var dash_duration: float = 0.2
 @export var dash_cooldown: float = 0.5
 @export var health: int = 100
+var energy = 7
 
 var is_dead: bool = false
 var death_played: bool = false
@@ -13,6 +14,9 @@ var death_played: bool = false
 var is_dashing: bool = false
 var dash_timer: float = 0.0
 var dash_cooldown_timer: float = 0.0
+
+var energyReplenishing = false
+@onready var energyTimer = $EnergyReplenish
 
 var can_attack: bool = true
 
@@ -43,10 +47,13 @@ func _process(delta):
 	).normalized()
 
 	if Input.is_action_just_pressed("dash") and not is_dashing and dash_cooldown_timer <= 0:
-		is_dashing = true
-		dash_timer = dash_duration
-		dash_cooldown_timer = dash_cooldown
-		velocity = direction * dash_speed
+		if energy >= 2:
+			is_dashing = true
+			dash_timer = dash_duration
+			dash_cooldown_timer = dash_cooldown
+			velocity = direction * dash_speed
+			energy -= 2
+			ui.update_energy_bar(energy)
 	elif not is_dashing:
 		velocity = direction * move_speed
 
@@ -71,6 +78,10 @@ func _physics_process(delta):
 		dash_timer -= delta
 		if dash_timer <= 0:
 			is_dashing = false
+			
+	if energy < 7 and !energyReplenishing:
+		energyReplenishing = true
+		energyTimer.start()
 
 	move_and_slide()
 
@@ -106,3 +117,25 @@ func take_damage(dmg: int):
 func die():
 	is_dead = true
 	print("Player died")
+
+
+func _on_energy_replenish_timeout():
+	energy += 1
+	ui.update_energy_bar(energy)
+	energyReplenishing = false
+
+
+func _on_navigate_area_area_entered(area):
+	ui.secondTooltip.visible = true
+	ui.firstTooltip.visible = false
+
+
+func _on_leave_cave_area_entered(area):
+	ui.leaveCaveTooltip.visible = true
+	await get_tree().create_timer(5).timeout
+	ui.leaveCaveTooltip.visible = false
+
+
+func _on_firstcombat_area_entered(area):
+	ui.secondTooltip.visible = false
+	ui.thirdTooltip.visible = true
