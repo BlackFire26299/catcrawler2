@@ -1,10 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://b58rr4vjdmcr"]
+[gd_scene load_steps=14 format=3 uid="uid://b58rr4vjdmcr"]
 
 [ext_resource type="Texture2D" uid="uid://encga3l4ha3j" path="res://raw assets/Sheets/Fire02/Fire-02_64x32_Sheet.png" id="1_y5x24"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y1grj"]
-atlas = ExtResource("1_y5x24")
-region = Rect2(320, 0, 64, 32)
+[ext_resource type="Texture2D" uid="uid://bfxt3rv6uo24u" path="res://raw assets/Sheets/Fire01/Fire-01_64x32_Sheet.png" id="2_y1grj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o6wmu"]
 atlas = ExtResource("1_y5x24")
@@ -27,39 +24,28 @@ atlas = ExtResource("1_y5x24")
 region = Rect2(640, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s4hp6"]
-atlas = ExtResource("1_y5x24")
+atlas = ExtResource("2_y1grj")
 region = Rect2(0, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lssv5"]
-atlas = ExtResource("1_y5x24")
+atlas = ExtResource("2_y1grj")
 region = Rect2(64, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mq2u2"]
-atlas = ExtResource("1_y5x24")
+atlas = ExtResource("2_y1grj")
 region = Rect2(128, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ay0jj"]
-atlas = ExtResource("1_y5x24")
+atlas = ExtResource("2_y1grj")
 region = Rect2(192, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_da5gq"]
-atlas = ExtResource("1_y5x24")
+atlas = ExtResource("2_y1grj")
 region = Rect2(256, 0, 64, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7oeu7"]
-atlas = ExtResource("1_y5x24")
-region = Rect2(320, 0, 64, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aedk7"]
-atlas = ExtResource("1_y5x24")
-region = Rect2(384, 0, 64, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mr333"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y1grj")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_o6wmu")
 }, {
@@ -94,18 +80,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_da5gq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7oeu7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aedk7")
 }],
 "loop": true,
-"name": &"default",
+"name": &"new_animation",
 "speed": 5.0
 }]
 
 [node name="Fire" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_mr333")
-frame = 5
+animation = &"new_animation"
+autoplay = "new_animation"
