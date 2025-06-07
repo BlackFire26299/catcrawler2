@@ -20,6 +20,8 @@ var energyReplenishing = false
 
 var can_attack: bool = true
 
+var rng = RandomNumberGenerator.new()
+
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var base_attack: Area2D = $base_attack
 @onready var hitbox_right: CollisionShape2D = $base_attack/base_attack_shape
@@ -98,7 +100,8 @@ func light_attack():
 
 	for body in base_attack.get_overlapping_bodies():
 		if body.is_in_group("enemies"):
-			body.take_damage(5)
+			var dmg = rng.randi_range(3,7)
+			body.take_damage(dmg)
 
 	hitbox_left.disabled = true
 	hitbox_right.disabled = true
@@ -107,7 +110,12 @@ func light_attack():
 	can_attack = true
 
 func take_damage(dmg: int):
+	var critical = false
+	if rng.randf_range(0,1) >= .97:
+		dmg += dmg
+		critical = true
 	health -= dmg
+	DamageRenderer.display_number(dmg, self.global_position, critical)
 	print("Player took damage:", dmg)
 	if health <= 0:
 		die()

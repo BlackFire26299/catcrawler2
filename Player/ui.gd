@@ -17,12 +17,6 @@ extends Control
 
 @onready var health_bar = $Bars/health/ProgressBar
 
-var wasd_seen = false
-var w_seen = false
-var a_seen = false
-var s_seen = false
-var d_seen = false
-
 var click_seen_num = 0
 
 var heavyClick = false
@@ -39,20 +33,7 @@ func _ready() -> void:
 	firstTooltip.visible = true
 	
 func _physics_process(delta: float):
-	if !wasd_seen:
-		if Input.is_action_just_pressed("Forward"):
-			w_seen = true
-		if Input.is_action_just_pressed("Left"):
-			a_seen = true
-		if Input.is_action_just_pressed("Back"):
-			s_seen = true
-		if Input.is_action_just_pressed("Right"):
-			d_seen = true
-			
-		if w_seen and a_seen and s_seen and d_seen:
-			firstTooltip.visible = false
-			wasd_seen = true
-	if wasd_seen and click_seen_num < 5:
+	if thirdTooltip.visible and click_seen_num < 5:
 		if Input.is_action_just_pressed("attack_light"):
 			click_seen_num += 1
 		if click_seen_num == 5:

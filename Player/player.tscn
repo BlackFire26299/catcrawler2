@@ -13,8 +13,8 @@
 [ext_resource type="FontFile" uid="uid://lvx5enj6u36a" path="res://MinimalPixel v2.ttf" id="11_apopc"]
 [ext_resource type="Script" uid="uid://c17rguu5cy2hf" path="res://Player/ui.gd" id="11_p5o4e"]
 [ext_resource type="Texture2D" uid="uid://bqpxm3pluoojh" path="res://raw assets/GUI.png" id="12_5htga"]
-[ext_resource type="Script" uid="uid://cevp2y6iqmo55" path="res://raw assets/sprites/questlogPanel.gd" id="14_ko42m"]
-[ext_resource type="Script" uid="uid://bgwkdlmpxejtu" path="res://raw assets/sprites/v_box_container.gd" id="15_mveel"]
+[ext_resource type="Script" uid="uid://cevp2y6iqmo55" path="res://Player/questlogPanel.gd" id="14_ko42m"]
+[ext_resource type="Script" uid="uid://bgwkdlmpxejtu" path="res://Player/v_box_container.gd" id="15_mveel"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qkwgi"]
 radius = 6.0

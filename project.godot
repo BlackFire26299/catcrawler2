@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 QuestManager="*res://quest_manager.gd"
+DamageRenderer="*res://damage_renderer.tscn"
 
 [global_group]
 

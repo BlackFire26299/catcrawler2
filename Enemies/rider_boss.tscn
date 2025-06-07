@@ -447,6 +447,7 @@ height = 86.0
 
 [node name="RiderBoss" type="CharacterBody2D" groups=["enemies"]]
 script = ExtResource("1_blgf3")
+aggro_range = 0.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mdkkc")

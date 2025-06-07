@@ -12,6 +12,8 @@ var can_attack := true
 
 @onready var attack_cooldown_timer := $AttackCooldown
 
+var rng = RandomNumberGenerator.new()
+
 var player: Node2D
 var is_aggroed := false
 var is_returning_to_patrol := false
@@ -109,8 +111,14 @@ func move_towards(target_position: Vector2, delta: float):
 	move_and_slide()
 	
 func take_damage(dmg):
+	var is_critical = false
+	if rng.randf_range(0,1) >= .85:
+		dmg += dmg
+		is_critical = true
+	
 	print("Ork took dmg: ", dmg)
 	health -= dmg
+	DamageRenderer.display_number(dmg, self.global_position, is_critical)
 	
 	if health <= 0:
 		die()
@@ -133,7 +141,11 @@ func attack():
 	can_attack = false
 	attack_cooldown_timer.start(attack_cooldown)
 	
-	player.take_damage(attack_damage)
+	var damage = attack_damage * rng.randf_range(.75,1.25)
+	
+	
+	
+	player.take_damage(damage)
 	print("Enemy attacked player")
 
 func face_player():
