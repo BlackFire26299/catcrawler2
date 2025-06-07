@@ -27,6 +27,10 @@ var rng = RandomNumberGenerator.new()
 @onready var hitbox_right: CollisionShape2D = $base_attack/base_attack_shape
 @onready var hitbox_left: CollisionShape2D = $base_attack/base_attack_shape2
 
+@onready var heavy_attack = $heavy_attack
+@onready var hitbox_right_H = $heavy_attack/CollisionShape2D
+@onready var hitbox_left_H = $heavy_attack/CollisionShape2D2
+
 @onready var ui = $UI
 
 func _ready():
@@ -66,9 +70,17 @@ func _process(delta):
 		hitbox_right.disabled = facing_left
 
 	if Input.is_action_just_pressed("attack_light") and can_attack:
-		light_attack()
+		use_light_attack()
+		
+	if Input.is_action_just_pressed("attack_heavy") and can_attack:
+		if energy > 3:
+			energy -= 3
+			ui.update_energy_bar(energy)
+			use_heavy_attack()
 
 	if sprite.animation == "Attack1" and sprite.is_playing():
+		pass
+	elif sprite.animation == "Attack2" and sprite.is_playing():
 		pass
 	elif velocity.length() > 0:
 		sprite.play("Walk")
@@ -87,7 +99,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-func light_attack():
+func use_light_attack():
 	can_attack = false
 
 	var facing_left = sprite.flip_h
@@ -106,6 +118,28 @@ func light_attack():
 	hitbox_left.disabled = true
 	hitbox_right.disabled = true
 
+	await get_tree().create_timer(0.6).timeout
+	can_attack = true
+	
+func use_heavy_attack():
+	can_attack = false
+	
+	var facing_left = sprite.flip_h
+	hitbox_left_H.disabled = not facing_left
+	hitbox_right_H.disabled = facing_left
+	
+	sprite.play("Attack2")
+	
+	await get_tree().create_timer(0.15).timeout
+	
+	for body in heavy_attack.get_overlapping_bodies():
+		if body.is_in_group("enemies"):
+			var dmg = rng.randi_range(7,10)
+			body.take_damage(dmg)
+	
+	hitbox_left_H.disabled = true
+	hitbox_right_H.disabled = true
+	
 	await get_tree().create_timer(0.6).timeout
 	can_attack = true
 

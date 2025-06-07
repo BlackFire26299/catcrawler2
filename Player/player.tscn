@@ -964,7 +964,6 @@ frame = 7
 zoom = Vector2(4, 4)
 
 [node name="base_attack" type="Area2D" parent="."]
-visible = false
 position = Vector2(13, -3)
 
 [node name="base_attack_shape" type="CollisionShape2D" parent="base_attack"]
@@ -978,7 +977,6 @@ shape = SubResource("CapsuleShape2D_sp7fq")
 disabled = true
 
 [node name="heavy_attack" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="heavy_attack"]
 position = Vector2(14, -6)

@@ -775,6 +775,11 @@ curve = SubResource("Curve2D_j45go")
 position = Vector2(902, -182)
 rotation = 0.999459
 
+[node name="PathFollow2D2" type="PathFollow2D" parent="Enemies/Pack2/Path2D"]
+position = Vector2(1258.16, -110.865)
+rotation = -1.39094
+progress = 506.144
+
 [node name="OrkScout" parent="Enemies/Pack2" instance=ExtResource("3_j45go")]
 position = Vector2(901, -158)
 follow_path_path = NodePath("../Path2D/PathFollow2D")
@@ -783,6 +788,16 @@ player_path = NodePath("../../../Player")
 [node name="OrkScout2" parent="Enemies/Pack2" instance=ExtResource("3_j45go")]
 position = Vector2(929, -165)
 follow_path_path = NodePath("../Path2D/PathFollow2D")
+player_path = NodePath("../../../Player")
+
+[node name="OrkScout3" parent="Enemies/Pack2" instance=ExtResource("3_j45go")]
+position = Vector2(1277, -106)
+follow_path_path = NodePath("../Path2D/PathFollow2D2")
+player_path = NodePath("../../../Player")
+
+[node name="OrkScout4" parent="Enemies/Pack2" instance=ExtResource("3_j45go")]
+position = Vector2(1242, -114)
+follow_path_path = NodePath("../Path2D/PathFollow2D2")
 player_path = NodePath("../../../Player")
 
 [node name="Pack3" type="Node2D" parent="Enemies"]
@@ -1025,7 +1040,7 @@ rotation = 0.13439
 color = Color(0.0784314, 0.0784314, 0.0784314, 0.443137)
 
 [node name="Player" parent="." instance=ExtResource("3_1pww4")]
-position = Vector2(1410, 13)
+position = Vector2(-57, -6)
 collision_layer = 3
 
 [node name="tutorialsections" type="Node2D" parent="."]
