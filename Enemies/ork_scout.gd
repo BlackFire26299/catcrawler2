@@ -44,7 +44,7 @@ func _physics_process(delta):
 		if is_aggroed and lost_aggro_timer.is_stopped():
 			lost_aggro_timer.start()
 
-	# AGGRO: Chase player
+	
 	if is_aggroed:
 		
 		face_player()
@@ -59,7 +59,7 @@ func _physics_process(delta):
 				var next_path = navigation_agent.get_next_path_position()
 				move_towards(next_path, delta)
 
-	# RETURNING: Move back to nearest patrol point
+	
 	elif is_returning_to_patrol:
 		var return_target = patrol_path_follow.global_position
 		if global_position.distance_to(return_target) < 10:
@@ -67,11 +67,11 @@ func _physics_process(delta):
 		else:
 			move_towards(return_target, delta)
 
-	# PATROLLING
+	
 	else:
 		var patrol_target = patrol_path_follow.global_position
 		if global_position.distance_to(patrol_target) < 10:
-			# Advance along the path
+			
 			patrol_path_follow.progress += speed * delta
 		else:
 			move_towards(patrol_target, delta)
