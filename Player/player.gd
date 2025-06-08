@@ -166,11 +166,14 @@ func use_heavy_attack():
 	await get_tree().create_timer(0.6).timeout
 	can_attack = true
 
-func take_damage(dmg: int):
+func take_damage(dmg: int, boss = false):
 	if !is_dead:
 		var critical = false
 		if rng.randf_range(0,1) >= .97:
-			dmg += dmg
+			if boss:
+				dmg += dmg/2
+			else:
+				dmg += dmg
 			critical = true
 		
 		time_since_last_damage = 0.0

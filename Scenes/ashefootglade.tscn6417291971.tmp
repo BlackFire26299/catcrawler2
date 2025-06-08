@@ -1399,7 +1399,7 @@ offset_bottom = 1022.0
 color = Color(0, 0, 0, 0.0784314)
 
 [node name="Player" parent="." instance=ExtResource("3_1pww4")]
-position = Vector2(1257, 459)
+position = Vector2(-33, -6)
 collision_layer = 3
 
 [node name="cave shadows" type="Node2D" parent="."]

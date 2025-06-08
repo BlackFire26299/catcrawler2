@@ -236,9 +236,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7js0x")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack1",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -274,9 +274,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dihvx")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack2",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -306,9 +306,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_f2idk")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack3",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -340,7 +340,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0t733")
 }],
-"loop": true,
+"loop": false,
 "name": &"Hurt",
 "speed": 5.0
 }, {
@@ -421,13 +421,13 @@ radius = 7.0
 collision_mask = 3
 script = ExtResource("1_st2md")
 speed = 98.0
-health = 35
 attack_cooldown = 3.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hfdof")
-animation = &"Idle"
-frame = 2
+animation = &"Attack1"
+frame = 6
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
@@ -453,20 +453,20 @@ position = Vector2(-15, 5)
 rotation = -0.872665
 shape = SubResource("CapsuleShape2D_4ah1s")
 
-[node name="Attack2 Area2" type="Area2D" parent="attack_areas"]
+[node name="sweep attack" type="Area2D" parent="attack_areas"]
 
-[node name="A2" type="CollisionShape2D" parent="attack_areas/Attack2 Area2"]
+[node name="A2" type="CollisionShape2D" parent="attack_areas/sweep attack"]
 position = Vector2(0, 2)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_st2md")
 
-[node name="Attack3 Area3" type="Area2D" parent="attack_areas"]
+[node name="heavy attack" type="Area2D" parent="attack_areas"]
 position = Vector2(0, 1)
 
-[node name="A3R" type="CollisionShape2D" parent="attack_areas/Attack3 Area3"]
+[node name="A3R" type="CollisionShape2D" parent="attack_areas/heavy attack"]
 position = Vector2(22, 2)
 shape = SubResource("CircleShape2D_4ah1s")
 
-[node name="A3L" type="CollisionShape2D" parent="attack_areas/Attack3 Area3"]
+[node name="A3L" type="CollisionShape2D" parent="attack_areas/heavy attack"]
 position = Vector2(-22, 2)
 shape = SubResource("CircleShape2D_4ah1s")

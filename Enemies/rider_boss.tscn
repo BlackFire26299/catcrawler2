@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://cxvxavf0u2vwj"]
+[gd_scene load_steps=70 format=3 uid="uid://cxvxavf0u2vwj"]
 
 [ext_resource type="Script" uid="uid://dmmoj7qwp5ct7" path="res://Enemies/rider_boss.gd" id="1_blgf3"]
 [ext_resource type="Texture2D" uid="uid://dbvvlvucnekwn" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Orc rider/Orc rider/Orc rider-Attack01.png" id="1_ra7t4"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://xxnuc464nb3m" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Orc rider/Orc rider/Orc rider-Hurt.png" id="6_lr4yt"]
 [ext_resource type="Texture2D" uid="uid://3omh56kkxi62" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Orc rider/Orc rider/Orc rider-Idle.png" id="7_ank3d"]
 [ext_resource type="Texture2D" uid="uid://jni3wsju4pn1" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Orc rider/Orc rider/Orc rider-Walk.png" id="8_d1vba"]
+[ext_resource type="Texture2D" uid="uid://x6thmmjanp1x" path="res://raw assets/64x64 textures (31).png" id="10_105xr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xy2ts"]
 atlas = ExtResource("1_ra7t4")
@@ -253,9 +254,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_66nxi")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack1",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -285,9 +286,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jtaoh")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack2",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -323,9 +324,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oyljq")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack3",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -340,7 +341,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_185et")
 }],
-"loop": true,
+"loop": false,
 "name": &"Block",
 "speed": 5.0
 }, {
@@ -357,7 +358,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h33cu")
 }],
-"loop": true,
+"loop": false,
 "name": &"Death",
 "speed": 5.0
 }, {
@@ -374,7 +375,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2w7j4")
 }],
-"loop": true,
+"loop": false,
 "name": &"Hurt",
 "speed": 5.0
 }, {
@@ -438,7 +439,7 @@ radius = 13.3417
 radius = 14.0357
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_blgf3"]
-radius = 8.0
+radius = 16.0
 height = 48.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_105xr"]
@@ -451,10 +452,12 @@ aggro_range = 0.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mdkkc")
-animation = &"Attack3"
-frame = 6
+animation = &"Attack2"
+frame = 8
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1, -6)
 shape = SubResource("CircleShape2D_jx0rv")
 
@@ -476,19 +479,26 @@ shape = SubResource("CircleShape2D_ra7t4")
 position = Vector2(-17, -3)
 shape = SubResource("CircleShape2D_ra7t4")
 
-[node name="Attack2" type="Area2D" parent="attack_areas"]
+[node name="heavy attack" type="Area2D" parent="attack_areas"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_areas/Attack2"]
-position = Vector2(37, -1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_areas/heavy attack"]
+position = Vector2(28, -2)
 shape = SubResource("CapsuleShape2D_blgf3")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="attack_areas/Attack2"]
-position = Vector2(-37, -1)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="attack_areas/heavy attack"]
+position = Vector2(-30, -1)
 shape = SubResource("CapsuleShape2D_blgf3")
 
-[node name="Attack3" type="Area2D" parent="attack_areas"]
+[node name="sweep attack" type="Area2D" parent="attack_areas"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_areas/Attack3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_areas/sweep attack"]
 position = Vector2(0, -3)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_105xr")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+color = Color(0.539863, 1.03481e-06, 2.88785e-07, 1)
+energy = 6.0
+texture = ExtResource("10_105xr")
+texture_scale = 0.7

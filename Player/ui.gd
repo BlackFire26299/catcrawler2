@@ -18,6 +18,7 @@ extends Control
 @onready var health_bar = $Bars/health/ProgressBar
 
 @onready var boss_bar = $"Boss Health bar"
+@onready var boss_health_bar = $"Boss Health bar/ProgressBar"
 
 @onready var death = $Death
 @onready var deathRed = $Death/ColorRect
@@ -90,7 +91,7 @@ func update_energy_bar(energy):
 		activeEnergy = energy0
 		
 func update_boss_bar(bhealth):
-	pass
+	boss_health_bar.value = bhealth
 	
 func deathAnim():
 	deathAnimP.play("fade in")
