@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=4 uid="uid://b6t5cfj5tmylk"]
+[gd_scene load_steps=91 format=4 uid="uid://b6t5cfj5tmylk"]
 
 [ext_resource type="Script" uid="uid://b1ercubrfme7w" path="res://Player/player.gd" id="1_pop16"]
 [ext_resource type="Texture2D" uid="uid://dyj7bej3tbv7d" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Knight/Knight/Knight-Attack01.png" id="3_x3vf3"]
@@ -13,7 +13,6 @@
 [ext_resource type="Script" uid="uid://c17rguu5cy2hf" path="res://Player/ui.gd" id="11_p5o4e"]
 [ext_resource type="Texture2D" uid="uid://bqpxm3pluoojh" path="res://raw assets/GUI.png" id="12_5htga"]
 [ext_resource type="Script" uid="uid://cevp2y6iqmo55" path="res://Player/questlogPanel.gd" id="14_ko42m"]
-[ext_resource type="Script" uid="uid://bgwkdlmpxejtu" path="res://Player/v_box_container.gd" id="15_mveel"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qkwgi"]
 radius = 6.0
@@ -1530,24 +1529,6 @@ show_behind_parent = true
 offset_right = 16.0
 offset_bottom = 16.0
 
-[node name="Questlog" type="CanvasLayer" parent="UI"]
-
-[node name="Panel" type="Panel" parent="UI/Questlog"]
-offset_left = 104.0
-offset_top = -81.0
-offset_right = 144.0
-offset_bottom = -19.0
-script = ExtResource("14_ko42m")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/Questlog/Panel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 62.0
-script = ExtResource("15_mveel")
-
-[node name="Label" type="Label" parent="UI/Questlog/Panel/VBoxContainer"]
-layout_mode = 2
-
 [node name="Boss Health bar" type="Control" parent="UI"]
 visible = false
 anchors_preset = 0
@@ -1598,6 +1579,21 @@ scale = Vector2(0.75, 0.75)
 theme_override_fonts/font = ExtResource("11_apopc")
 text = "~~~ You Died ~~~"
 label_settings = SubResource("LabelSettings_pisgm")
+
+[node name="Questlog" type="Panel" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 204.0
+offset_top = 1.0
+offset_right = 478.0
+offset_bottom = 141.0
+scale = Vector2(0.3, 0.3)
+script = ExtResource("14_ko42m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Questlog"]
+layout_mode = 0
+offset_right = 267.0
+offset_bottom = 90.0
 
 [connection signal="body_entered" from="base_attack" to="." method="_on_base_attack_body_entered"]
 [connection signal="timeout" from="EnergyReplenish" to="." method="_on_energy_replenish_timeout"]

@@ -2,6 +2,9 @@ extends Panel
 
 @onready var quest_vbox = $VBoxContainer
 
+@onready var label_set = LabelSettings.new()
+
+
 func _ready():
 	QuestManager.quests_updated.connect(update_quest_log)
 	update_quest_log()

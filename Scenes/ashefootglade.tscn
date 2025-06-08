@@ -1,6 +1,7 @@
-[gd_scene load_steps=79 format=4 uid="uid://b41lqhbxhiqf2"]
+[gd_scene load_steps=80 format=4 uid="uid://b41lqhbxhiqf2"]
 
 [ext_resource type="Texture2D" uid="uid://clhdhfsqcbh7h" path="res://raw assets/TopDownFantasy-Forest/Tiles/Tileset.png" id="1_8gq75"]
+[ext_resource type="Script" uid="uid://ie7n4poloj0t" path="res://Scenes/questlog.gd" id="1_vywha"]
 [ext_resource type="Texture2D" uid="uid://qng0rr8386lc" path="res://raw assets/TopDownFantasy-Forest/Decorations/Decorations.png" id="2_ks2kl"]
 [ext_resource type="PackedScene" uid="uid://b6t5cfj5tmylk" path="res://Player/player.tscn" id="3_1pww4"]
 [ext_resource type="PackedScene" uid="uid://dbfmr8txoh5gg" path="res://Enemies/ork_scout.tscn" id="3_j45go"]
@@ -899,6 +900,9 @@ height = 134.31
 
 [node name="Ashefootglade" type="Node2D"]
 
+[node name="Questlog" type="Node2D" parent="."]
+script = ExtResource("1_vywha")
+
 [node name="Tilemaps" type="Node2D" parent="."]
 
 [node name="Terrain" type="TileMapLayer" parent="Tilemaps"]
@@ -1399,7 +1403,7 @@ offset_bottom = 1022.0
 color = Color(0, 0, 0, 0.0784314)
 
 [node name="Player" parent="." instance=ExtResource("3_1pww4")]
-position = Vector2(1257, 459)
+position = Vector2(-58, -8)
 collision_layer = 3
 
 [node name="cave shadows" type="Node2D" parent="."]
