@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c0nkclvgehkd8" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Knight/Knight/Knight-Hurt.png" id="8_dkpta"]
 [ext_resource type="Texture2D" uid="uid://u6bbqwrlcuhi" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Knight/Knight/Knight-Idle.png" id="9_lfmf2"]
 [ext_resource type="Texture2D" uid="uid://nsbcadfltbv5" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Knight/Knight/Knight-Walk.png" id="10_pisgm"]
-[ext_resource type="FontFile" uid="uid://lvx5enj6u36a" path="res://MinimalPixel v2.ttf" id="11_apopc"]
+[ext_resource type="FontFile" uid="uid://lvx5enj6u36a" path="res://raw assets/MinimalPixel v2.ttf" id="11_apopc"]
 [ext_resource type="Script" uid="uid://c17rguu5cy2hf" path="res://Player/ui.gd" id="11_p5o4e"]
 [ext_resource type="Texture2D" uid="uid://bqpxm3pluoojh" path="res://raw assets/GUI.png" id="12_5htga"]
 [ext_resource type="Script" uid="uid://cevp2y6iqmo55" path="res://Player/questlogPanel.gd" id="14_ko42m"]
@@ -296,7 +296,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Attack2",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -334,7 +334,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Attack3",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -385,7 +385,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Hurt",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1177,33 +1177,6 @@ sources/0 = SubResource("TileSetAtlasSource_dkpta")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gu6f8"]
 bg_color = Color(0.726223, 3.41728e-06, 5.77569e-07, 1)
 
-[sub_resource type="Animation" id="Animation_gu6f8"]
-resource_name = "fade in"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.54902]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Label:modulate:a")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.466667, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
 [sub_resource type="Animation" id="Animation_dkpta"]
 length = 0.001
 tracks/0/type = "value"
@@ -1231,6 +1204,33 @@ tracks/1/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="Animation" id="Animation_gu6f8"]
+resource_name = "fade in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.54902]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Label:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.466667, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lfmf2"]
 _data = {
 &"RESET": SubResource("Animation_dkpta"),
@@ -1256,8 +1256,9 @@ shape = SubResource("CapsuleShape2D_qkwgi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_soeee")
-animation = &"Attack3"
-frame = 7
+animation = &"Hurt"
+frame = 3
+frame_progress = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)

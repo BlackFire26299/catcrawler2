@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c2nqxssrpjb3"]
 
-[ext_resource type="Script" uid="uid://1s5gh1wdpufi" path="res://interaction_manager.gd" id="1_i0wkv"]
-[ext_resource type="FontFile" uid="uid://lvx5enj6u36a" path="res://MinimalPixel v2.ttf" id="2_5ykev"]
+[ext_resource type="Script" uid="uid://1s5gh1wdpufi" path="res://universal scripts/interaction_manager.gd" id="1_i0wkv"]
+[ext_resource type="FontFile" uid="uid://lvx5enj6u36a" path="res://raw assets/MinimalPixel v2.ttf" id="2_5ykev"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5ykev"]
 font_size = 20

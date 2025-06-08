@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://bc2dbshj02xhc"]
+
+[ext_resource type="Texture2D" uid="uid://dg0fwka5uhxb0" path="res://raw assets/Fire-03_32x32_Sheet.png" id="1_iq68d"]
+[ext_resource type="Texture2D" uid="uid://x6thmmjanp1x" path="res://raw assets/64x64 textures (31).png" id="2_pypd8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pypd8"]
+atlas = ExtResource("1_iq68d")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fug3g"]
+atlas = ExtResource("1_iq68d")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8l3rs"]
+atlas = ExtResource("1_iq68d")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5335a"]
+atlas = ExtResource("1_iq68d")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbty7"]
+atlas = ExtResource("1_iq68d")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wtxhk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pypd8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fug3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8l3rs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5335a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbty7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="smallFire" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_wtxhk")
+autoplay = "default"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+shadow_enabled = true
+texture = ExtResource("2_pypd8")
+texture_scale = 4.0

@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var dash_speed: float = 300.0
 @export var dash_duration: float = 0.2
 @export var dash_cooldown: float = 0.5
-@export var health: int = 100
+@export var health: float = 100
 var energy = 7
 
 var is_dead: bool = false
@@ -32,6 +32,12 @@ var rng = RandomNumberGenerator.new()
 @onready var hitbox_left_H = $heavy_attack/CollisionShape2D2
 
 @onready var ui = $UI
+
+# Health regen settings
+var time_since_last_damage: float = 0.0
+var regen_delay: float = 5.0 # seconds before regen starts
+var regen_rate: float = 2.5 # health per second
+var max_health: float = 100 # to cap regen
 
 var interactable_in_range = null
 
@@ -79,10 +85,22 @@ func _process(delta):
 			energy -= 3
 			ui.update_energy_bar(energy)
 			use_heavy_attack()
+			
+	# Update time since last damage
+	time_since_last_damage += delta
+
+	# Passive health regen
+	if time_since_last_damage > regen_delay and health < max_health and !is_dead:
+		health += regen_rate * delta
+		if health > max_health:
+			health = max_health
+		ui.update_health_bar(int(health))
 
 	if sprite.animation == "Attack1" and sprite.is_playing():
 		pass
 	elif sprite.animation == "Attack2" and sprite.is_playing():
+		pass
+	elif sprite.animation == "Hurt" and sprite.is_playing():
 		pass
 	elif velocity.length() > 0:
 		sprite.play("Walk")
@@ -154,10 +172,12 @@ func take_damage(dmg: int):
 		if rng.randf_range(0,1) >= .97:
 			dmg += dmg
 			critical = true
-	
+		
+		time_since_last_damage = 0.0
+		
 		health -= dmg
 		DamageRenderer.display_number(dmg, self.global_position, critical)
-		print("Player took damage:", dmg)
+		sprite.play("Hurt")
 		if health <= 0:
 			die()
 		
