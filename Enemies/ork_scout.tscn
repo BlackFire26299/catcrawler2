@@ -1,7 +1,6 @@
-[gd_scene load_steps=46 format=3 uid="uid://chha38au6j6ev"]
+[gd_scene load_steps=45 format=3 uid="uid://chha38au6j6ev"]
 
 [ext_resource type="Script" uid="uid://dlnu140618h8k" path="res://Enemies/ork_scout.gd" id="1_s1b84"]
-[ext_resource type="Script" uid="uid://075kvhb341iy" path="res://universal scripts/health.gd" id="2_x0dsl"]
 [ext_resource type="Texture2D" uid="uid://clo0sdrfjy4eh" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Orc/Orc/Orc-Attack01.png" id="3_jit7v"]
 [ext_resource type="Texture2D" uid="uid://bnfq1bqrcldth" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Orc/Orc/Orc-Attack02.png" id="4_3htgr"]
 [ext_resource type="Texture2D" uid="uid://backwksm8qc7i" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Orc/Orc/Orc-Death.png" id="5_me1my"]
@@ -291,9 +290,6 @@ radius = 12.1655
 collision_mask = 3
 script = ExtResource("1_s1b84")
 attack_damage = 5
-
-[node name="Health" type="Node2D" parent="."]
-script = ExtResource("2_x0dsl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_40vy5")

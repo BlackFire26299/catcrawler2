@@ -1,23 +1,19 @@
 extends Area2D
-
-signal interacted
-
-@export var interaction_text: String = "Press F to interact"
-
-@onready var label = $Label
+@export var player: Player
+@export var label: Label
 
 func _ready():
-	label.visible = false
-	connect("body_entered", _on_body_entered)
-	connect("body_exited", _on_body_exited)
+	label.visible = false  # Hide label initially
 
 func _on_body_entered(body):
-	if body.name == "Player":
-		label.visible = true
-		body.set_meta("interactable", self)
+	if body == player:
+		player.interactable_in_range = self
+		show_tooltip(true)
 
 func _on_body_exited(body):
-	if body.name == "Player":
-		label.visible = false
-		if body.has_meta("interactable"):
-			body.set_meta("interactable", null)
+	if body == player:
+		player.interactable_in_range = null
+		show_tooltip(false)
+
+func show_tooltip(visible: bool):
+	label.visible = visible

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dp7s0osln0c25"]
 
-[ext_resource type="Script" uid="uid://yxk6mrjunil8" path="res://quest_manager.gd" id="1_pno2t"]
+[ext_resource type="Script" uid="uid://yxk6mrjunil8" path="res://universal scripts/quest_manager.gd" id="1_pno2t"]
 
 [node name="QuestManager" type="Node"]
 script = ExtResource("1_pno2t")

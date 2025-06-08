@@ -33,6 +33,8 @@ var rng = RandomNumberGenerator.new()
 
 @onready var ui = $UI
 
+var interactable_in_range = null
+
 func _ready():
 	hitbox_left.disabled = true
 	hitbox_right.disabled = true
@@ -86,6 +88,9 @@ func _process(delta):
 		sprite.play("Walk")
 	else:
 		sprite.play("Idle")
+		
+	if Input.is_action_just_pressed("interact") and interactable_in_range != null:
+		interactable_in_range.interact()
 
 func _physics_process(delta):
 	if is_dashing:
@@ -144,21 +149,26 @@ func use_heavy_attack():
 	can_attack = true
 
 func take_damage(dmg: int):
-	var critical = false
-	if rng.randf_range(0,1) >= .97:
-		dmg += dmg
-		critical = true
-	health -= dmg
-	DamageRenderer.display_number(dmg, self.global_position, critical)
-	print("Player took damage:", dmg)
-	if health <= 0:
-		die()
+	if !is_dead:
+		var critical = false
+		if rng.randf_range(0,1) >= .97:
+			dmg += dmg
+			critical = true
 	
-	ui.update_health_bar(health)
+		health -= dmg
+		DamageRenderer.display_number(dmg, self.global_position, critical)
+		print("Player took damage:", dmg)
+		if health <= 0:
+			die()
+		
+		ui.update_health_bar(health)
 
 func die():
 	is_dead = true
 	print("Player died")
+	
+	ui.death.show()
+	ui.deathAnim()
 
 
 func _on_energy_replenish_timeout():
@@ -173,6 +183,8 @@ func _on_navigate_area_area_entered(area):
 
 
 func _on_leave_cave_area_entered(area):
+	ui.thirdTooltip.visible = false
+	ui.heavyAttkTooltip.visible = false
 	ui.leaveCaveTooltip.visible = true
 	await get_tree().create_timer(5).timeout
 	ui.leaveCaveTooltip.visible = false
@@ -181,3 +193,8 @@ func _on_leave_cave_area_entered(area):
 func _on_firstcombat_area_entered(area):
 	ui.secondTooltip.visible = false
 	ui.thirdTooltip.visible = true
+
+
+func _on_boss_area_body_entered(body):
+	if body == self:
+		ui.boss_bar.show()

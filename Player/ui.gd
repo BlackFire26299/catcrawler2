@@ -17,6 +17,12 @@ extends Control
 
 @onready var health_bar = $Bars/health/ProgressBar
 
+@onready var boss_bar = $"Boss Health bar"
+
+@onready var death = $Death
+@onready var deathRed = $Death/ColorRect
+@onready var deathAnimP = $Death/AnimationPlayer
+
 var click_seen_num = 0
 
 var heavyClick = false
@@ -83,3 +89,8 @@ func update_energy_bar(energy):
 	else:
 		activeEnergy = energy0
 		
+func update_boss_bar(bhealth):
+	pass
+	
+func deathAnim():
+	deathAnimP.play("fade in")
