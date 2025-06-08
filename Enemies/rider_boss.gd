@@ -82,8 +82,8 @@ func sweep_attack_phase():
 
 	for body in sweep_attack.get_overlapping_bodies():
 		if body == player:
-			player.take_damage(attack_damage * 1.5, true) # Sweep also hits harder
-
+			player.take_damage(attack_damage * 1.5, true) 
+			
 	sweep_hitbox.disabled = true
 
 func take_damage(dmg):

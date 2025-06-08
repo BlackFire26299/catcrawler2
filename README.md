@@ -384,7 +384,7 @@ func use_heavy_attack():
 ```
 
 #### Video of Functionality (link to youtube)
-[![Prototype 2 8 June](https://img.youtube.com/vi/au8M1duLbQ8/0.jpg)](https://www.youtube.com/watch?v=au8M1duLbQ8)
+[![Prototype 3 8 June](https://img.youtube.com/vi/au8M1duLbQ8/0.jpg)](https://www.youtube.com/watch?v=au8M1duLbQ8)
 
 #### Issues 
 
@@ -493,15 +493,101 @@ func checkOrder():
 ```
 
 #### Video of Functionality (link to youtube)
-[![Prototype 2 8 June](https://img.youtube.com/vi/4y8tH9JwVWE/0.jpg)](https://www.youtube.com/watch?v=4y8tH9JwVWE)
+[![Prototype 4 8 June](https://img.youtube.com/vi/4y8tH9JwVWE/0.jpg)](https://www.youtube.com/watch?v=4y8tH9JwVWE)
 
 #### Issues 
 
 
-### Prototype 5 -
+### Prototype 5 - More Enemie Attacks, Lighting and health regen
 #### Important Additions 
+Attack Selection System
+```gd
+func perform_attack():
+	can_attack = false
+	is_attacking = true
+	attack_cooldown_timer.start(attack_cooldown)
+
+	# Enrage check
+	if not enraged and health <= 25:
+		enraged = true
+		attack_cooldown *= 0.75 # Faster attacks when enraged
+		$PointLight2D.show()
+
+	# Pick attack phase based on enraged or not
+	if enraged:
+		# Higher chance of sweep or heavy
+		var roll = rng.randi_range(0, 100)
+		if roll < 40:
+			attack_phase = 0 # base
+		elif roll < 70:
+			attack_phase = 1 # heavy
+		else:
+			attack_phase = 2 # sweep
+	else:
+		# Normal chance
+		attack_phase = rng.randi_range(0, 2)
+
+	# Perform attack phase
+	if attack_phase == 0:
+		# Base attack
+		var damage = attack_damage * rng.randf_range(.75, 1.25)
+		player.take_damage(damage, true)
+		animated_sprite.play("Attack1")
+	elif attack_phase == 1:
+		# Heavy attack
+		animated_sprite.play("Attack2")
+		await heavy_attack_phase()
+	elif attack_phase == 2:
+		# Sweep attack
+		animated_sprite.play("Attack3")
+		await sweep_attack_phase()
+```
+
+Heavy Attack
+```gd
+func heavy_attack_phase():
+	# Enable correct hitbox based on facing
+	var facing_left = animated_sprite.flip_h
+	heavy_hitbox_left.disabled = not facing_left
+	heavy_hitbox_right.disabled = facing_left
+
+	await get_tree().create_timer(0.15).timeout
+
+	for body in heavy_attack.get_overlapping_bodies():
+		if body == player:
+			player.take_damage(attack_damage * 1.75, true) # Heavy hits harder
+
+	# Disable hitboxes
+	heavy_hitbox_left.disabled = true
+	heavy_hitbox_right.disabled = true
+```
+
+Sweep Attack
+```gd
+func sweep_attack_phase():
+	sweep_hitbox.disabled = false
+
+	await get_tree().create_timer(0.2).timeout
+
+	for body in sweep_attack.get_overlapping_bodies():
+		if body == player:
+			player.take_damage(attack_damage * 1.5, true) 
+			
+	sweep_hitbox.disabled = true
+```
+
+Health Regen
+```gd
+# Passive health regen
+if time_since_last_damage > regen_delay and health < max_health and !is_dead:
+	health += regen_rate * delta
+	if health > max_health:
+		health = max_health
+	ui.update_health_bar(int(health))
+```
 
 #### Video of Functionality (link to youtube)
+[![Prototype 5 9 June](https://img.youtube.com/vi/SzGvsq4UhoA/0.jpg)](https://www.youtube.com/watch?v=SzGvsq4UhoA)
 
 #### Issues 
 
