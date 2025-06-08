@@ -252,6 +252,44 @@ else:
 
 ### Prototype 2 - Enemies, world layout, ui
 #### Important Additions 
+This prototype focused mostly on visual additions such as level design and ui, with small amounts of code when implementing new enemies such as undoing some hard coded features. 
+
+Ui
+```gd
+func update_energy_bar(energy):
+	activeEnergy.visivle = false
+	
+	if energy == 7:
+		fullEnergy.visible = true
+		activeEnergy = fullEnergy
+	
+	elif energy == 6:
+		energy6.visible = true
+		activeEnergy = energy6
+		
+	elif energy == 5:
+		energy5.visible = true
+		activeEnergy = energy5
+		
+	elif energy == 4:
+		energy4.visible = true
+		activeEnergy = energy4
+		
+	elif energy == 3:
+		energy3.visivle = true
+		activeEnergy = energy3
+		
+	elif energy == 2:
+		energy2.visible = true
+		activeEnergy = energy2
+		
+	elif energy == 1:
+		energy1.visible = true
+		activeEnergy = energy1
+		
+	else:
+		activeEnergy = energy0
+```
 
 #### Video of Functionality (link to youtube)
 [![Prototype 2 7 June](https://img.youtube.com/vi/eBECJ2ZKu4k/0.jpg)](https://www.youtube.com/watch?v=eBECJ2ZKu4k)
@@ -260,6 +298,90 @@ else:
 
 ### Prototype 3 - Tutorial, damage popups and new attacks
 #### Important Additions 
+Damage Popups
+```gd
+extends Node
+
+func display_number(value:int, position: Vector2, is_critical:bool = false):
+	var number = Label.new()
+	number.global_position = position
+	number.text = str(value)
+	number.z_index = 5
+	number.label_settings = LabelSettings.new()
+	
+	var colour = '#FFF'
+	if is_critical:
+		colour = '#B22'
+	if value == 0:
+		colour = '#FFF8'
+
+	number.label_settings.font_color = colour
+	number.label_settings.font_size = 10
+	number.label_settings.outline_color = '#000'
+	number.label_settings.outline_size = 1
+	
+	call_deferred("add_child",number)
+	
+	await number.resized
+	number.pivot_offset = Vector2(number.size / 2)
+	
+	var tween = get_tree().create_tween()
+	tween.set_parallel(true)
+	
+	tween.tween_property(
+		number, "position:y", number.position.y - 24, 0.25	
+	).set_ease(Tween.EASE_OUT)
+	tween.tween_property(
+		number, "position:y", number.position.y, 0.5
+	).set_ease(Tween.EASE_IN).set_delay(0.25)
+	tween.tween_property(
+		number, "scale", Vector2.ZERO, 0.25
+	).set_ease(Tween.EASE_IN).set_delay(0.5)
+	
+	await tween.finished
+	number.queue_free()
+```
+
+Tutorials
+```gd
+func _physics_process(delta: float):
+	if thirdTooltip.visible and click_seen_num < 5:
+		if Input.is_action_just_pressed("attack_light"):
+			click_seen_num += 1
+		if click_seen_num == 5:
+			thirdTooltip.visible = false
+			heavyAttkTooltip.visible = true
+	if heavyClick == false:
+		if Input.is_action_just_pressed("attack_heavy"):
+			heavyClick = true
+			await get_tree().create_timer(2).timeout
+			heavyAttkTooltip.visible = false
+```
+
+New attack
+```gd
+func use_heavy_attack():
+	can_attack = false
+	
+	var facing_left = sprite.flip_h
+	hitbox_left_H.disabled = not facing_left
+	hitbox_right_H.disabled = facing_left
+	
+	sprite.play("Attack2")
+	
+	await get_tree().create_timer(0.15).timeout
+	
+	for body in heavy_attack.get_overlapping_bodies():
+		if body.is_in_group("enemies"):
+			var dmg = rng.randi_range(7,10)
+			body.take_damage(dmg)
+	
+	hitbox_left_H.disabled = true
+	hitbox_right_H.disabled = true
+	
+	await get_tree().create_timer(0.6).timeout
+	can_attack = true
+```
 
 #### Video of Functionality (link to youtube)
 [![Prototype 2 8 June](https://img.youtube.com/vi/au8M1duLbQ8/0.jpg)](https://www.youtube.com/watch?v=au8M1duLbQ8)
@@ -268,6 +390,107 @@ else:
 
 ### Prototype 4 - Interactions, Puzzels and Ui updates
 #### Important Additions 
+Interaction Manager
+```gd
+extends Node2D
+
+@onready var player = get_tree().get_first_node_in_group("player")
+@onready var label = $Label
+
+const base_text = "[E] to "
+
+var active_areas = []
+var can_interact = true
+
+func register_area(area: InteractionArea):
+	active_areas.push_back(area)
+	
+func unregister_area(area: InteractionArea):
+	var index = active_areas.find(area)
+	if index != -1:
+		active_areas.remove_at(index)
+
+func _process(delta):
+	if active_areas.size() > 0 && can_interact:
+		active_areas.sort_custom(_sort_by_distance_to_player)
+		label.text = base_text + active_areas[0].action_name
+		label.global_position = active_areas[0].global_position
+		#label.global_position.y -= 20
+		#label.global_position.x -= label.size.x / 2
+		label.show()
+	else:
+		label.hide()
+
+func _sort_by_distance_to_player(area1, area2):
+	var area1_to_player = player.global_position.distance_to(area1.global_position)
+	var area2_to_player = player.global_position.distance_to(area2.global_position)
+	return area1_to_player < area2_to_player
+
+func _input(event):
+	if event.is_action_pressed("interact") && can_interact:
+		if active_areas.size() > 0:
+			can_interact = false
+			label.hide()
+			
+			await active_areas[0].interact.call()
+			
+			can_interact = true
+```
+
+Interaction Area
+```gd
+class_name InteractionArea
+extends Area2D
+
+@export var action_name: String = "Interact"
+
+var interact: Callable = func():
+	pass
+
+
+func _on_body_entered(body):
+	if body is Player:
+		InteractionManager.register_area(self)
+
+
+func _on_body_exited(body):
+	if body is Player:
+		InteractionManager.unregister_area(self)
+
+```
+
+Puzzels
+```gd
+extends Node2D
+
+var lilyOrder = []
+
+@onready var single_lily: InteractionArea = $"single lily"
+@onready var double_lily: InteractionArea = $"double lily"
+signal waterPuzzle
+
+func _ready():
+	single_lily.interact = Callable(self, "on_interact_s")
+	double_lily.interact = Callable(self, "on_interact_d")
+	
+
+	
+func on_interact_s():
+	lilyOrder.append("s")
+	if lilyOrder.size() == 5:
+		checkOrder()
+	
+func on_interact_d():
+	lilyOrder.append("d")
+	if lilyOrder.size() == 5:
+		checkOrder()
+		
+func checkOrder():
+	if lilyOrder == ["s","d","s","d","d"]:
+		emit_signal("waterPuzzle")
+	else:
+		lilyOrder = []
+```
 
 #### Video of Functionality (link to youtube)
 [![Prototype 2 8 June](https://img.youtube.com/vi/4y8tH9JwVWE/0.jpg)](https://www.youtube.com/watch?v=4y8tH9JwVWE)
