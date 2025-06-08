@@ -34,10 +34,8 @@
 ### Controls
 W, A, S, D for movement. <br>
 Left Click is your basic attack. <br>
-Right Click is Block. <br>
-E Slash Attack <br>
-R Heavy Attack <br>
-F interact.  <br>
+Right Click is your heavy attack. <br>
+E Interact <br>
 Left shift for dash. <br>
 ESC to enter the menu <br>
 
@@ -212,66 +210,90 @@ func attack():
 	player.take_damage(attack_damage)
 	print("Enemy attacked player")
 ```
-##### Enemie Patrol
+##### Enemie 
+```gd
+if is_aggroed:
+	
+	face_player()
+	
+	var distance = player.global_position.distance_to(global_position)
+	
+	if distance <= attack_range and can_attack:
+		attack()
+	else:
+		navigation_agent.set_target_position(player.global_position)
+		if not navigation_agent.is_navigation_finished():
+			var next_path = navigation_agent.get_next_path_position()
+			move_towards(next_path, delta)
+
+	
+elif is_returning_to_patrol:
+	var return_target = patrol_path_follow.global_position
+	if global_position.distance_to(return_target) < 10:
+		is_returning_to_patrol = false
+	else:
+		move_towards(return_target, delta)
+
+	
+else:
+	var patrol_target = patrol_path_follow.global_position
+	if global_position.distance_to(patrol_target) < 10:
+		
+		patrol_path_follow.progress += speed * delta
+	else:
+		move_towards(patrol_target, delta)
+```
 
 #### Video of Functionality (link to youtube)
+[![Prototype 1 26 May](https://img.youtube.com/vi/DqD7hDQ_Xno/0.jpg)](https://www.youtube.com/watch?v=DqD7hDQ_Xno)
 
 #### Issues 
 
-#### Next Steps
 
-### Prototype 2 - Ashroot Glade Part 1
+### Prototype 2 - Enemies, world layout, ui
 #### Important Additions 
 #### Video of Functionality (link to youtube)
 
 #### Issues 
 
-#### Next Steps
-
-### Prototype 3 - Ashroot Glade Part 2
-#### Important Additions 
-
-#### Video of Functionality (link to youtube)
-
-#### Issues 
-
-#### Next Steps
-
-### Prototype 4 - Runestone Vale Part 1
-#### Important Additions 
-
-#### Video of Functionality (link to youtube)
-
-#### Issues 
-
-#### Next Steps
-
-### Prototype 5 - Runestone Vale Part 2
-#### Important Additions 
-
-#### Video of Functionality (link to youtube)
-
-#### Issues 
-
-#### Next Steps
-
-### Prototype 6 - Runestone Vale Part 3
-#### Important Additions 
-
-#### Video of Functionality (link to youtube)
-
-#### Issues 
-
-#### Next Steps
-
-### Prototype 7 - Boss Fight
+### Prototype 3 - Tutorial, damage popups and new attacks
 #### Important Additions 
 
 #### Video of Functionality (link to youtube)
 
 #### Issues 
 
-#### Next Steps
+### Prototype 4 - Interactions, Puzzels and Ui updates
+#### Important Additions 
+
+#### Video of Functionality (link to youtube)
+
+#### Issues 
+
+
+### Prototype 5 -
+#### Important Additions 
+
+#### Video of Functionality (link to youtube)
+
+#### Issues 
+
+
+### Prototype 6 -
+#### Important Additions 
+
+#### Video of Functionality (link to youtube)
+
+#### Issues 
+
+
+### Prototype 7 - 
+#### Important Additions 
+
+#### Video of Functionality (link to youtube)
+
+#### Issues 
+
 
 ## Reflection 
 ### How is the overall design 
