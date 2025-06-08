@@ -252,7 +252,9 @@ else:
 
 ### Prototype 2 - Enemies, world layout, ui
 #### Important Additions 
+
 #### Video of Functionality (link to youtube)
+[![Prototype 2 7 June](https://img.youtube.com/vi/eBECJ2ZKu4k/0.jpg)](https://www.youtube.com/watch?v=eBECJ2ZKu4k)
 
 #### Issues 
 
@@ -260,6 +262,7 @@ else:
 #### Important Additions 
 
 #### Video of Functionality (link to youtube)
+[![Prototype 2 8 June](https://img.youtube.com/vi/au8M1duLbQ8/0.jpg)](https://www.youtube.com/watch?v=au8M1duLbQ8)
 
 #### Issues 
 
@@ -267,6 +270,7 @@ else:
 #### Important Additions 
 
 #### Video of Functionality (link to youtube)
+[![Prototype 2 8 June](https://img.youtube.com/vi/4y8tH9JwVWE/0.jpg)](https://www.youtube.com/watch?v=4y8tH9JwVWE)
 
 #### Issues 
 
