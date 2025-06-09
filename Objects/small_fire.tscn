@@ -57,7 +57,10 @@ autoplay = "default"
 script = ExtResource("2_8l3rs")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 0.564706, 0, 1)
 shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 1.0
 texture = ExtResource("2_pypd8")
 texture_scale = 4.0
 

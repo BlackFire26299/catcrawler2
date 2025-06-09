@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqqts6bhh0xwn"]
+
+[ext_resource type="Texture2D" uid="uid://b815i7dr8g8d8" path="res://raw assets/RF_Catacombs_v1.0/candleA_03.png" id="1_fqqdw"]
+[ext_resource type="Texture2D" uid="uid://x6thmmjanp1x" path="res://raw assets/64x64 textures (31).png" id="2_dke8i"]
+
+[node name="CandleA03" type="Sprite2D"]
+texture = ExtResource("1_fqqdw")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.95542, 0.650198, 0.177329, 1)
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 1.0
+texture = ExtResource("2_dke8i")
+texture_scale = 1.5
+height = 10.0

@@ -40,6 +40,9 @@ var unlocked_fire_attack = false
 
 @onready var ui = $UI
 
+@export var respawn_point: Node2D
+@export var respawn_point_after_tutorial: Node2D
+
 # Health regen settings
 var time_since_last_damage: float = 0.0
 var regen_delay: float = 5.0 # seconds before regen starts
@@ -258,6 +261,8 @@ func _on_leave_cave_area_entered(area):
 	ui.leaveCaveTooltip.visible = true
 	await get_tree().create_timer(5).timeout
 	ui.leaveCaveTooltip.visible = false
+	
+	respawn_point = respawn_point_after_tutorial
 
 
 func _on_firstcombat_area_entered(area):
@@ -268,3 +273,22 @@ func _on_firstcombat_area_entered(area):
 func _on_boss_area_body_entered(body):
 	if body == self:
 		ui.boss_bar.show()
+
+
+func _on_ui_respawn():
+	global_position = respawn_point.global_position
+	
+	health = max_health
+	ui.update_health_bar(health)
+	
+	energy = 7
+	ui.update_energy_bar(energy)
+	
+	is_dead = false
+	death_played = false
+	is_dashing = false
+	velocity = Vector2.ZERO
+	time_since_last_damage = 0.0
+	
+	
+	

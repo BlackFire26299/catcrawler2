@@ -23,8 +23,11 @@ extends Control
 @onready var death = $Death
 @onready var deathRed = $Death/ColorRect
 @onready var deathAnimP = $Death/AnimationPlayer
+@onready var deathButtons = $Death/buttons
 
 @onready var newAttackPopup = $newAttackPopup
+
+signal respawn()
 
 var click_seen_num = 0
 
@@ -97,3 +100,13 @@ func update_boss_bar(bhealth):
 	
 func deathAnim():
 	deathAnimP.play("fade in")
+
+
+func _on_respawn_pressed():
+	death.hide()
+	emit_signal("respawn")
+	
+
+
+func _on_restart_pressed():
+	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
