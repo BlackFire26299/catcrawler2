@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b58rr4vjdmcr" path="res://Objects/fire.tscn" id="5_2igke"]
 [ext_resource type="PackedScene" uid="uid://cr6r5oyh7sl1j" path="res://Enemies/ork_elite.tscn" id="5_4o7g3"]
 [ext_resource type="PackedScene" uid="uid://cxvxavf0u2vwj" path="res://Enemies/rider_boss.tscn" id="6_nhbju"]
-[ext_resource type="Script" uid="uid://b5d06v4bpk4i0" path="res://Objects/fires.gd" id="7_3ivw4"]
+[ext_resource type="Script" path="res://Objects/fires.gd" id="7_3ivw4"]
 [ext_resource type="Script" uid="uid://c6kxiworqgcft" path="res://Scenes/ashefootglade/water_puzzle.gd" id="9_asxyi"]
 [ext_resource type="Script" uid="uid://kympi5spdmlm" path="res://Scenes/ashefootglade/tile_map_layer.gd" id="10_yu7ka"]
 [ext_resource type="Script" uid="uid://8ibmn31be45s" path="res://Scenes/ashefootglade/boss_arena.gd" id="11_5anbi"]
