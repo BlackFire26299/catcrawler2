@@ -1,7 +1,7 @@
 [gd_scene load_steps=80 format=4 uid="uid://b41lqhbxhiqf2"]
 
 [ext_resource type="Texture2D" uid="uid://clhdhfsqcbh7h" path="res://raw assets/TopDownFantasy-Forest/Tiles/Tileset.png" id="1_8gq75"]
-[ext_resource type="Script" uid="uid://ie7n4poloj0t" path="res://Scenes/questlog.gd" id="1_vywha"]
+[ext_resource type="Script" uid="uid://ie7n4poloj0t" path="res://Scenes/ashefootglade/questlog.gd" id="1_vywha"]
 [ext_resource type="Texture2D" uid="uid://qng0rr8386lc" path="res://raw assets/TopDownFantasy-Forest/Decorations/Decorations.png" id="2_ks2kl"]
 [ext_resource type="PackedScene" uid="uid://b6t5cfj5tmylk" path="res://Player/player.tscn" id="3_1pww4"]
 [ext_resource type="PackedScene" uid="uid://dbfmr8txoh5gg" path="res://Enemies/ork_scout.tscn" id="3_j45go"]
@@ -9,10 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://b58rr4vjdmcr" path="res://Objects/fire.tscn" id="5_2igke"]
 [ext_resource type="PackedScene" uid="uid://cr6r5oyh7sl1j" path="res://Enemies/ork_elite.tscn" id="5_4o7g3"]
 [ext_resource type="PackedScene" uid="uid://cxvxavf0u2vwj" path="res://Enemies/rider_boss.tscn" id="6_nhbju"]
-[ext_resource type="Script" uid="uid://b5d06v4bpk4i0" path="res://Scenes/fires.gd" id="7_3ivw4"]
-[ext_resource type="Script" uid="uid://c6kxiworqgcft" path="res://Scenes/water_puzzle.gd" id="9_asxyi"]
-[ext_resource type="Script" uid="uid://kympi5spdmlm" path="res://Scenes/tile_map_layer.gd" id="10_yu7ka"]
-[ext_resource type="Script" uid="uid://8ibmn31be45s" path="res://Scenes/boss_arena.gd" id="11_5anbi"]
+[ext_resource type="Script" uid="uid://b5d06v4bpk4i0" path="res://Objects/fires.gd" id="7_3ivw4"]
+[ext_resource type="Script" uid="uid://c6kxiworqgcft" path="res://Scenes/ashefootglade/water_puzzle.gd" id="9_asxyi"]
+[ext_resource type="Script" uid="uid://kympi5spdmlm" path="res://Scenes/ashefootglade/tile_map_layer.gd" id="10_yu7ka"]
+[ext_resource type="Script" uid="uid://8ibmn31be45s" path="res://Scenes/ashefootglade/boss_arena.gd" id="11_5anbi"]
 [ext_resource type="PackedScene" uid="uid://cjhaq1848wmn6" path="res://Objects/interaction_area.tscn" id="12_jy1cj"]
 [ext_resource type="PackedScene" uid="uid://bc2dbshj02xhc" path="res://Objects/small_fire.tscn" id="14_yu7ka"]
 [ext_resource type="Texture2D" uid="uid://x6thmmjanp1x" path="res://raw assets/64x64 textures (31).png" id="15_g5dfc"]
@@ -1442,7 +1442,7 @@ position = Vector2(163.562, 572.654)
 rotation = -1.77675
 
 [node name="sun" type="DirectionalLight2D" parent="."]
-position = Vector2(906, 356)
+position = Vector2(1885, 857)
 rotation = 1.77675
 energy = 0.3
 shadow_enabled = true
