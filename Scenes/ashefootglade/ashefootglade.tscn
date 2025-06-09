@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=4 uid="uid://b41lqhbxhiqf2"]
+[gd_scene load_steps=89 format=4 uid="uid://b41lqhbxhiqf2"]
 
 [ext_resource type="Texture2D" uid="uid://clhdhfsqcbh7h" path="res://raw assets/TopDownFantasy-Forest/Tiles/Tileset.png" id="1_8gq75"]
 [ext_resource type="Script" uid="uid://l1efdhmfbkbk" path="res://Scenes/ashefootglade/ashefootglade.gd" id="1_anj4x"]
@@ -902,6 +902,21 @@ polygon = PackedVector2Array(-309, 429, -286, 352, -304, 319)
 closed = false
 polygon = PackedVector2Array(-722, -39, -539, -185, -352, -241, -254, -321, -204, -497, -288, -584, -346, -637)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_anj4x"]
+radius = 130.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jf6dh"]
+radius = 140.236
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_34iye"]
+radius = 132.098
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fsj48"]
+radius = 125.782
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_67xos"]
+radius = 58.0775
+
 [node name="Ashefootglade" type="Node2D"]
 script = ExtResource("1_anj4x")
 
@@ -1188,6 +1203,7 @@ visible = false
 navigation_polygon = SubResource("NavigationPolygon_2igke")
 
 [node name="NavigationRegion2D2" type="NavigationRegion2D" parent="."]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_nhbju")
 
 [node name="Enemies" type="Node2D" parent="."]
@@ -1465,7 +1481,7 @@ offset_bottom = 1021.0
 color = Color(0, 0, 0, 0.0784314)
 
 [node name="Player" parent="." node_paths=PackedStringArray("respawn_point", "respawn_point_after_tutorial") instance=ExtResource("3_1pww4")]
-position = Vector2(1375, 331)
+position = Vector2(-58, -7)
 collision_layer = 3
 respawn_point = NodePath("../Questlog")
 respawn_point_after_tutorial = NodePath("../respawn point")
@@ -1559,7 +1575,6 @@ position = Vector2(-31, 84)
 position = Vector2(700, 9)
 
 [node name="LightingEffects" type="Node2D" parent="."]
-visible = false
 
 [node name="cave shadows" type="Node2D" parent="LightingEffects"]
 position = Vector2(906, 356)
@@ -1600,10 +1615,71 @@ parameters/looping = true
 stream = ExtResource("19_anj4x")
 parameters/looping = true
 
+[node name="ScoutQuestAreas" type="Node2D" parent="."]
+
+[node name="nearCave" type="Area2D" parent="ScoutQuestAreas"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoutQuestAreas/nearCave"]
+position = Vector2(934, 191)
+shape = SubResource("CircleShape2D_anj4x")
+
+[node name="southofCave" type="Area2D" parent="ScoutQuestAreas"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoutQuestAreas/southofCave"]
+position = Vector2(500, 474)
+shape = SubResource("CircleShape2D_jf6dh")
+
+[node name="NorthOfCave" type="Area2D" parent="ScoutQuestAreas"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoutQuestAreas/NorthOfCave"]
+position = Vector2(1120, -141)
+shape = SubResource("CircleShape2D_34iye")
+
+[node name="trailQuest" type="Node2D" parent="."]
+
+[node name="entrance" type="Area2D" parent="trailQuest"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trailQuest/entrance"]
+position = Vector2(1498, 217)
+shape = SubResource("CircleShape2D_fsj48")
+
+[node name="pastentrance" type="Area2D" parent="trailQuest"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trailQuest/pastentrance"]
+position = Vector2(1453, 288)
+shape = SubResource("CircleShape2D_67xos")
+
+[connection signal="fire_snuffed" from="TerrainFeatures/Ork campfires/smallFire2" to="Questlog" method="_on_small_fire_2_fire_snuffed"]
+[connection signal="fire_snuffed" from="TerrainFeatures/Ork campfires/smallFire3" to="Questlog" method="_on_small_fire_3_fire_snuffed"]
+[connection signal="fire_snuffed" from="TerrainFeatures/Ork campfires/smallFire4" to="Questlog" method="_on_small_fire_4_fire_snuffed"]
+[connection signal="fire_snuffed" from="TerrainFeatures/Ork campfires/smallFire5" to="Questlog" method="_on_small_fire_5_fire_snuffed"]
+[connection signal="fire_snuffed" from="TerrainFeatures/Ork campfires/smallFire6" to="Questlog" method="_on_small_fire_6_fire_snuffed"]
+[connection signal="child_exiting_tree" from="Enemies/Pack 1" to="Questlog" method="_on_pack_1_child_exiting_tree"]
+[connection signal="Aggroed" from="Enemies/Boss/RiderBoss" to="Questlog" method="_on_rider_boss_aggroed"]
+[connection signal="BossDied" from="Enemies/Boss/RiderBoss" to="Questlog" method="_on_rider_boss_boss_died"]
+[connection signal="area_entered" from="tutorialsections/Navigate area" to="Questlog" method="_on_navigate_area_area_entered"]
 [connection signal="area_entered" from="tutorialsections/Navigate area" to="Player" method="_on_navigate_area_area_entered"]
+[connection signal="area_entered" from="tutorialsections/firstcombat" to="Questlog" method="_on_firstcombat_area_entered"]
 [connection signal="area_entered" from="tutorialsections/firstcombat" to="Player" method="_on_firstcombat_area_entered"]
+[connection signal="area_entered" from="tutorialsections/leave cave" to="Questlog" method="_on_leave_cave_area_entered"]
 [connection signal="area_entered" from="tutorialsections/leave cave" to="Player" method="_on_leave_cave_area_entered"]
+[connection signal="tree_exiting" from="tutorialsections/TileMapLayer" to="Questlog" method="_on_tile_map_layer_tree_exiting"]
+[connection signal="fire_snuffed" from="tutorialsections/smallFire" to="Questlog" method="_on_small_fire_fire_snuffed"]
+[connection signal="fireAttack" from="Player" to="Questlog" method="_on_player_fire_attack"]
+[connection signal="waterPuzzle" from="waterPuzzle" to="Questlog" method="_on_water_puzzle_water_puzzle"]
 [connection signal="waterPuzzle" from="waterPuzzle" to="TerrainFeatures/Fires" method="_on_water_puzzle_water_puzzle"]
 [connection signal="waterPuzzle" from="waterPuzzle" to="bossArena" method="_on_water_puzzle_water_puzzle"]
 [connection signal="body_entered" from="bossArena/BossArea" to="." method="_on_boss_area_body_entered"]
+[connection signal="body_entered" from="bossArena/BossArea" to="Questlog" method="_on_boss_area_body_entered"]
 [connection signal="body_entered" from="bossArena/BossArea" to="Player" method="_on_boss_area_body_entered"]
+[connection signal="tree_exited" from="bossArena/Boss Entrance" to="Questlog" method="_on_boss_entrance_tree_exited"]
+[connection signal="fire_snuffed" from="bossArena/smallFire5" to="Questlog" method="_on_small_fire_5_fire_snuffed"]
+[connection signal="fire_snuffed" from="bossArena/smallFire8" to="Questlog" method="_on_small_fire_8_fire_snuffed"]
+[connection signal="fire_snuffed" from="bossArena/smallFire6" to="Questlog" method="_on_small_fire_6_fire_snuffed"]
+[connection signal="fire_snuffed" from="bossArena/smallFire9" to="Questlog" method="_on_small_fire_9_fire_snuffed"]
+[connection signal="fire_snuffed" from="bossArena/smallFire7" to="Questlog" method="_on_small_fire_7_fire_snuffed"]
+[connection signal="body_entered" from="ScoutQuestAreas/nearCave" to="Questlog" method="_on_near_cave_body_entered"]
+[connection signal="body_entered" from="ScoutQuestAreas/southofCave" to="Questlog" method="_on_southof_cave_body_entered"]
+[connection signal="body_entered" from="ScoutQuestAreas/NorthOfCave" to="Questlog" method="_on_north_of_cave_body_entered"]
+[connection signal="body_entered" from="trailQuest/entrance" to="Questlog" method="_on_entrance_body_entered"]
+[connection signal="body_entered" from="trailQuest/pastentrance" to="Questlog" method="_on_pastentrance_body_entered"]

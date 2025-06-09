@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=4 uid="uid://b6t5cfj5tmylk"]
+[gd_scene load_steps=93 format=4 uid="uid://b6t5cfj5tmylk"]
 
 [ext_resource type="Script" uid="uid://b1ercubrfme7w" path="res://Player/player.gd" id="1_pop16"]
 [ext_resource type="Texture2D" uid="uid://dyj7bej3tbv7d" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Knight/Knight/Knight-Attack01.png" id="3_x3vf3"]
@@ -12,6 +12,7 @@
 [ext_resource type="FontFile" uid="uid://lvx5enj6u36a" path="res://raw assets/MinimalPixel v2.ttf" id="11_apopc"]
 [ext_resource type="Script" uid="uid://c17rguu5cy2hf" path="res://Player/ui.gd" id="11_p5o4e"]
 [ext_resource type="Texture2D" uid="uid://bqpxm3pluoojh" path="res://raw assets/GUI.png" id="12_5htga"]
+[ext_resource type="LabelSettings" uid="uid://dbf3fqfa5vhun" path="res://Player/player.res" id="12_gu6f8"]
 [ext_resource type="Script" uid="uid://cevp2y6iqmo55" path="res://Player/questlogPanel.gd" id="14_ko42m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qkwgi"]
@@ -451,9 +452,6 @@ radius = 20.0
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_p5o4e"]
 polygon = PackedVector2Array(-3, 7, 0, 7, 0, 6, 1, 6, 1, 7, 3, 7, 3, 6, 3, 0, 3, -7, 0, -10, -6, -11, -11, -8, -6, -4, -6, 1, -5, 5)
-
-[sub_resource type="LabelSettings" id="LabelSettings_5htga"]
-font_size = 25
 
 [sub_resource type="LabelSettings" id="LabelSettings_apopc"]
 font_size = 25
@@ -1065,6 +1063,8 @@ font_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
 shadow_size = 8
 shadow_color = Color(0.917647, 0, 0, 0.670588)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gu6f8"]
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_pop16")
@@ -1155,25 +1155,25 @@ anchors_preset = 0
 
 [node name="WelcomeText" type="Label" parent="UI/Tutorial Tooltips/Movement Tooltip"]
 layout_mode = 0
-offset_left = -71.0
-offset_top = -60.0
-offset_right = 215.0
-offset_bottom = -35.0
+offset_left = 2.0
+offset_top = 55.0
+offset_right = 288.0
+offset_bottom = 80.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("11_apopc")
 text = "Welcome to Thornvail"
-label_settings = SubResource("LabelSettings_5htga")
+label_settings = ExtResource("12_gu6f8")
 
 [node name="MovementText" type="Label" parent="UI/Tutorial Tooltips/Movement Tooltip"]
 layout_mode = 0
-offset_left = -68.0
-offset_top = 22.0
-offset_right = 203.0
-offset_bottom = 47.0
+offset_left = 5.0
+offset_top = 68.0
+offset_right = 276.0
+offset_bottom = 93.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("11_apopc")
 text = "Use W,A,S,D to move"
-label_settings = SubResource("LabelSettings_5htga")
+label_settings = ExtResource("12_gu6f8")
 
 [node name="Navigate Tooltip" type="Control" parent="UI/Tutorial Tooltips"]
 visible = false
@@ -1181,10 +1181,10 @@ anchors_preset = 0
 
 [node name="Label" type="Label" parent="UI/Tutorial Tooltips/Navigate Tooltip"]
 layout_mode = 0
-offset_left = -85.0
-offset_top = -60.0
-offset_right = 252.0
-offset_bottom = -35.0
+offset_left = -32.0
+offset_top = 51.0
+offset_right = 305.0
+offset_bottom = 76.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("11_apopc")
 text = "Navigate through the cave"
@@ -1192,14 +1192,14 @@ label_settings = SubResource("LabelSettings_apopc")
 
 [node name="MovementText2" type="Label" parent="UI/Tutorial Tooltips/Navigate Tooltip"]
 layout_mode = 0
-offset_left = -97.0
-offset_top = 21.0
-offset_right = 290.0
-offset_bottom = 46.0
+offset_left = -50.0
+offset_top = 68.0
+offset_right = 337.0
+offset_bottom = 93.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("11_apopc")
 text = "You can dash by using left shift"
-label_settings = SubResource("LabelSettings_5htga")
+label_settings = ExtResource("12_gu6f8")
 
 [node name="Combat Tooltip" type="Control" parent="UI/Tutorial Tooltips"]
 visible = false
@@ -1207,10 +1207,10 @@ anchors_preset = 0
 
 [node name="Label" type="Label" parent="UI/Tutorial Tooltips/Combat Tooltip"]
 layout_mode = 0
-offset_left = -79.0
-offset_top = -60.0
-offset_right = 237.0
-offset_bottom = -35.0
+offset_left = -26.0
+offset_top = 51.0
+offset_right = 290.0
+offset_bottom = 76.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("11_apopc")
 text = "You have entered combat"
@@ -1218,11 +1218,11 @@ label_settings = SubResource("LabelSettings_p5o4e")
 
 [node name="Label2" type="Label" parent="UI/Tutorial Tooltips/Combat Tooltip"]
 layout_mode = 0
-offset_left = -111.0
-offset_top = 23.0
-offset_right = 340.0
-offset_bottom = 48.0
-scale = Vector2(0.5, 0.5)
+offset_left = -40.0
+offset_top = 70.0
+offset_right = 411.0
+offset_bottom = 95.0
+scale = Vector2(0.4, 0.4)
 theme_override_fonts/font = ExtResource("11_apopc")
 text = "Press left click to do a basic attack."
 label_settings = SubResource("LabelSettings_p5o4e")
@@ -1233,11 +1233,11 @@ anchors_preset = 0
 
 [node name="Label" type="Label" parent="UI/Tutorial Tooltips/Advanced Combat"]
 layout_mode = 0
-offset_left = -115.0
-offset_top = 22.0
-offset_right = 346.0
-offset_bottom = 47.0
-scale = Vector2(0.5, 0.5)
+offset_left = -47.0
+offset_top = 69.0
+offset_right = 414.0
+offset_bottom = 94.0
+scale = Vector2(0.4, 0.4)
 theme_override_fonts/font = ExtResource("11_apopc")
 text = "Press right click to use heavy attack"
 label_settings = SubResource("LabelSettings_gu6f8")
@@ -1279,9 +1279,9 @@ offset_bottom = 40.0
 [node name="Label" type="Label" parent="UI/newAttackPopup"]
 layout_mode = 0
 offset_left = 31.0
-offset_top = 24.0
+offset_top = 110.0
 offset_right = 783.0
-offset_bottom = 49.0
+offset_bottom = 135.0
 scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("11_apopc")
 text = "By snuffing out the fires you have taken some of their power"
@@ -1290,9 +1290,9 @@ label_settings = SubResource("LabelSettings_b1ygp")
 [node name="Label2" type="Label" parent="UI/newAttackPopup"]
 layout_mode = 0
 offset_left = 29.0
-offset_top = 104.0
+offset_top = 120.0
 offset_right = 787.0
-offset_bottom = 129.0
+offset_bottom = 145.0
 scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("11_apopc")
 text = "You can now use your middle mouse button to do a fire attack"
@@ -1395,6 +1395,7 @@ value = 80.0
 show_percentage = false
 
 [node name="Death" type="Control" parent="UI"]
+visible = false
 anchors_preset = 0
 offset_right = 286.0
 offset_bottom = 163.0
@@ -1453,17 +1454,18 @@ text = "Restart"
 
 [node name="Questlog" type="Panel" parent="UI"]
 layout_mode = 0
-offset_left = 204.0
-offset_top = 1.0
-offset_right = 478.0
-offset_bottom = 141.0
+offset_right = 274.0
+offset_bottom = 263.0
 scale = Vector2(0.3, 0.3)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gu6f8")
 script = ExtResource("14_ko42m")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/Questlog"]
 layout_mode = 0
-offset_right = 267.0
-offset_bottom = 90.0
+offset_left = 13.0
+offset_top = 17.0
+offset_right = 280.0
+offset_bottom = 247.0
 
 [connection signal="body_entered" from="base_attack" to="." method="_on_base_attack_body_entered"]
 [connection signal="timeout" from="EnergyReplenish" to="." method="_on_energy_replenish_timeout"]

@@ -40,6 +40,8 @@ var unlocked_fire_attack = false
 
 @onready var ui = $UI
 
+signal fireAttack()
+
 @export var respawn_point: Node2D
 @export var respawn_point_after_tutorial: Node2D
 
@@ -101,6 +103,7 @@ func _process(delta):
 			energy -= 3
 			
 			ui.update_energy_bar(energy)
+			emit_signal("fireAttack")
 			use_fire_attack()
 			
 	# Update time since last damage

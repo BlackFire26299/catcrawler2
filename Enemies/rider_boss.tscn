@@ -433,7 +433,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jx0rv"]
-radius = 13.3417
+radius = 11.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ra7t4"]
 radius = 14.0357
@@ -461,7 +461,7 @@ frame = 8
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -6)
+position = Vector2(-1, -3)
 shape = SubResource("CircleShape2D_jx0rv")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

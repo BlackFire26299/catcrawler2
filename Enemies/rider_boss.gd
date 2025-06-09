@@ -4,6 +4,10 @@ extends Ork
 var attack_phase = 0
 var enraged := false
 
+var first_attack = false
+signal Aggroed
+signal BossDied
+
 @onready var heavy_hitbox_left = $"attack_areas/heavy attack/CollisionShape2D2"
 @onready var heavy_hitbox_right = $"attack_areas/heavy attack/CollisionShape2D"
 @onready var heavy_attack = $"attack_areas/heavy attack"
@@ -23,7 +27,10 @@ func perform_attack():
 	can_attack = false
 	is_attacking = true
 	attack_cooldown_timer.start(attack_cooldown)
-
+	
+	if !first_attack:
+		emit_signal("Aggroed")
+		
 	# Enrage check
 	if not enraged and health <= 25:
 		enraged = true
@@ -102,3 +109,4 @@ func take_damage(dmg):
 	animated_sprite.play("Hurt")
 	if health <= 0:
 		die()
+		emit_signal("BossDied")

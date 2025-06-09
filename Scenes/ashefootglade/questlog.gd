@@ -5,6 +5,7 @@ var awaken = Quest.new()
 var scout = Quest.new()
 var followTrail = Quest.new()
 var trial = Quest.new()
+var sideQ = Quest.new()
 
 func _ready():
 	# First Quest
@@ -18,8 +19,8 @@ func _ready():
 	# second quest
 	scout.name = "Scout the Grove"
 	scout.description = "Having exited the cave you find your self in a once sacred grove now taken by the ork scum."
-	scout.objectives.append("Scout the area in the cave")
-	scout.objectives.append("Explore the south of the grove")
+	scout.objectives.append("Scout the area near the cave")
+	scout.objectives.append("Explore the south of the cave")
 	scout.objectives.append("Continue the search north east of the cave")
 	
 	#third quest
@@ -33,9 +34,151 @@ func _ready():
 	#boss
 	trial.name = "Trial by flame"
 	trial.description = "Defeat the ork beast master and save the grove"
+	trial.objectives.append("check the entrace to the inner grove")
 	trial.objectives.append("Enter the old grove")
 	trial.objectives.append("confront the ork beastmaster")
 	trial.objectives.append("Defeat the ork beastmaster")
 	
+	#side quest
+	sideQ.name = "Why not put them out"
+	sideQ.description = "Put out the orks campfires"
+	sideQ.objectives.append("1 fire extinguished")
+	sideQ.objectives.append("2 fire extinguished")
+	sideQ.objectives.append("3 fire extinguished")
+	sideQ.objectives.append("4 fire extinguished")
+	sideQ.objectives.append("Try new abilitie (middle mouse button)")
+	
 	# Add the first quest to manager
 	QuestManager.add_quest(awaken)
+
+
+func _on_navigate_area_area_entered(area):
+	QuestManager.advance_quest_objective(awaken)
+	$"../tutorialsections/Navigate area".queue_free()
+
+func _on_firstcombat_area_entered(area):
+	QuestManager.advance_quest_objective(awaken)
+	$"../tutorialsections/firstcombat".queue_free()
+
+var awaken_num_orks = 3
+
+func _on_pack_1_child_exiting_tree(node):
+	awaken_num_orks -= 1
+	if awaken_num_orks == 0:
+		QuestManager.advance_quest_objective(awaken)
+
+
+func _on_tile_map_layer_tree_exiting():
+	QuestManager.advance_quest_objective(awaken)
+	QuestManager.complete_quest(awaken)
+	QuestManager.add_quest(scout)
+
+
+func _on_near_cave_body_entered(body):
+	if body is Player:
+		QuestManager.advance_quest_objective(scout)
+		$"../ScoutQuestAreas/nearCave".queue_free()
+
+
+func _on_southof_cave_body_entered(body):
+	if body is Player:
+		QuestManager.advance_quest_objective(scout)
+		$"../ScoutQuestAreas/southofCave".queue_free()
+
+var ready_return_to_pond = false
+
+func _on_north_of_cave_body_entered(body):
+	if body is Player:
+		if QuestManager._has_quest("Scout the Grove"):
+			QuestManager.advance_quest_objective(scout)
+			QuestManager.add_quest(followTrail)
+		if ready_return_to_pond:
+			QuestManager.advance_quest_objective(followTrail)
+			$"../ScoutQuestAreas/NorthOfCave".queue_free()
+
+
+func _on_entrance_body_entered(body):
+	if body is Player:
+		QuestManager.advance_quest_objective(followTrail)
+		ready_return_to_pond = true
+
+
+func _on_boss_entrance_tree_exited():
+	QuestManager.advance_quest_objective(followTrail)
+	
+var usedLily = false
+func _on_water_puzzle_water_puzzle():
+	if !usedLily:
+		QuestManager.advance_quest_objective(followTrail)
+		usedLily = true
+		QuestManager.add_quest(trial)
+
+func _on_pastentrance_body_entered(body):	
+	if body is Player:
+		QuestManager.advance_quest_objective(trial)
+		
+
+var enteredBossarea = false
+
+func _on_boss_area_body_entered(body):
+	if body is Player && !enteredBossarea:
+		QuestManager.advance_quest_objective(trial)
+		enteredBossarea = true
+		
+
+
+func _on_rider_boss_aggroed():
+	QuestManager.advance_quest_objective(trial)
+	
+
+
+func _on_rider_boss_boss_died():
+	QuestManager.advance_quest_objective(trial)
+	
+func fire_snuffed():
+	if QuestManager._has_quest("Why not put them out"):
+		QuestManager.advance_quest_objective(sideQ)
+	else:
+		QuestManager.add_quest(sideQ)
+
+
+func _on_small_fire_2_fire_snuffed():
+	fire_snuffed()
+
+
+func _on_small_fire_3_fire_snuffed():
+	fire_snuffed()
+
+
+func _on_small_fire_4_fire_snuffed():
+	fire_snuffed()
+
+
+func _on_small_fire_5_fire_snuffed():
+	fire_snuffed()
+
+
+func _on_small_fire_6_fire_snuffed():
+	fire_snuffed()
+
+
+func _on_small_fire_8_fire_snuffed():
+	fire_snuffed()
+
+
+func _on_small_fire_9_fire_snuffed():
+	fire_snuffed()
+
+
+func _on_small_fire_7_fire_snuffed():
+	fire_snuffed()
+
+
+func _on_small_fire_fire_snuffed():
+	fire_snuffed()
+
+var used_fireAtt = false
+func _on_player_fire_attack():
+	if !used_fireAtt:
+		QuestManager.advance_quest_objective(sideQ)
+		used_fireAtt = true
