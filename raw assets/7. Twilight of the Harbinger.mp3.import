@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cd0eavt88pvs"
+path="res://.godot/imported/7. Twilight of the Harbinger.mp3-1361fa548ac0585ad63f16e8b8e8b5c0.mp3str"
+
+[deps]
+
+source_file="res://raw assets/7. Twilight of the Harbinger.mp3"
+dest_files=["res://.godot/imported/7. Twilight of the Harbinger.mp3-1361fa548ac0585ad63f16e8b8e8b5c0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

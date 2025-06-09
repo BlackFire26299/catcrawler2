@@ -13,9 +13,9 @@ var enraged := false
 func _ready():
 	super._ready()
 	
-	speed = 50
+	speed = 45
 	health = 80
-	attack_range = 30
+	attack_range = 60
 	attack_damage = 12
 	attack_cooldown = 2.5
 	
@@ -58,6 +58,9 @@ func perform_attack():
 		# Sweep attack
 		animated_sprite.play("Attack3")
 		await sweep_attack_phase()
+	
+	await animated_sprite.animation_finished
+	is_attacking = false
 	
 func heavy_attack_phase():
 	# Enable correct hitbox based on facing

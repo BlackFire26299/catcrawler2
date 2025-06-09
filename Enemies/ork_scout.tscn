@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dbfmr8txoh5gg"]
+[gd_scene load_steps=46 format=3 uid="uid://dbfmr8txoh5gg"]
 
 [ext_resource type="Script" uid="uid://dlnu140618h8k" path="res://Enemies/ork_scout.gd" id="1_s1b84"]
 [ext_resource type="Texture2D" uid="uid://clo0sdrfjy4eh" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Orc/Orc/Orc-Attack01.png" id="3_jit7v"]
@@ -286,6 +286,9 @@ height = 16.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_jit7v"]
 radius = 12.1655
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_00npw"]
+polygon = PackedVector2Array(-3, 7, 0, 7, 0, 6, 1, 6, 1, 7, 4, 7, 4, 4, 4, 0, 6, 0, 6, -2, 5, -7, 1, -8, -2, -8, -5, -4, -6, -3, -4, -1, -6, 1, -6, 4, -5, 5, -3, 5)
+
 [node name="OrkScout" type="CharacterBody2D" groups=["enemies"]]
 collision_mask = 3
 script = ExtResource("1_s1b84")
@@ -323,3 +326,6 @@ shape = SubResource("CircleShape2D_jit7v")
 [node name="baseAttack2" type="CollisionShape2D" parent="attack_areas/attack_area"]
 position = Vector2(-13, 0)
 shape = SubResource("CircleShape2D_jit7v")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_00npw")

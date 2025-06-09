@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://cr6r5oyh7sl1j"]
+[gd_scene load_steps=65 format=3 uid="uid://cr6r5oyh7sl1j"]
 
 [ext_resource type="Texture2D" uid="uid://cf4p74hkygf8t" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Elite Orc/Elite Orc/Elite Orc-Attack01.png" id="1_4ah1s"]
 [ext_resource type="Script" uid="uid://cn4n1srk0rh3l" path="res://Enemies/ork_elite.gd" id="1_st2md"]
@@ -417,6 +417,9 @@ height = 58.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ah1s"]
 radius = 7.0
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_st2md"]
+polygon = PackedVector2Array(-3, 7, 5, 7, 6, 0, 9, -1, 7, -6, 8, -11, 8, -16, 5, -12, 0, -11, -3, -16, -5, -13, -2, -9, -3, -5, -3, -2, -4, 1, -4, 5)
+
 [node name="OrkElite" type="CharacterBody2D" groups=["enemies"]]
 collision_mask = 3
 script = ExtResource("1_st2md")
@@ -440,6 +443,7 @@ shape = SubResource("CapsuleShape2D_av2wt")
 [node name="LostAggroTimer" type="Timer" parent="."]
 
 [node name="attack_areas" type="Node2D" parent="."]
+visible = false
 
 [node name="attack_area" type="Area2D" parent="attack_areas"]
 
@@ -470,3 +474,6 @@ shape = SubResource("CircleShape2D_4ah1s")
 [node name="A3L" type="CollisionShape2D" parent="attack_areas/heavy attack"]
 position = Vector2(-22, 2)
 shape = SubResource("CircleShape2D_4ah1s")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_st2md")

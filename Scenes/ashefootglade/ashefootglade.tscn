@@ -1,6 +1,7 @@
-[gd_scene load_steps=81 format=4 uid="uid://b41lqhbxhiqf2"]
+[gd_scene load_steps=84 format=4 uid="uid://b41lqhbxhiqf2"]
 
 [ext_resource type="Texture2D" uid="uid://clhdhfsqcbh7h" path="res://raw assets/TopDownFantasy-Forest/Tiles/Tileset.png" id="1_8gq75"]
+[ext_resource type="Script" uid="uid://l1efdhmfbkbk" path="res://Scenes/ashefootglade/ashefootglade.gd" id="1_anj4x"]
 [ext_resource type="Script" uid="uid://ie7n4poloj0t" path="res://Scenes/ashefootglade/questlog.gd" id="1_vywha"]
 [ext_resource type="Texture2D" uid="uid://qng0rr8386lc" path="res://raw assets/TopDownFantasy-Forest/Decorations/Decorations.png" id="2_ks2kl"]
 [ext_resource type="PackedScene" uid="uid://b6t5cfj5tmylk" path="res://Player/player.tscn" id="3_1pww4"]
@@ -17,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://bc2dbshj02xhc" path="res://Objects/small_fire.tscn" id="14_yu7ka"]
 [ext_resource type="Texture2D" uid="uid://x6thmmjanp1x" path="res://raw assets/64x64 textures (31).png" id="15_g5dfc"]
 [ext_resource type="PackedScene" uid="uid://dqqts6bhh0xwn" path="res://Objects/decorativeCandle.tscn" id="17_wyat5"]
+[ext_resource type="AudioStream" uid="uid://cekpluvmqgg7y" path="res://raw assets/Ambient 5.mp3" id="18_x2a5s"]
+[ext_resource type="AudioStream" uid="uid://cd0eavt88pvs" path="res://raw assets/7. Twilight of the Harbinger.mp3" id="19_anj4x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j45go"]
 texture = ExtResource("1_8gq75")
@@ -794,9 +797,9 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(-94, -192, 831, -203, 1148, -270, 1672, 33, 1539, 345, 1401, 274, 1159, 373, 865, 433, 900, 664, 713, 729, 292, 643, 188, 266, -47, 100, -137, 1)])
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_nhbju"]
-vertices = PackedVector2Array(1313.75, 602.898, 1330.61, 697.102, 1247.56, 723.273, 1130.93, 744.398, 1110.22, 637.898, 1138.62, 402.742, 1266.95, 350.188, 964.203, 588.453, 918.758, 594.813, 891.547, 471.961, 1014.68, 419.719, 1448.59, 349.773, 1510.6, 430.289, 1422.44, 556.906, 1390.01, 294.852, 1020.76, 638.953)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(11, 12, 13, 0, 6, 14), PackedInt32Array(7, 10, 5, 4, 15)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(880, 466, 1012, 410, 1136, 393, 1263, 341, 1392, 283, 1456, 343, 1523, 430, 1429, 565, 1325, 609, 1342, 704, 1250, 733, 1123, 756, 1102, 648, 1017, 649, 961, 599, 911, 606)])
+vertices = PackedVector2Array(1112.52, 619.688, 1031.78, 610.367, 978.227, 571.156, 950.203, 546.75, 941.43, 498.906, 1021.89, 473.883, 1161.83, 463.75, 1269.96, 376.828, 1387.73, 333.742, 1432.95, 352.867, 1462.95, 406.211, 1340.32, 496.977, 1309.78, 603.828, 1281.14, 648.18, 1229.9, 672.398, 1146.57, 687.797)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), PackedInt32Array(7, 8, 9, 10, 11, 6), PackedInt32Array(6, 11, 12, 13, 14, 15, 0)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(930, 492, 1020, 464, 1158, 454, 1265, 368, 1388, 323, 1440, 345, 1476, 409, 1349, 503, 1319, 608, 1288, 656, 1233, 682, 1141, 699, 1106, 629, 1028, 620, 972, 579, 941, 552)])
 
 [sub_resource type="Curve2D" id="Curve2D_j6o6x"]
 _data = {
@@ -900,6 +903,7 @@ closed = false
 polygon = PackedVector2Array(-722, -39, -539, -185, -352, -241, -254, -321, -204, -497, -288, -584, -346, -637)
 
 [node name="Ashefootglade" type="Node2D"]
+script = ExtResource("1_anj4x")
 
 [node name="Questlog" type="Node2D" parent="."]
 script = ExtResource("1_vywha")
@@ -959,7 +963,6 @@ position = Vector2(577, 2)
 [node name="Ork campfires" type="Node2D" parent="TerrainFeatures"]
 position = Vector2(906, 356)
 rotation = 1.77675
-scale = Vector2(1, 1)
 
 [node name="smallFire2" parent="TerrainFeatures/Ork campfires" instance=ExtResource("14_yu7ka")]
 position = Vector2(210.753, 197.066)
@@ -1185,7 +1188,6 @@ visible = false
 navigation_polygon = SubResource("NavigationPolygon_2igke")
 
 [node name="NavigationRegion2D2" type="NavigationRegion2D" parent="."]
-visible = false
 navigation_polygon = SubResource("NavigationPolygon_nhbju")
 
 [node name="Enemies" type="Node2D" parent="."]
@@ -1411,7 +1413,6 @@ progress = 189.586
 
 [node name="RiderBoss" parent="Enemies/Boss" instance=ExtResource("6_nhbju")]
 position = Vector2(1051, 547)
-aggro_range = 100.0
 follow_path_path = NodePath("../Path2D/PathFollow2D")
 player_path = NodePath("../../../Player")
 
@@ -1457,14 +1458,14 @@ shape = SubResource("CircleShape2D_yu7ka")
 position = Vector2(445, 28)
 
 [node name="DarkenWorld" type="ColorRect" parent="."]
-offset_left = -434.0
-offset_top = -368.0
-offset_right = 2195.0
-offset_bottom = 1022.0
+offset_left = -449.0
+offset_top = -369.0
+offset_right = 2180.0
+offset_bottom = 1021.0
 color = Color(0, 0, 0, 0.0784314)
 
 [node name="Player" parent="." node_paths=PackedStringArray("respawn_point", "respawn_point_after_tutorial") instance=ExtResource("3_1pww4")]
-position = Vector2(-1, -1)
+position = Vector2(1375, 331)
 collision_layer = 3
 respawn_point = NodePath("../Questlog")
 respawn_point_after_tutorial = NodePath("../respawn point")
@@ -1558,6 +1559,7 @@ position = Vector2(-31, 84)
 position = Vector2(700, 9)
 
 [node name="LightingEffects" type="Node2D" parent="."]
+visible = false
 
 [node name="cave shadows" type="Node2D" parent="LightingEffects"]
 position = Vector2(906, 356)
@@ -1589,9 +1591,19 @@ shadow_filter = 2
 shadow_filter_smooth = 1.0
 shadow_item_cull_mask = 2
 
+[node name="Background Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_x2a5s")
+autoplay = true
+parameters/looping = true
+
+[node name="Boss Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_anj4x")
+parameters/looping = true
+
 [connection signal="area_entered" from="tutorialsections/Navigate area" to="Player" method="_on_navigate_area_area_entered"]
 [connection signal="area_entered" from="tutorialsections/firstcombat" to="Player" method="_on_firstcombat_area_entered"]
 [connection signal="area_entered" from="tutorialsections/leave cave" to="Player" method="_on_leave_cave_area_entered"]
 [connection signal="waterPuzzle" from="waterPuzzle" to="TerrainFeatures/Fires" method="_on_water_puzzle_water_puzzle"]
 [connection signal="waterPuzzle" from="waterPuzzle" to="bossArena" method="_on_water_puzzle_water_puzzle"]
+[connection signal="body_entered" from="bossArena/BossArea" to="." method="_on_boss_area_body_entered"]
 [connection signal="body_entered" from="bossArena/BossArea" to="Player" method="_on_boss_area_body_entered"]

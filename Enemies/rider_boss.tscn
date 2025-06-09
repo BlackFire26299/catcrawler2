@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://cxvxavf0u2vwj"]
+[gd_scene load_steps=71 format=3 uid="uid://cxvxavf0u2vwj"]
 
 [ext_resource type="Script" uid="uid://dmmoj7qwp5ct7" path="res://Enemies/rider_boss.gd" id="1_blgf3"]
 [ext_resource type="Texture2D" uid="uid://dbvvlvucnekwn" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Orc rider/Orc rider/Orc rider-Attack01.png" id="1_ra7t4"]
@@ -446,9 +446,13 @@ height = 48.0
 radius = 12.0
 height = 86.0
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_105xr"]
+polygon = PackedVector2Array(-10, 7, -7, 7, -5, 5, -5, 6, -5, 7, -2, 7, -2, 5, -1, 7, 2, 7, 3, 5, 5, 5, 7, 7, 9, 7, 8, 5, 9, 3, 13, 4, 16, 4, 17, 0, 14, 0, 14, -2, 12, -5, 8, -6, 7, -9, 8, -13, 5, -19, -1, -19, -5, -21, -8, -18, -3, -17, -4, -13, -3, -11, -8, -9, -10, -5, -13, -2, -12, 2)
+
 [node name="RiderBoss" type="CharacterBody2D" groups=["enemies"]]
+scale = Vector2(2, 2)
 script = ExtResource("1_blgf3")
-aggro_range = 0.0
+aggro_range = 200.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mdkkc")
@@ -457,7 +461,6 @@ frame = 8
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-1, -6)
 shape = SubResource("CircleShape2D_jx0rv")
 
@@ -502,3 +505,6 @@ color = Color(0.539863, 1.03481e-06, 2.88785e-07, 1)
 energy = 6.0
 texture = ExtResource("10_105xr")
 texture_scale = 0.7
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_105xr")
