@@ -8,6 +8,8 @@ extends CharacterBody2D
 @export var health: float = 100
 var energy = 7
 
+var num_fires_snuffed = 0
+
 var is_dead: bool = false
 var death_played: bool = false
 
@@ -30,6 +32,11 @@ var rng = RandomNumberGenerator.new()
 @onready var heavy_attack = $heavy_attack
 @onready var hitbox_right_H = $heavy_attack/CollisionShape2D
 @onready var hitbox_left_H = $heavy_attack/CollisionShape2D2
+
+@onready var fire_attack = $fire_attack
+@onready var hitbox_right_f = $fire_attack/CollisionShape2D
+@onready var hitbox_left_f = $fire_attack/CollisionShape2D2
+var unlocked_fire_attack = false
 
 @onready var ui = $UI
 
@@ -81,10 +88,17 @@ func _process(delta):
 		use_light_attack()
 		
 	if Input.is_action_just_pressed("attack_heavy") and can_attack:
-		if energy > 3:
+		if energy > 2:
 			energy -= 3
 			ui.update_energy_bar(energy)
 			use_heavy_attack()
+			
+	if Input.is_action_just_pressed("fire_attack") and can_attack and unlocked_fire_attack:
+		if energy > 3:
+			energy -= 3
+			
+			ui.update_energy_bar(energy)
+			use_fire_attack()
 			
 	# Update time since last damage
 	time_since_last_damage += delta
@@ -99,6 +113,8 @@ func _process(delta):
 	if sprite.animation == "Attack1" and sprite.is_playing():
 		pass
 	elif sprite.animation == "Attack2" and sprite.is_playing():
+		pass
+	elif sprite.animation == "Attack3" and sprite.is_playing():
 		pass
 	elif sprite.animation == "Hurt" and sprite.is_playing():
 		pass
@@ -166,6 +182,28 @@ func use_heavy_attack():
 	await get_tree().create_timer(0.6).timeout
 	can_attack = true
 
+func use_fire_attack():
+	can_attack = false
+	
+	var facing_left = sprite.flip_h
+	hitbox_left_f.disabled = not facing_left
+	hitbox_right_f.disabled = facing_left
+	
+	sprite.play("Attack3")
+	
+	await get_tree().create_timer(0.20).timeout
+	
+	for body in fire_attack.get_overlapping_bodies():
+		if body.is_in_group("enemies"):
+			var dmg = rng.randi_range(9,12)
+			body.take_damage(dmg)
+			
+	hitbox_left_f.disabled = true
+	hitbox_right_f.disabled = true
+	
+	await get_tree().create_timer(0.6).timeout
+	can_attack = true
+
 func take_damage(dmg: int, boss = false):
 	if !is_dead:
 		var critical = false
@@ -192,7 +230,16 @@ func die():
 	
 	ui.death.show()
 	ui.deathAnim()
-
+	
+func check_snuffed_fires():
+	if num_fires_snuffed == 5:
+		unlocked_fire_attack = true
+		
+		ui.newAttackPopup.show()
+		
+		await get_tree().create_timer(2).timeout
+		
+		ui.newAttackPopup.hide()
 
 func _on_energy_replenish_timeout():
 	energy += 1

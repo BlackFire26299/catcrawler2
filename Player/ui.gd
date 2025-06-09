@@ -24,6 +24,8 @@ extends Control
 @onready var deathRed = $Death/ColorRect
 @onready var deathAnimP = $Death/AnimationPlayer
 
+@onready var newAttackPopup = $newAttackPopup
+
 var click_seen_num = 0
 
 var heavyClick = false

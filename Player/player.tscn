@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=4 uid="uid://b6t5cfj5tmylk"]
+[gd_scene load_steps=93 format=4 uid="uid://b6t5cfj5tmylk"]
 
 [ext_resource type="Script" uid="uid://b1ercubrfme7w" path="res://Player/player.gd" id="1_pop16"]
 [ext_resource type="Texture2D" uid="uid://dyj7bej3tbv7d" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Knight/Knight/Knight-Attack01.png" id="3_x3vf3"]
@@ -465,6 +465,12 @@ font_size = 25
 font_size = 25
 
 [sub_resource type="LabelSettings" id="LabelSettings_lfmf2"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_b1ygp"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_o28un"]
 font_size = 25
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gu6f8"]
@@ -1305,7 +1311,6 @@ wait_time = 0.5
 one_shot = true
 
 [node name="EnergyReplenish" type="Timer" parent="."]
-wait_time = 1.5
 one_shot = true
 
 [node name="UI" type="Control" parent="."]
@@ -1445,6 +1450,34 @@ theme_override_fonts/font = ExtResource("11_apopc")
 text = "and follow the quests"
 label_settings = SubResource("LabelSettings_lfmf2")
 
+[node name="newAttackPopup" type="Control" parent="UI"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI/newAttackPopup"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 24.0
+offset_right = 783.0
+offset_bottom = 49.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("11_apopc")
+text = "By snuffing out the fires you have taken some of their power"
+label_settings = SubResource("LabelSettings_b1ygp")
+
+[node name="Label2" type="Label" parent="UI/newAttackPopup"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 104.0
+offset_right = 787.0
+offset_bottom = 129.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("11_apopc")
+text = "You can now use your middle mouse button to do a fire attack"
+label_settings = SubResource("LabelSettings_o28un")
+
 [node name="Bars" type="Control" parent="UI"]
 anchors_preset = 0
 offset_left = 143.0
@@ -1551,6 +1584,7 @@ value = 80.0
 show_percentage = false
 
 [node name="Death" type="Control" parent="UI"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -1581,7 +1615,6 @@ text = "~~~ You Died ~~~"
 label_settings = SubResource("LabelSettings_pisgm")
 
 [node name="Questlog" type="Panel" parent="UI"]
-visible = false
 layout_mode = 0
 offset_left = 204.0
 offset_top = 1.0

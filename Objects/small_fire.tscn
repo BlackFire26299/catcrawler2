@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bc2dbshj02xhc"]
+[gd_scene load_steps=12 format=3 uid="uid://bc2dbshj02xhc"]
 
 [ext_resource type="Texture2D" uid="uid://dg0fwka5uhxb0" path="res://raw assets/Fire-03_32x32_Sheet.png" id="1_iq68d"]
+[ext_resource type="Script" uid="uid://c0u7pakhshd8v" path="res://Objects/small_fire.gd" id="2_8l3rs"]
 [ext_resource type="Texture2D" uid="uid://x6thmmjanp1x" path="res://raw assets/64x64 textures (31).png" id="2_pypd8"]
+[ext_resource type="PackedScene" uid="uid://cjhaq1848wmn6" path="res://Objects/interaction_area.tscn" id="4_8l3rs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pypd8"]
 atlas = ExtResource("1_iq68d")
@@ -46,11 +48,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_8l3rs"]
+radius = 31.0161
+
 [node name="smallFire" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_wtxhk")
 autoplay = "default"
+script = ExtResource("2_8l3rs")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 shadow_enabled = true
 texture = ExtResource("2_pypd8")
 texture_scale = 4.0
+
+[node name="interaction_area" parent="." instance=ExtResource("4_8l3rs")]
+action_name = "Extinquish"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]
+shape = SubResource("CircleShape2D_8l3rs")
