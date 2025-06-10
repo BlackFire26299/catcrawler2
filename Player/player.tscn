@@ -1474,8 +1474,6 @@ scale = Vector2(0.95, 0.95)
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
 
-[node name="AudioListener2D" type="AudioListener2D" parent="."]
-
 [node name="walking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_lfmf2")
 
