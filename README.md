@@ -592,8 +592,19 @@ if time_since_last_damage > regen_delay and health < max_health and !is_dead:
 #### Issues 
 
 
-### Prototype 6 -
+### Prototype 6 - Quest System, Last Player Abilitie, Finalise Level
 #### Important Additions 
+Quest Manager
+```gd
+```
+
+Quest Resource
+```gd
+```
+
+Last Player Abilitie
+```gd
+```
 
 #### Video of Functionality (link to youtube)
 
