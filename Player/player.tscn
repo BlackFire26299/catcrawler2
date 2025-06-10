@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=4 uid="uid://b6t5cfj5tmylk"]
+[gd_scene load_steps=95 format=4 uid="uid://b6t5cfj5tmylk"]
 
 [ext_resource type="Script" uid="uid://b1ercubrfme7w" path="res://Player/player.gd" id="1_pop16"]
 [ext_resource type="Texture2D" uid="uid://dyj7bej3tbv7d" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Knight/Knight/Knight-Attack01.png" id="3_x3vf3"]
@@ -13,7 +13,9 @@
 [ext_resource type="Script" uid="uid://c17rguu5cy2hf" path="res://Player/ui.gd" id="11_p5o4e"]
 [ext_resource type="Texture2D" uid="uid://bqpxm3pluoojh" path="res://raw assets/GUI.png" id="12_5htga"]
 [ext_resource type="LabelSettings" uid="uid://dbf3fqfa5vhun" path="res://Player/player.res" id="12_gu6f8"]
-[ext_resource type="Script" path="res://Player/questlogPanel.gd" id="14_ko42m"]
+[ext_resource type="Script" uid="uid://cevp2y6iqmo55" path="res://Player/questlogPanel.gd" id="14_ko42m"]
+[ext_resource type="AudioStream" uid="uid://b6nsosnx61kev" path="res://raw assets/Grass - Walk 4.wav" id="15_lfmf2"]
+[ext_resource type="AudioStream" uid="uid://dstcauqwbjqfq" path="res://raw assets/Grass - Run.wav" id="16_lfmf2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qkwgi"]
 radius = 6.0
@@ -1471,6 +1473,14 @@ scale = Vector2(0.95, 0.95)
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+
+[node name="walking" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_lfmf2")
+
+[node name="running" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_lfmf2")
 
 [connection signal="body_entered" from="base_attack" to="." method="_on_base_attack_body_entered"]
 [connection signal="timeout" from="EnergyReplenish" to="." method="_on_energy_replenish_timeout"]

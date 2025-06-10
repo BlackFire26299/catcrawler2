@@ -508,3 +508,9 @@ texture_scale = 0.7
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_105xr")
+
+[node name="lightAttck" type="AudioStreamPlayer2D" parent="."]
+
+[node name="heavyAttack" type="AudioStreamPlayer2D" parent="."]
+
+[node name="mediumAttack" type="AudioStreamPlayer2D" parent="."]

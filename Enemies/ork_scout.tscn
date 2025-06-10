@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dbfmr8txoh5gg"]
+[gd_scene load_steps=47 format=3 uid="uid://dbfmr8txoh5gg"]
 
 [ext_resource type="Script" uid="uid://dlnu140618h8k" path="res://Enemies/ork_scout.gd" id="1_s1b84"]
 [ext_resource type="Texture2D" uid="uid://clo0sdrfjy4eh" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Orc/Orc/Orc-Attack01.png" id="3_jit7v"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://backwksm8qc7i" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Orc/Orc/Orc-Death.png" id="5_me1my"]
 [ext_resource type="Texture2D" uid="uid://b0gnel3ctl4lb" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Orc/Orc/Orc-Hurt.png" id="6_k8ois"]
 [ext_resource type="Texture2D" uid="uid://bedve6mckxmqh" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Orc/Orc/Orc-Idle.png" id="7_f4qr1"]
+[ext_resource type="AudioStream" uid="uid://cfx64gsn8j7jp" path="res://raw assets/lightattack3.wav" id="8_jit7v"]
 [ext_resource type="Texture2D" uid="uid://cum6lh8t12k80" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Orc/Orc/Orc-Walk.png" id="8_roewj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w30rx"]
@@ -330,4 +331,5 @@ shape = SubResource("CircleShape2D_jit7v")
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_00npw")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="lightAttack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_jit7v")

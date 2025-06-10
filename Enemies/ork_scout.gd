@@ -12,6 +12,8 @@ var can_attack := true
 
 @onready var attack_cooldown_timer := $AttackCooldown
 
+@onready var lightAttackSfx = $lightAttack
+
 var rng = RandomNumberGenerator.new()
 
 var player: Node2D
@@ -143,7 +145,8 @@ func attack():
 	
 	var damage = attack_damage * rng.randf_range(.75,1.25)
 	
-	
+	animated_sprite.play("Attack1")
+	lightAttackSfx.play()
 	
 	player.take_damage(damage)
 	print("Enemy attacked player")

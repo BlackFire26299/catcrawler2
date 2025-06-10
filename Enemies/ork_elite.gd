@@ -10,6 +10,9 @@ var attack_phase = 0
 @onready var sweep_hitbox = $"attack_areas/sweep attack/A2"
 @onready var sweep_attack = $"attack_areas/sweep attack"
 
+@onready var heavyAttackSfx = $heavyAttack
+@onready var mediumAttackSfx = $"medium Attack"
+
 func _ready():
 	super._ready()
 	
@@ -51,16 +54,19 @@ func perform_attack():
 		var damage = attack_damage * rng.randf_range(.75,1.25)
 		player.take_damage(damage)
 		animated_sprite.play("Attack1")
+		lightAttackSfx.play()
 		
 	elif attack_phase == 1:
 		# Heavy Attack
 		animated_sprite.play("Attack2")
+		heavyAttackSfx.play()
 		heavy_attack_phase()
 		
 		
 	elif attack_phase == 2:
 		# Sweeping Attack
 		animated_sprite.play("Attack3")
+		mediumAttackSfx.play()
 		sweep_attack_phase()
 	
 	await animated_sprite.animation_finished
