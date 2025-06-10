@@ -1,5 +1,7 @@
 # Defence of Thornvail
+
 ## Table Of Contents
+
 - [How to Play](#how-to-play)
 	- [Controls](#controls)
    	- [How to Run](#how-to-run)
@@ -51,13 +53,16 @@
 
 - [Reflection](#reflection)
   	- [How is the overall design](#how-is-the-overall-design)
+	- [How far through my plan did i get](#how-far-through-my-plan-did-i-get)
   	- [What changes could i make](#what-changes-could-i-make)
   	- [What would i do diffirently](#what-would-i-do-diffirently)
   	- [Issues I Encountered](#issues-i-encountered)
   	- [What have i learnt](#what-have-i-learnt)
 
 ## How to Play
+
 ### Controls
+
 W, A, S, D for movement. <br>
 Left Click is your basic attack. <br>
 Right Click is your heavy attack. <br>
@@ -68,16 +73,21 @@ ESC to enter the menu <br>
 ### How to run
 
 ## Preplanning
-### What Made the Original a Game Great
+
+### **What Made the Original a Game Great**
+
 The Legend of Zelda revolutionized video game design with its expansive open world, non-linear exploration, and blend of action and puzzle-solving. Players controlled Link through the vast land of Hyrule, navigating forests, mountains, and hidden dungeons while collecting items, solving puzzles, and defeating enemies. Unlike most games of the time, Zelda encouraged free exploration, allowing players to tackle challenges in nearly any order and rewarding curiosity with secrets and upgrades. It also introduced a persistent inventory system that remixed the game for added challenge after completion.
 
 Zelda was groundbreaking—it was the first console game to use battery-backed memory, allowing players to save their progress without passwords. This, along with clever use of memory management, enabled a world much larger and deeper than what was typical for the NES. Critically acclaimed and commercially successful, The Legend of Zelda sold over 6.5 million copies worldwide and set the standard for action-adventure games. Its influence is still seen today in open-world design, and it remains one of gaming's most iconic and celebrated titles.
 
-### How My Game is Diffirent
+### **How My Game is Diffirent**
+
 It is not Zelda.
 
-### Story and Gameplay Plan 
+### **Story and Gameplay Plan**
+
 #### Background
+
 Thornvail a vast magical forest that once served as a natural barrier between human and ork lands, until some ancient force was lost. The forest is ancient and full of secrets, ruins, puzzles and mysteries. It is now under siege by an army of Orks. 
  
 The orks are led by the warlord Brokil the Flame-Eater, who broke the forest's magical barrier. In doing so they’ve unleashed wild magic, warping the environment and awakening dangerous creatures. Their goal, to conquer and claim the Heart of the Forest, a source of immense power. 
@@ -85,6 +95,7 @@ The orks are led by the warlord Brokil the Flame-Eater, who broke the forest's m
 Brokil has sent his General, Blazetooth an ork beast warden to scout and raise the forest allowing the orks to advance into the heartland of thornvail. Your kigndom has sent you to stop his incersion and push back the ork threat. 
 
 #### First level - Ashroot Glade 
+
 📜 Awakening in the Ash <br>
 Objective: You arrive in a grove scarred by flame. The air is thick with smoke, and the earth is charred. <br> 
 You Must: <br>
@@ -118,9 +129,11 @@ You Must: <br>
 * Unlock the way to Runestone Vale.
   
 #### Level Map - Ashroot Glade
+
 ![screenshot](documentation_images/Ashroot_Glade_Map.png)
 
 #### Second level - Runestone Vale
+
 📜 Behind Enemy Vines <br>
 Objective: You've breached the perimeter of Runestone Vale, a newly constructed ork fortresss. <br>
 You Must: <br>
@@ -158,15 +171,19 @@ You Must: <br>
 * Phase 3: Use the runeblade and the spirite shards to either - Cleanse his corruption (if all shards were collected) or 'end' his corruption 
 
 #### Level Map - Runestone Vale
+
 ![screenshot](documentation_images/Runestone_Vale_map.png)
 
 #### Player Progression
+
 You start as a knight in the kingdom of Thornvail, during the tutorial you learn basic movement and your base attack and block, later you learn two special abilitys one slash heavy attack and a heavy fire attack you get after defeating the first boss. 
 
-### Flowcharts (Production plan)
+### **Flowcharts (Production plan)**
+
 ![screenshot](documentation_images/Flowchart.png)
 
-### Assets
+### **Assets**
+
 Below are the links to all the itch.io pages where i found my assets. <br>
 Used for the game enviroment and terrain on the first level, https://aamatniekss.itch.io/topdown-fantasy-forest <br>
 The Player and Enemie sprites can be found here, https://zerie.itch.io/tiny-rpg-character-asset-pack <br>
@@ -182,8 +199,11 @@ SFX for the ork enemies, https://johncarroll.itch.io/orc-voice-pack <br>
 SFX for player movement, https://nebula-audio.itch.io/character-footsteps-rock-grass-pack-1 <br>
 
 ## Prototypes
-### Prototype 1 - Core Systems
+
+### **Prototype 1 - Core Systems**
+
 #### Important Additions - Player Controller, Base combat (player and enemie), Enemie patrol (basic)
+
 ```gd
 	var direction: Vector2 = Vector2.ZERO
 	direction.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
@@ -277,13 +297,16 @@ else:
 ```
 
 #### Video of Functionality (link to youtube)
+
 [![Prototype 1 26 May](https://img.youtube.com/vi/DqD7hDQ_Xno/0.jpg)](https://www.youtube.com/watch?v=DqD7hDQ_Xno)
 
-#### Issues 
+#### Issues
 
 
-### Prototype 2 - Enemies, world layout, ui
+### **Prototype 2 - Enemies, world layout, ui**
+
 #### Important Additions 
+
 This prototype focused mostly on visual additions such as level design and ui, with small amounts of code when implementing new enemies such as undoing some hard coded features. 
 
 Ui
@@ -324,12 +347,15 @@ func update_energy_bar(energy):
 ```
 
 #### Video of Functionality (link to youtube)
+
 [![Prototype 2 7 June](https://img.youtube.com/vi/eBECJ2ZKu4k/0.jpg)](https://www.youtube.com/watch?v=eBECJ2ZKu4k)
 
 #### Issues 
 
-### Prototype 3 - Tutorial, damage popups and new attacks
+### **Prototype 3 - Tutorial, damage popups and new attacks**
+
 #### Important Additions 
+
 Damage Popups
 ```gd
 extends Node
@@ -416,12 +442,15 @@ func use_heavy_attack():
 ```
 
 #### Video of Functionality (link to youtube)
+
 [![Prototype 3 8 June](https://img.youtube.com/vi/au8M1duLbQ8/0.jpg)](https://www.youtube.com/watch?v=au8M1duLbQ8)
 
 #### Issues 
 
-### Prototype 4 - Interactions, Puzzels and Ui updates
+### **Prototype 4 - Interactions, Puzzels and Ui updates**
+
 #### Important Additions 
+
 Interaction Manager
 ```gd
 extends Node2D
@@ -525,13 +554,16 @@ func checkOrder():
 ```
 
 #### Video of Functionality (link to youtube)
+
 [![Prototype 4 8 June](https://img.youtube.com/vi/4y8tH9JwVWE/0.jpg)](https://www.youtube.com/watch?v=4y8tH9JwVWE)
 
 #### Issues 
 
 
-### Prototype 5 - More Enemie Attacks, Lighting and health regen
+### **Prototype 5 - More Enemie Attacks, Lighting and health regen**
+
 #### Important Additions 
+
 Attack Selection System
 ```gd
 func perform_attack():
@@ -619,13 +651,16 @@ if time_since_last_damage > regen_delay and health < max_health and !is_dead:
 ```
 
 #### Video of Functionality (link to youtube)
+
 [![Prototype 5 9 June](https://img.youtube.com/vi/SzGvsq4UhoA/0.jpg)](https://www.youtube.com/watch?v=SzGvsq4UhoA)
 
 #### Issues 
 
 
-### Prototype 6 - Quest System, Last Player Abilitie, Finalise Level
+### **Prototype 6 - Quest System, Last Player Abilitie, Finalise Level**
+
 #### Important Additions 
+
 Quest Manager
 ```gd
 extends Node
@@ -737,6 +772,7 @@ func use_fire_attack():
 ```
 
 #### Video of Functionality (link to youtube)
+
 [![Prototype 6 10 June](https://img.youtube.com/vi/sr4IiLtbKJ0/0.jpg)](https://www.youtube.com/watch?v=sr4IiLtbKJ0)
 
 
@@ -744,7 +780,9 @@ func use_fire_attack():
 
 
 ### Prototype 7 - 
+
 #### Important Additions 
+
 
 #### Video of Functionality (link to youtube)
 
@@ -752,15 +790,18 @@ func use_fire_attack():
 
 
 ## Reflection 
-### How is the overall design 
 
-### What changes could i make
+### **How is the overall design**
 
-### What would i do diffirently 
+### **How far through my plan did i get**
 
-### Issues I Encountered
+### **What changes could i make**
 
-### What have I learnt
+### **What would i do diffirently**
+
+### **Issues I Encountered**
+
+### **What have I learnt**
 
 
  
