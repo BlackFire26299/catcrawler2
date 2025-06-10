@@ -8,6 +8,9 @@ extends CharacterBody2D
 @export var health: float = 100
 var energy = 7
 
+@onready var walkingSfx = $walking
+@onready var runningSfx = $running
+
 var num_fires_snuffed = 0
 
 var is_dead: bool = false
@@ -125,6 +128,10 @@ func _process(delta):
 	elif sprite.animation == "Hurt" and sprite.is_playing():
 		pass
 	elif velocity.length() > 0:
+		if is_dashing and !runningSfx.playing:
+			runningSfx.play()
+		elif !walkingSfx.playing:
+			walkingSfx.play()
 		sprite.play("Walk")
 	else:
 		sprite.play("Idle")

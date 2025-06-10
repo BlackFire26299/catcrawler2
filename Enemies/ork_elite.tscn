@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://cr6r5oyh7sl1j"]
+[gd_scene load_steps=68 format=3 uid="uid://cr6r5oyh7sl1j"]
 
 [ext_resource type="Texture2D" uid="uid://cf4p74hkygf8t" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Elite Orc/Elite Orc/Elite Orc-Attack01.png" id="1_4ah1s"]
 [ext_resource type="Script" uid="uid://cn4n1srk0rh3l" path="res://Enemies/ork_elite.gd" id="1_st2md"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bhn3axkd1ssmx" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Elite Orc/Elite Orc/Elite Orc-Death.png" id="4_ij7sy"]
 [ext_resource type="Texture2D" uid="uid://bu4mh4ltll502" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Elite Orc/Elite Orc/Elite Orc-Hurt.png" id="5_rgavn"]
 [ext_resource type="Texture2D" uid="uid://cfylbtg3cn45i" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Elite Orc/Elite Orc/Elite Orc-Walk.png" id="6_wr6gy"]
+[ext_resource type="AudioStream" uid="uid://c3ds71chpsu6e" path="res://raw assets/heavyattack4.wav" id="8_rgavn"]
+[ext_resource type="AudioStream" uid="uid://dbf3wo6w2c3ro" path="res://raw assets/attack1.wav" id="9_wr6gy"]
+[ext_resource type="AudioStream" uid="uid://cfx64gsn8j7jp" path="res://raw assets/lightattack3.wav" id="10_r778r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r778r"]
 atlas = ExtResource("1_4ah1s")
@@ -477,3 +480,12 @@ shape = SubResource("CircleShape2D_4ah1s")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_st2md")
+
+[node name="heavyAttack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_rgavn")
+
+[node name="medium Attack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_wr6gy")
+
+[node name="lightAttck" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_r778r")

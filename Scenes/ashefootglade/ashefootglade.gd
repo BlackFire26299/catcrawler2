@@ -6,4 +6,4 @@ func _on_boss_area_body_entered(body):
 		$"Background Music".stop()
 		$"Boss Music".play()
 	
-		$Player.respawn_point = $"bossArena/Boss Entrance"
+		$Player.respawn_point = $bossArena/bossArenaRespawn

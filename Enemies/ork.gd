@@ -14,6 +14,8 @@ var can_attack := true
 var is_attacking = false
 var rng = RandomNumberGenerator.new()
 
+@onready var lightAttackSfx = $lightAttck
+
 @onready var attack_cooldown_timer := $AttackCooldown
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attack_area = $attack_areas/attack_area
@@ -132,6 +134,7 @@ func perform_attack():
 	print("BaseEnemy attacked player")
 	
 	animated_sprite.play("Attack1")
+	lightAttackSfx.play()
 	
 	await animated_sprite.animation_finished
 	
