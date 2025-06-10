@@ -3,26 +3,52 @@
 - [How to Play](#how-to-play)
 	- [Controls](#controls)
    	- [How to Run](#how-to-run)
+
 - [Preplanning](#preplanning)
-  	- [What made the original game great](#hwhat-made-the-original-a-game-great)
+  	- [What Made the Original a Game Great](#what-made-the-original-a-game-great)
   	- [How My Game Is Diffirent](#how-my-game-is-diffirent)
   	- [Story Plan](#story-plan)
   		- [Background](#background)
-  	   	- [First Level](#first-level)
-  	   	- [Second Level](#second-level)
-  	- [Gameplay Plan](#gameplay-plan)
-  		- [General](#general)
-  	  	- [First Level](#first-level)
-  	  	- [Second Level](#second-level)
-  	- [Production Plan](#production-plan)
-  	- [If i get more time](#if-i-get-more-time)
+  	   	- [First level - Ashroot Glade ](#First-level---Ashroot-Glade)
+		- [Level Map - Ashroot Glade](#level-map---ashroot-glade)
+  	   	- [Second Level - Runestone Vale](#second-level---runestone-vale)
+		- [Level Map - Runestone Vale](#level-map---runestone-vale)
+		- [Player Progression](#player-progression)
+  	- [Flowcharts (Production plan)](#flowcharts-production-plan)
   	- [Assets](#assets)
+
 - [Prototypes](#prototypes)
-  	- [Prototype 1](#prototype-1)
-  		- [Important Additions](#important-additions)
+
+  	- [Prototype 1 - Core Systems](#prototype-1---core-systems)
+  		- [Important Additions - Player Controller, Base combat (player and enemie), Enemie patrol (basic)](#important-additions---player-controller-base-combat-player-and-enemie-enemie-patrol-basic)
   	   	- [Video of Functionality (link to youtube)](#video-of-functionality-link-to-youtube)
   	   	- [Issues](#issues)
-  	   	- [Next Steps](#next-steps)
+
+	- [Prototype 2 - Enemies, worldlayout and ui](#prototype-2---enemies-world-layout-ui)
+		- [Important Additions](#important-additions)
+		- [Video of Functionality](#video-of-functionality-link-to-youtube-1)
+		- [Issues](#issues-1)
+
+	- [Prototype 3 - Tutorial, damage popups and new attacks](#prototype-3---tutorial-damage-popups-and-new-attacks)
+		- [Important Additions](#important-additions-1)
+		- [Video of Functionality](#video-of-functionality-link-to-youtube-2)
+		- [Issues](#issues-2)
+
+	- [Prototype 4 - Interactions, Puzzels and Ui updates](#prototype-4---interactions-puzzels-and-ui-updates)
+		- [Important Additions](#important-additions-2)
+		- [Video of Functionality](#video-of-functionality-link-to-youtube-3)
+		- [Issues](#issues-3)
+	
+	- [Prototype 5 - More Enemie Attacks, Lighting and health regen](#prototype-5---more-enemie-attacks-lighting-and-health-regen)
+		- [Important Additions](#important-additions-3)
+		- [Video of Functionality](#video-of-functionality-link-to-youtube-4)
+		- [Issues](#issues-4)
+
+	- [Prototype 6 - Quest System, Last Player Abilitie, Finalise Level](#prototype-6---quest-system-last-player-abilitie-finalise-level)
+		- [Important Additions](#important-additions-3)
+		- [Video of Functionality](#video-of-functionality-link-to-youtube-4)
+		- [Issues](#issues-4)
+
 - [Reflection](#reflection)
   	- [How is the overall design](#how-is-the-overall-design)
   	- [What changes could i make](#what-changes-could-i-make)
@@ -38,6 +64,8 @@ Right Click is your heavy attack. <br>
 E Interact <br>
 Left shift for dash. <br>
 ESC to enter the menu <br>
+
+### How to run
 
 ## Preplanning
 ### What Made the Original a Game Great
@@ -140,17 +168,22 @@ You start as a knight in the kingdom of Thornvail, during the tutorial you learn
 
 ### Assets
 Below are the links to all the itch.io pages where i found my assets. <br>
-Used for the game ennviroment and terrain, https://aamatniekss.itch.io/topdown-fantasy-forest <br>
-Most of the NPC's can be found here, https://zerie.itch.io/tiny-rpg-character-asset-pack <br>
-GUI https://mounirtohami.itch.io/pixel-art-gui-elements <br>
-More GUI https://greatdocbrown.itch.io/gamepad-ui <br>
-Font https://mounirtohami.itch.io/minimalpixel-font <br>
-https://tekilor.itch.io/2d-fires-pack-2
+Used for the game enviroment and terrain on the first level, https://aamatniekss.itch.io/topdown-fantasy-forest <br>
+The Player and Enemie sprites can be found here, https://zerie.itch.io/tiny-rpg-character-asset-pack <br>
+GUI for health bar, https://mounirtohami.itch.io/pixel-art-gui-elements <br>
+The font used in the game, https://mounirtohami.itch.io/minimalpixel-font <br>
+Fire textures, https://tekilor.itch.io/2d-fires-pack-2 <br>
+Texture for lighting, https://pixelfranek.itch.io/free-textures-of-light <br>
+Candles in level one and main terrain pack for level two, https://szadiart.itch.io/rogue-fantasy-catacombs <br>
+Some of the objects in level two, https://cainos.itch.io/pixel-art-top-down-basic <br>
+Main background music, https://alkakrab.itch.io/free-25-fantasy-rpg-game-tracks-no-copyright-vol-2 <br>
+Background music for the boss battles, https://alkakrab.itch.io/fantasy-boss-battle-music-pack-vol-2 <br>
+SFX for the ork enemies, https://johncarroll.itch.io/orc-voice-pack <br>
+SFX for player movement, https://nebula-audio.itch.io/character-footsteps-rock-grass-pack-1 <br>
 
-## Prototyping
+## Prototypes
 ### Prototype 1 - Core Systems
 #### Important Additions - Player Controller, Base combat (player and enemie), Enemie patrol (basic)
-##### Player Controller
 ```gd
 	var direction: Vector2 = Vector2.ZERO
 	direction.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
@@ -173,7 +206,6 @@ if Input.is_action_just_pressed("dash") and not is_dashing and dash_cooldown_tim
 		sprite.rotation_degrees = 0
 ```
 
-##### Combat - Player and Enemie 
 ```gd
 if Input.is_action_just_pressed("attack_light") and can_attack:
 	light_attack()
@@ -210,7 +242,7 @@ func attack():
 	player.take_damage(attack_damage)
 	print("Enemy attacked player")
 ```
-##### Enemie 
+
 ```gd
 if is_aggroed:
 	
@@ -596,14 +628,112 @@ if time_since_last_damage > regen_delay and health < max_health and !is_dead:
 #### Important Additions 
 Quest Manager
 ```gd
+extends Node
+
+# List of current active quests
+var active_quests: Array[Quest] = [] # list of active quests
+
+# List of completed quests
+var completed_quests: Array[Quest] = [] #list of completed quests
+
+signal quests_updated # signal for when a quest is updated (so the visual component can update)
+
+func add_quest(quest: Quest):
+	if not _has_quest(quest.name): # checks if the quest isn't already active
+		active_quests.append(quest) # adds the quest to active questss
+		print("Quest added: ", quest.name)
+		quests_updated.emit() # sends signal
+
+func complete_quest(quest: Quest):
+	if quest in active_quests:  # Checks all quests
+		quest.is_complete = true # sets it to completed
+		active_quests.erase(quest) # removes it from active quests
+		completed_quests.append(quest) # adds quest to completed quests
+		print("Quest completed: ", quest.name)
+		quests_updated.emit() # senf signal
+
+func advance_quest_objective(quest: Quest):
+	if quest in active_quests: # checks if the quest is in active quests
+		quest.current_objective_index += 1 # chnages the current objective
+		if quest.current_objective_index >= quest.objectives.size():
+			complete_quest(quest) # if completed all objectives complete the quest
+		else:
+			print("Advanced quest: ", quest.name, " → ", quest.get_current_objective())
+			quests_updated.emit() # send signal
+
+func get_active_quests() -> Array[Quest]:
+	return active_quests # Just returns active quest (helper func )
+
+func get_quest_by_name(quest_name: String) -> Quest:
+	for q in active_quests:
+		if q.name == quest_name:
+			return q
+	for q in completed_quests:
+		if q.name == quest_name:
+			return q
+	return null
+
+func _has_quest(quest_name: String) -> bool: # just checks if the quest exists in the manager either in 
+	return get_quest_by_name(quest_name) != null
+
 ```
 
 Quest Resource
 ```gd
+class_name Quest
+extends Resource
+
+@export var name: String
+@export var description: String
+@export var objectives: Array[String] = []
+var current_objective_index: int = 0
+var is_complete: bool = false
+
+func get_current_objective() -> String:
+	if current_objective_index < objectives.size():
+		return objectives[current_objective_index]
+	return ""
+
+var objective_progress: Dictionary = {}
+
+func update_progress(key: String, amount: int = 1) -> bool:
+	if current_objective_index >= objectives.size():
+		return false
+		
+	if not objective_progress.has(key):
+		objective_progress[key] = 0
+		
+	objective_progress[key] += amount
+	return true
+
+func get_progress(key: String) -> int:
+	return objective_progress.get(key, 0)
+
 ```
 
 Last Player Abilitie
 ```gd
+func use_fire_attack():
+	can_attack = false
+	
+	var facing_left = sprite.flip_h
+	hitbox_left_f.disabled = not facing_left
+	hitbox_right_f.disabled = facing_left
+	
+	sprite.play("Attack3")
+	
+	await get_tree().create_timer(0.20).timeout
+	
+	for body in fire_attack.get_overlapping_bodies():
+		if body.is_in_group("enemies"):
+			var dmg = rng.randi_range(9,12)
+			body.take_damage(dmg)
+			
+	hitbox_left_f.disabled = true
+	hitbox_right_f.disabled = true
+	
+	await get_tree().create_timer(0.6).timeout
+	can_attack = true
 ```
 
 #### Video of Functionality (link to youtube)
