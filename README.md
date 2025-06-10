@@ -607,6 +607,8 @@ Last Player Abilitie
 ```
 
 #### Video of Functionality (link to youtube)
+[![Prototype 6 10 June](https://img.youtube.com/vi/sr4IiLtbKJ0/0.jpg)](https://www.youtube.com/watch?v=sr4IiLtbKJ0)
+
 
 #### Issues 
 
