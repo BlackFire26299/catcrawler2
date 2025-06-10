@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://130xveeqxe44"]
 
-[ext_resource type="Script" uid="uid://d2crkmchokdmn" path="res://Enemies/ork.gd" id="1_l1xw4"]
+[ext_resource type="Script" path="res://Enemies/ork.gd" id="1_l1xw4"]
 
 [node name="Ork" type="CharacterBody2D"]
 script = ExtResource("1_l1xw4")

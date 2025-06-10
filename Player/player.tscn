@@ -1063,7 +1063,8 @@ font_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
 shadow_size = 8
 shadow_color = Color(0.917647, 0, 0, 0.670588)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gu6f8"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dkpta"]
+bg_color = Color(0.368627, 0.639216, 0.768627, 0.176471)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
@@ -1454,10 +1455,10 @@ text = "Restart"
 
 [node name="Questlog" type="Panel" parent="UI"]
 layout_mode = 0
-offset_right = 274.0
-offset_bottom = 263.0
+offset_right = 347.0
+offset_bottom = 270.0
 scale = Vector2(0.3, 0.3)
-theme_override_styles/panel = SubResource("StyleBoxEmpty_gu6f8")
+theme_override_styles/panel = SubResource("StyleBoxFlat_dkpta")
 script = ExtResource("14_ko42m")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/Questlog"]
@@ -1466,6 +1467,10 @@ offset_left = 13.0
 offset_top = 17.0
 offset_right = 280.0
 offset_bottom = 247.0
+scale = Vector2(0.95, 0.95)
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
 
 [connection signal="body_entered" from="base_attack" to="." method="_on_base_attack_body_entered"]
 [connection signal="timeout" from="EnergyReplenish" to="." method="_on_energy_replenish_timeout"]
