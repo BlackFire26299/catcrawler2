@@ -66,19 +66,23 @@
 W, A, S, D for movement. <br>
 Left Click is your basic attack. <br>
 Right Click is your heavy attack. <br>
+Middle Click is your fire attack <br>
 E Interact <br>
 Left shift for dash. <br>
 ESC to enter the menu <br>
 
 ### How to run
 
+Navigate to the releases folder and execute the file within.
+To play prototype version navigate to the prototype folder and execute the file of the version you wish to play.
+
 ## Preplanning
 
 ### **What Made the Original a Game Great**
 
-The Legend of Zelda revolutionized video game design with its expansive open world, non-linear exploration, and blend of action and puzzle-solving. Players controlled Link through the vast land of Hyrule, navigating forests, mountains, and hidden dungeons while collecting items, solving puzzles, and defeating enemies. Unlike most games of the time, Zelda encouraged free exploration, allowing players to tackle challenges in nearly any order and rewarding curiosity with secrets and upgrades. It also introduced a persistent inventory system that remixed the game for added challenge after completion.
+The Legend of Zelda revolutionised video game design with its expansive open world, non-linear exploration, and blend of action and puzzle-solving. Players controlled Link through the vast land of Hyrule, navigating forests, mountains, and hidden dungeons while collecting items, solving puzzles, and defeating enemies. Unlike most games of the time, Zelda encouraged free exploration, allowing players to tackle challenges in nearly any order and rewarding curiosity with secrets and upgrades. It also introduced a persistent inventory system that reworked the game for added challenge after completion.
 
-Zelda was groundbreaking—it was the first console game to use battery-backed memory, allowing players to save their progress without passwords. This, along with clever use of memory management, enabled a world much larger and deeper than what was typical for the NES. Critically acclaimed and commercially successful, The Legend of Zelda sold over 6.5 million copies worldwide and set the standard for action-adventure games. Its influence is still seen today in open-world design, and it remains one of gaming's most iconic and celebrated titles.
+Zelda was groundbreaking. It was the first console game to use battery-backed memory, allowing players to save their progress without passwords. This, along with clever use of memory management, enabled a world much larger and deeper than what was typical for the NES. Critically acclaimed and commercially successful, The Legend of Zelda sold over 6.5 million copies worldwide and set the standard for action-adventure games. Its influence is still seen today in open-world design, and it remains one of gaming’s most iconic and celebrated titles.
 
 ### **How My Game is Diffirent**
 
@@ -176,7 +180,7 @@ You Must: <br>
 
 #### Player Progression
 
-You start as a knight in the kingdom of Thornvail, during the tutorial you learn basic movement and your base attack and block, later you learn two special abilitys one slash heavy attack and a heavy fire attack you get after defeating the first boss. 
+You start as a knight in the kingdom of Thornvail, during the tutorial you learn basic movement and your base attack, later you learn two special abilitys one slash heavy attack and a heavy fire attack you get after defeating the first boss. 
 
 ### **Flowcharts (Production plan)**
 
@@ -204,13 +208,15 @@ SFX for player movement, https://nebula-audio.itch.io/character-footsteps-rock-g
 
 #### Important Additions - Player Controller, Base combat (player and enemie), Enemie patrol (basic)
 
+Player Movement
 ```gd
 	var direction: Vector2 = Vector2.ZERO
 	direction.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
 	direction.y = Input.get_action_strength("Back") - Input.get_action_strength("Forward")
 	direction = direction.normalized()
- ```
+```
  
+Dashing
 ```gd
 if Input.is_action_just_pressed("dash") and not is_dashing and dash_cooldown_timer <= 0:
 	is_dashing = true
@@ -226,6 +232,7 @@ if Input.is_action_just_pressed("dash") and not is_dashing and dash_cooldown_tim
 		sprite.rotation_degrees = 0
 ```
 
+Light Attack
 ```gd
 if Input.is_action_just_pressed("attack_light") and can_attack:
 	light_attack()
@@ -247,8 +254,9 @@ func light_attack():
 
 	await get_tree().create_timer(0.6).timeout  # Cooldown delay
 	can_attack = true
-
 ```
+
+Enemy Attack
 ```gd
 if distance <= attack_range and can_attack:
 	attack()
@@ -263,6 +271,7 @@ func attack():
 	print("Enemy attacked player")
 ```
 
+Enemy Aggro and Patrol
 ```gd
 if is_aggroed:
 	
@@ -309,7 +318,7 @@ else:
 
 This prototype focused mostly on visual additions such as level design and ui, with small amounts of code when implementing new enemies such as undoing some hard coded features. 
 
-Ui
+Ui - Energy System
 ```gd
 func update_energy_bar(energy):
 	activeEnergy.visivle = false
@@ -400,7 +409,7 @@ func display_number(value:int, position: Vector2, is_critical:bool = false):
 	number.queue_free()
 ```
 
-Tutorials
+Tutorial triggers
 ```gd
 func _physics_process(delta: float):
 	if thirdTooltip.visible and click_seen_num < 5:
@@ -416,7 +425,7 @@ func _physics_process(delta: float):
 			heavyAttkTooltip.visible = false
 ```
 
-New attack
+New attack - Heavy
 ```gd
 func use_heavy_attack():
 	can_attack = false
@@ -520,7 +529,7 @@ func _on_body_exited(body):
 
 ```
 
-Puzzels
+Lily Pad Puzzles
 ```gd
 extends Node2D
 
@@ -564,7 +573,7 @@ func checkOrder():
 
 #### Important Additions 
 
-Attack Selection System
+Attack Selection System - Elite and Boss 
 ```gd
 func perform_attack():
 	can_attack = false
@@ -607,7 +616,7 @@ func perform_attack():
 		await sweep_attack_phase()
 ```
 
-Heavy Attack
+Heavy Attack - Elite and Boss
 ```gd
 func heavy_attack_phase():
 	# Enable correct hitbox based on facing
@@ -626,7 +635,7 @@ func heavy_attack_phase():
 	heavy_hitbox_right.disabled = true
 ```
 
-Sweep Attack
+Sweep Attack - Elite and Boss
 ```gd
 func sweep_attack_phase():
 	sweep_hitbox.disabled = false
@@ -640,7 +649,7 @@ func sweep_attack_phase():
 	sweep_hitbox.disabled = true
 ```
 
-Health Regen
+Player - Health Regen
 ```gd
 # Passive health regen
 if time_since_last_damage > regen_delay and health < max_health and !is_dead:
@@ -746,7 +755,7 @@ func get_progress(key: String) -> int:
 
 ```
 
-Last Player Abilitie
+Last Player Ability - Fire Attack
 ```gd
 func use_fire_attack():
 	can_attack = false
@@ -795,11 +804,11 @@ func use_fire_attack():
 
 ### **How far through my plan did i get**
 
-### **What changes could i make**
+#### Flowchart Comparison
 
-### **What would i do diffirently**
+#### Map Comparison
 
-### **Issues I Encountered**
+### **What changes could i make and what would i do diffirently**
 
 ### **What have I learnt**
 
