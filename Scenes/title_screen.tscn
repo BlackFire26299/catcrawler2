@@ -1,0 +1,204 @@
+[gd_scene load_steps=24 format=3 uid="uid://detla1d8ps820"]
+
+[ext_resource type="Script" uid="uid://crnmwpxgp4ehd" path="res://Scenes/title_screen.gd" id="1_8mikk"]
+[ext_resource type="Texture2D" uid="uid://caqd4rj2bwhti" path="res://raw assets/TopDownFantasy-Forest/Mockup2.png" id="1_klylv"]
+[ext_resource type="Texture2D" uid="uid://bu4mh4ltll502" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Elite Orc/Elite Orc/Elite Orc-Hurt.png" id="2_12m1t"]
+[ext_resource type="Texture2D" uid="uid://xm1lywro01wn" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Knight/Knight/Knight.png" id="2_p3fck"]
+[ext_resource type="Texture2D" uid="uid://bxs1584m3fyh4" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Skeleton Archer/Skeleton Archer/Skeleton Archer-Attack.png" id="4_6vd4x"]
+[ext_resource type="Texture2D" uid="uid://c7x4up82tma8u" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Skeleton Archer/Arrow(projectile)/Arrow03(32x32).png" id="5_n82rj"]
+[ext_resource type="Texture2D" uid="uid://clo0sdrfjy4eh" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Orc/Orc/Orc-Attack01.png" id="6_0061g"]
+[ext_resource type="Texture2D" uid="uid://cum6lh8t12k80" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Orc/Orc/Orc-Walk.png" id="7_6vd4x"]
+[ext_resource type="Texture2D" uid="uid://x6thmmjanp1x" path="res://raw assets/64x64 textures (31).png" id="8_n82rj"]
+[ext_resource type="FontFile" uid="uid://lvx5enj6u36a" path="res://raw assets/MinimalPixel v2.ttf" id="9_0061g"]
+[ext_resource type="AudioStream" uid="uid://cekpluvmqgg7y" path="res://raw assets/Ambient 5.mp3" id="11_sqelc"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_n82rj"]
+closed = false
+polygon = PackedVector2Array(180, 100, 184, 103, 180, 106, 182, 108, 183, 112, 181, 115, 180, 117, 177, 117)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0061g"]
+closed = false
+polygon = PackedVector2Array(143, 105, 143, 109, 145, 112, 144, 114, 145, 117, 145, 122, 146, 126, 148, 127, 149, 125, 152, 125, 152, 127, 153, 127)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8mikk"]
+closed = false
+polygon = PackedVector2Array(131, 91, 131, 94, 134, 98, 133, 100, 134, 105, 133, 108, 134, 112, 137, 113, 139, 111)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sqelc"]
+closed = false
+polygon = PackedVector2Array(198, 106, 200, 110, 195, 115, 192, 115, 195, 118, 193, 121, 193, 124, 191, 126, 190, 128, 188, 129)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_w5sh6"]
+closed = false
+polygon = PackedVector2Array(136, 86, 138, 90, 134, 92, 130, 89)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_o1e67"]
+closed = false
+polygon = PackedVector2Array(197, 60, 193, 62, 196, 68, 195, 72, 188, 72, 185, 76, 189, 80, 195, 80, 197, 84, 202, 87, 208, 87, 209, 89)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ycay6"]
+closed = false
+polygon = PackedVector2Array(155, 48, 163, 45, 169, 51, 190, 34)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bsy20"]
+closed = false
+polygon = PackedVector2Array(129, 70, 135, 71, 142, 69)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_07cxn"]
+closed = false
+polygon = PackedVector2Array(217, 145, 217, 152, 213, 160)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_x2pfe"]
+closed = false
+polygon = PackedVector2Array(169, 167, 173, 159, 171, 151, 185, 133, 202, 153)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8mikk"]
+font = ExtResource("9_0061g")
+font_size = 50
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 13
+shadow_color = Color(0, 0, 0, 0.294118)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0061g"]
+font = ExtResource("9_0061g")
+font_size = 40
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[node name="TitleScreen" type="Node2D"]
+script = ExtResource("1_8mikk")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="Mockup2" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(160, 90)
+texture = ExtResource("1_klylv")
+
+[node name="EliteOrc-hurt" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(138, 106)
+texture = ExtResource("2_12m1t")
+hframes = 4
+frame = 2
+
+[node name="Knight" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(177, 110)
+texture = ExtResource("2_p3fck")
+flip_h = true
+hframes = 11
+vframes = 8
+frame = 51
+
+[node name="EliteOrc-hurt2" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(149, 120)
+texture = ExtResource("2_12m1t")
+hframes = 4
+frame = 2
+
+[node name="SkeletonArcher-attack" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(96, 74)
+rotation = 0.359538
+texture = ExtResource("4_6vd4x")
+hframes = 9
+frame = 6
+
+[node name="Arrow03(32x32)" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(128, 86)
+rotation = 0.359538
+texture = ExtResource("5_n82rj")
+
+[node name="Orc-attack01" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(188, 122)
+texture = ExtResource("6_0061g")
+flip_h = true
+hframes = 6
+frame = 2
+
+[node name="Orc-walk" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(201, 76)
+texture = ExtResource("7_6vd4x")
+flip_h = true
+hframes = 8
+frame = 2
+
+[node name="Orc-walk2" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(209, 64)
+texture = ExtResource("7_6vd4x")
+flip_h = true
+hframes = 8
+frame = 2
+
+[node name="Orc-walk3" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(213, 82)
+texture = ExtResource("7_6vd4x")
+flip_h = true
+hframes = 8
+frame = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(25, 25)
+anchor_mode = 0
+zoom = Vector2(4.57, 4.57)
+
+[node name="Lighting" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting"]
+position = Vector2(155, 110)
+color = Color(1, 0.541176, 0, 0.796078)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.466667)
+shadow_filter = 1
+texture = ExtResource("8_n82rj")
+texture_scale = 3.0
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Lighting"]
+occluder = SubResource("OccluderPolygon2D_n82rj")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Lighting"]
+occluder = SubResource("OccluderPolygon2D_0061g")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Lighting"]
+occluder = SubResource("OccluderPolygon2D_8mikk")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="Lighting"]
+occluder = SubResource("OccluderPolygon2D_sqelc")
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="Lighting"]
+occluder = SubResource("OccluderPolygon2D_w5sh6")
+
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="Lighting"]
+occluder = SubResource("OccluderPolygon2D_o1e67")
+
+[node name="LightOccluder2D7" type="LightOccluder2D" parent="Lighting"]
+occluder = SubResource("OccluderPolygon2D_ycay6")
+
+[node name="LightOccluder2D8" type="LightOccluder2D" parent="Lighting"]
+occluder = SubResource("OccluderPolygon2D_bsy20")
+
+[node name="LightOccluder2D9" type="LightOccluder2D" parent="Lighting"]
+occluder = SubResource("OccluderPolygon2D_07cxn")
+
+[node name="LightOccluder2D10" type="LightOccluder2D" parent="Lighting"]
+occluder = SubResource("OccluderPolygon2D_x2pfe")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 35.0
+offset_top = 43.0
+offset_right = 586.0
+offset_bottom = 93.0
+scale = Vector2(0.425, 0.425)
+text = "Defence Of Thornvail"
+label_settings = SubResource("LabelSettings_8mikk")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 51.0
+offset_top = 125.0
+offset_right = 475.0
+offset_bottom = 165.0
+scale = Vector2(0.195, 0.195)
+text = "Press SPACE to play!"
+label_settings = SubResource("LabelSettings_0061g")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_sqelc")
+parameters/looping = true

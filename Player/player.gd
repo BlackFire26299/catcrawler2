@@ -45,8 +45,11 @@ var unlocked_fire_attack = false
 
 signal fireAttack()
 
+signal player_died_boss()
+
 @export var respawn_point: Node2D
 @export var respawn_point_after_tutorial: Node2D
+@export var respawn_point_boss: Node2D
 
 # Health regen settings
 var time_since_last_damage: float = 0.0
@@ -239,7 +242,10 @@ func take_damage(dmg: int, boss = false):
 
 func die():
 	is_dead = true
-	print("Player died")
+	print("Playerdied")
+	
+	if respawn_point == respawn_point_boss:
+		emit_signal("player_died_boss")
 	
 	ui.death.show()
 	ui.deathAnim()

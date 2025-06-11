@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://c17rguu5cy2hf" path="res://Player/ui.gd" id="11_p5o4e"]
 [ext_resource type="Texture2D" uid="uid://bqpxm3pluoojh" path="res://raw assets/GUI.png" id="12_5htga"]
 [ext_resource type="LabelSettings" uid="uid://dbf3fqfa5vhun" path="res://Player/player.res" id="12_gu6f8"]
-[ext_resource type="Script" uid="uid://cevp2y6iqmo55" path="res://Player/questlogPanel.gd" id="14_ko42m"]
+[ext_resource type="Script" path="res://Player/questlogPanel.gd" id="14_ko42m"]
 [ext_resource type="AudioStream" uid="uid://b6nsosnx61kev" path="res://raw assets/Grass - Walk 4.wav" id="15_lfmf2"]
 [ext_resource type="AudioStream" uid="uid://dstcauqwbjqfq" path="res://raw assets/Grass - Run.wav" id="16_lfmf2"]
 
@@ -442,6 +442,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_p5o4e"]
+polygon = PackedVector2Array(-3, 7, 0, 7, 0, 6, 1, 6, 1, 7, 3, 7, 3, 6, 3, 0, 3, -7, 0, -10, -6, -11, -11, -8, -6, -4, -6, 1, -5, 5)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sp7fq"]
 radius = 7.0
 height = 24.0
@@ -451,9 +454,6 @@ radius = 17.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gu6f8"]
 radius = 20.0
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_p5o4e"]
-polygon = PackedVector2Array(-3, 7, 0, 7, 0, 6, 1, 6, 1, 7, 3, 7, 3, 6, 3, 0, 3, -7, 0, -10, -6, -11, -11, -8, -6, -4, -6, 1, -5, 5)
 
 [sub_resource type="LabelSettings" id="LabelSettings_apopc"]
 font_size = 25
@@ -1085,6 +1085,9 @@ animation = &"Hurt"
 frame = 3
 frame_progress = 1.0
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="AnimatedSprite2D"]
+occluder = SubResource("OccluderPolygon2D_p5o4e")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
@@ -1125,9 +1128,6 @@ disabled = true
 position = Vector2(-22, -6)
 shape = SubResource("CircleShape2D_gu6f8")
 disabled = true
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource("OccluderPolygon2D_p5o4e")
 
 [node name="AttackCooldown" type="Timer" parent="."]
 wait_time = 0.5

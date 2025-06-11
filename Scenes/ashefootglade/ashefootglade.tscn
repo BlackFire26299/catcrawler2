@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=4 uid="uid://b41lqhbxhiqf2"]
+[gd_scene load_steps=93 format=4 uid="uid://b41lqhbxhiqf2"]
 
 [ext_resource type="Texture2D" uid="uid://clhdhfsqcbh7h" path="res://raw assets/TopDownFantasy-Forest/Tiles/Tileset.png" id="1_8gq75"]
 [ext_resource type="Script" uid="uid://l1efdhmfbkbk" path="res://Scenes/ashefootglade/ashefootglade.gd" id="1_anj4x"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b58rr4vjdmcr" path="res://Objects/fire.tscn" id="5_2igke"]
 [ext_resource type="PackedScene" uid="uid://cr6r5oyh7sl1j" path="res://Enemies/ork_elite.tscn" id="5_4o7g3"]
 [ext_resource type="PackedScene" uid="uid://cxvxavf0u2vwj" path="res://Enemies/rider_boss.tscn" id="6_nhbju"]
-[ext_resource type="Script" uid="uid://b5d06v4bpk4i0" path="res://Objects/fires.gd" id="7_3ivw4"]
+[ext_resource type="Script" path="res://Objects/fires.gd" id="7_3ivw4"]
 [ext_resource type="Script" uid="uid://c6kxiworqgcft" path="res://Scenes/ashefootglade/water_puzzle.gd" id="9_asxyi"]
 [ext_resource type="Script" uid="uid://kympi5spdmlm" path="res://Scenes/ashefootglade/tile_map_layer.gd" id="10_yu7ka"]
 [ext_resource type="Script" uid="uid://8ibmn31be45s" path="res://Scenes/ashefootglade/boss_arena.gd" id="11_5anbi"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dqqts6bhh0xwn" path="res://Objects/decorativeCandle.tscn" id="17_wyat5"]
 [ext_resource type="AudioStream" uid="uid://cekpluvmqgg7y" path="res://raw assets/Ambient 5.mp3" id="18_x2a5s"]
 [ext_resource type="AudioStream" uid="uid://cd0eavt88pvs" path="res://raw assets/7. Twilight of the Harbinger.mp3" id="19_anj4x"]
+[ext_resource type="AudioStream" uid="uid://xwcjbyvbcnon" path="res://raw assets/New Recording 26.wav" id="21_jf6dh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j45go"]
 texture = ExtResource("1_8gq75")
@@ -1700,11 +1701,12 @@ offset_right = 2180.0
 offset_bottom = 1021.0
 color = Color(0, 0, 0, 0.0784314)
 
-[node name="Player" parent="." node_paths=PackedStringArray("respawn_point", "respawn_point_after_tutorial") instance=ExtResource("3_1pww4")]
-position = Vector2(-58, -7)
+[node name="Player" parent="." node_paths=PackedStringArray("respawn_point", "respawn_point_after_tutorial", "respawn_point_boss") instance=ExtResource("3_1pww4")]
+position = Vector2(-9, 1)
 collision_layer = 3
 respawn_point = NodePath("../Questlog")
 respawn_point_after_tutorial = NodePath("../respawn point")
+respawn_point_boss = NodePath("../bossArena/bossArenaRespawn")
 
 [node name="waterPuzzle" type="Node2D" parent="."]
 script = ExtResource("9_asxyi")
@@ -1880,6 +1882,10 @@ shape = SubResource("CircleShape2D_fsj48")
 position = Vector2(1453, 288)
 shape = SubResource("CircleShape2D_67xos")
 
+[node name="Victory Speach" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_jf6dh")
+pitch_scale = 4.0
+
 [connection signal="fire_snuffed" from="TerrainFeatures/Ork campfires/smallFire2" to="Questlog" method="_on_small_fire_2_fire_snuffed"]
 [connection signal="fire_snuffed" from="TerrainFeatures/Ork campfires/smallFire3" to="Questlog" method="_on_small_fire_3_fire_snuffed"]
 [connection signal="fire_snuffed" from="TerrainFeatures/Ork campfires/smallFire4" to="Questlog" method="_on_small_fire_4_fire_snuffed"]
@@ -1887,6 +1893,7 @@ shape = SubResource("CircleShape2D_67xos")
 [connection signal="fire_snuffed" from="TerrainFeatures/Ork campfires/smallFire6" to="Questlog" method="_on_small_fire_6_fire_snuffed"]
 [connection signal="child_exiting_tree" from="Enemies/Pack 1" to="Questlog" method="_on_pack_1_child_exiting_tree"]
 [connection signal="Aggroed" from="Enemies/Boss/RiderBoss" to="Questlog" method="_on_rider_boss_aggroed"]
+[connection signal="BossDied" from="Enemies/Boss/RiderBoss" to="." method="_on_rider_boss_boss_died"]
 [connection signal="BossDied" from="Enemies/Boss/RiderBoss" to="Questlog" method="_on_rider_boss_boss_died"]
 [connection signal="area_entered" from="tutorialsections/Navigate area" to="Questlog" method="_on_navigate_area_area_entered"]
 [connection signal="area_entered" from="tutorialsections/Navigate area" to="Player" method="_on_navigate_area_area_entered"]
@@ -1897,6 +1904,7 @@ shape = SubResource("CircleShape2D_67xos")
 [connection signal="tree_exiting" from="tutorialsections/TileMapLayer" to="Questlog" method="_on_tile_map_layer_tree_exiting"]
 [connection signal="fire_snuffed" from="tutorialsections/smallFire" to="Questlog" method="_on_small_fire_fire_snuffed"]
 [connection signal="fireAttack" from="Player" to="Questlog" method="_on_player_fire_attack"]
+[connection signal="player_died_boss" from="Player" to="." method="_on_player_player_died_boss"]
 [connection signal="waterPuzzle" from="waterPuzzle" to="Questlog" method="_on_water_puzzle_water_puzzle"]
 [connection signal="waterPuzzle" from="waterPuzzle" to="TerrainFeatures/Fires" method="_on_water_puzzle_water_puzzle"]
 [connection signal="waterPuzzle" from="waterPuzzle" to="bossArena" method="_on_water_puzzle_water_puzzle"]
