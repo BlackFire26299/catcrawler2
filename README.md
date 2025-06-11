@@ -807,6 +807,7 @@ func use_fire_attack():
 #### Flowchart Comparison
 
 #### Map Comparison
+![screenshot](documentation_images/Screenshot%202025-06-11%20003709.png)
 
 ### **What changes could i make and what would i do diffirently**
 

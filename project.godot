@@ -13,7 +13,7 @@ config_version=5
 config/name="Defence Of Thronvail"
 run/main_scene="uid://detla1d8ps820"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://vdw6rfkr2810"
 
 [autoload]
 
