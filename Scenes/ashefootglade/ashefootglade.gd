@@ -22,3 +22,4 @@ func _on_player_player_died_boss() -> void:
 func _on_rider_boss_boss_died() -> void:
 	$"Victory Speach".play()
 	await $"Victory Speach".finished()
+	get_tree().change_scene_to_file("res://Scenes/ashefootglade/ashefootglade.tscn")

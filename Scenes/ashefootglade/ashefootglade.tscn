@@ -1701,13 +1701,6 @@ offset_right = 2180.0
 offset_bottom = 1021.0
 color = Color(0, 0, 0, 0.0784314)
 
-[node name="Player" parent="." node_paths=PackedStringArray("respawn_point", "respawn_point_after_tutorial", "respawn_point_boss") instance=ExtResource("3_1pww4")]
-position = Vector2(-9, 1)
-collision_layer = 3
-respawn_point = NodePath("../Questlog")
-respawn_point_after_tutorial = NodePath("../respawn point")
-respawn_point_boss = NodePath("../bossArena/bossArenaRespawn")
-
 [node name="waterPuzzle" type="Node2D" parent="."]
 script = ExtResource("9_asxyi")
 
@@ -1800,6 +1793,13 @@ tile_set = SubResource("TileSet_jf6dh")
 [node name="bossArenaRespawn" type="Node2D" parent="bossArena"]
 position = Vector2(305, -209)
 
+[node name="Player" parent="." node_paths=PackedStringArray("respawn_point", "respawn_point_after_tutorial", "respawn_point_boss") instance=ExtResource("3_1pww4")]
+position = Vector2(-9, 1)
+collision_layer = 3
+respawn_point = NodePath("../Questlog")
+respawn_point_after_tutorial = NodePath("../respawn point")
+respawn_point_boss = NodePath("../bossArena/bossArenaRespawn")
+
 [node name="respawn point" type="Node2D" parent="."]
 position = Vector2(700, 9)
 
@@ -1839,15 +1839,6 @@ shadow_filter = 2
 shadow_filter_smooth = 1.0
 shadow_item_cull_mask = 2
 
-[node name="Background Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("18_x2a5s")
-autoplay = true
-parameters/looping = true
-
-[node name="Boss Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("19_anj4x")
-parameters/looping = true
-
 [node name="ScoutQuestAreas" type="Node2D" parent="."]
 
 [node name="nearCave" type="Area2D" parent="ScoutQuestAreas"]
@@ -1882,6 +1873,15 @@ shape = SubResource("CircleShape2D_fsj48")
 position = Vector2(1453, 288)
 shape = SubResource("CircleShape2D_67xos")
 
+[node name="Background Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_x2a5s")
+autoplay = true
+parameters/looping = true
+
+[node name="Boss Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_anj4x")
+parameters/looping = true
+
 [node name="Victory Speach" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_jf6dh")
 pitch_scale = 4.0
@@ -1903,8 +1903,6 @@ pitch_scale = 4.0
 [connection signal="area_entered" from="tutorialsections/leave cave" to="Player" method="_on_leave_cave_area_entered"]
 [connection signal="tree_exiting" from="tutorialsections/TileMapLayer" to="Questlog" method="_on_tile_map_layer_tree_exiting"]
 [connection signal="fire_snuffed" from="tutorialsections/smallFire" to="Questlog" method="_on_small_fire_fire_snuffed"]
-[connection signal="fireAttack" from="Player" to="Questlog" method="_on_player_fire_attack"]
-[connection signal="player_died_boss" from="Player" to="." method="_on_player_player_died_boss"]
 [connection signal="waterPuzzle" from="waterPuzzle" to="Questlog" method="_on_water_puzzle_water_puzzle"]
 [connection signal="waterPuzzle" from="waterPuzzle" to="TerrainFeatures/Fires" method="_on_water_puzzle_water_puzzle"]
 [connection signal="waterPuzzle" from="waterPuzzle" to="bossArena" method="_on_water_puzzle_water_puzzle"]
@@ -1917,6 +1915,8 @@ pitch_scale = 4.0
 [connection signal="fire_snuffed" from="bossArena/smallFire6" to="Questlog" method="_on_small_fire_6_fire_snuffed"]
 [connection signal="fire_snuffed" from="bossArena/smallFire9" to="Questlog" method="_on_small_fire_9_fire_snuffed"]
 [connection signal="fire_snuffed" from="bossArena/smallFire7" to="Questlog" method="_on_small_fire_7_fire_snuffed"]
+[connection signal="fireAttack" from="Player" to="Questlog" method="_on_player_fire_attack"]
+[connection signal="player_died_boss" from="Player" to="." method="_on_player_player_died_boss"]
 [connection signal="body_entered" from="ScoutQuestAreas/nearCave" to="Questlog" method="_on_near_cave_body_entered"]
 [connection signal="body_entered" from="ScoutQuestAreas/southofCave" to="Questlog" method="_on_southof_cave_body_entered"]
 [connection signal="body_entered" from="ScoutQuestAreas/NorthOfCave" to="Questlog" method="_on_north_of_cave_body_entered"]
