@@ -1,66 +1,41 @@
 # Defence of Thornvail
 
-## Table Of Contents
+## **Table Of Contents**
 
-- [How to Play](#how-to-play)
-	- [Controls](#controls)
+- [How to Play](#how-to-play)  
+  - [Controls](#controls)
 
-- [Preplanning](#preplanning)
-  	- [What Made the Original a Game Great](#what-made-the-original-a-game-great)
-  	- [How My Game Is Diffirent](#how-my-game-is-diffirent)
-  	- [Story Plan](#story-plan)
-  		- [Background](#background)
-  	   	- [First level - Ashroot Glade ](#First-level---Ashroot-Glade)
-		- [Level Map - Ashroot Glade](#level-map---ashroot-glade)
-  	   	- [Second Level - Runestone Vale](#second-level---runestone-vale)
-		- [Level Map - Runestone Vale](#level-map---runestone-vale)
-		- [Player Progression](#player-progression)
-  	- [Flowcharts (Production plan)](#flowcharts-production-plan)
-  	- [Assets](#assets)
+- [Preplanning](#preplanning)  
+  - [What Made the Original Game Great](#what-made-the-original-game-great)  
+  - [How My Game is Different](#how-my-game-is-different)  
+  - [Story and Gameplay Plan](#story-and-gameplay-plan)  
+    - [Background](#background)  
+    - [First Level – Ashroot Glade](#first-level--ashroot-glade)  
+    - [Level Map – Ashroot Glade](#level-map--ashroot-glade)  
+    - [Second Level – Runestone Vale (Planned)](#second-level--runestone-vale-planned)  
+    - [Level Map – Runestone Vale](#level-map--runestone-vale)  
+    - [Player Progression](#player-progression)  
+  - [Flowcharts (Production Plan)](#flowcharts-production-plan)  
+  - [Assets](#assets)
 
-- [Prototypes](#prototypes)
+- [Prototyping and Development](#prototyping-and-development)  
+  - [Prototype 1 – Core Systems](#prototype-1--core-systems)  
+  - [Prototype 2 – Enemies, World Layout, UI](#prototype-2--enemies-world-layout-ui)  
+  - [Prototype 3 – Tutorial, Damage Popups, New Attacks](#prototype-3--tutorial-damage-popups-new-attacks)  
+  - [Prototype 4 – Interactions, Puzzles, UI Updates](#prototype-4--interactions-puzzles-ui-updates)  
+  - [Prototype 5 – More Enemy Attacks, Lighting, Health Regen](#prototype-5--more-enemy-attacks-lighting-health-regen)  
+  - [Prototype 6 – Quest System, Final Abilities, Level Finalisation](#prototype-6--quest-system-final-abilities-level-finalisation)  
 
-  	- [Prototype 1 - Core Systems](#prototype-1---core-systems)
-  		- [Important Additions - Player Controller, Base combat (player and enemie), Enemie patrol (basic)](#important-additions---player-controller-base-combat-player-and-enemie-enemie-patrol-basic)
-  	   	- [Video of Functionality (link to youtube)](#video-of-functionality-link-to-youtube)
-  	   	- [Issues](#issues)
+- [Reflection](#reflection)  
+  - [How is the Overall Design](#how-is-the-overall-design)  
+  - [How Far Through My Plan Did I Get](#how-far-through-my-plan-did-i-get)  
+  - [What Changes Could I Make and What Would I Do Differently](#what-changes-could-i-make-and-what-would-i-do-differently)  
+  - [What Issues Did I Encounter](#what-issues-did-i-encounter)  
+  - [What Have I Learnt](#what-have-i-learnt)
 
-	- [Prototype 2 - Enemies, worldlayout and ui](#prototype-2---enemies-world-layout-ui)
-		- [Important Additions](#important-additions)
-		- [Video of Functionality](#video-of-functionality-link-to-youtube-1)
-		- [Issues](#issues-1)
+## **How to Play**
 
-	- [Prototype 3 - Tutorial, damage popups and new attacks](#prototype-3---tutorial-damage-popups-and-new-attacks)
-		- [Important Additions](#important-additions-1)
-		- [Video of Functionality](#video-of-functionality-link-to-youtube-2)
-		- [Issues](#issues-2)
-
-	- [Prototype 4 - Interactions, Puzzels and Ui updates](#prototype-4---interactions-puzzels-and-ui-updates)
-		- [Important Additions](#important-additions-2)
-		- [Video of Functionality](#video-of-functionality-link-to-youtube-3)
-		- [Issues](#issues-3)
-	
-	- [Prototype 5 - More Enemie Attacks, Lighting and health regen](#prototype-5---more-enemie-attacks-lighting-and-health-regen)
-		- [Important Additions](#important-additions-3)
-		- [Video of Functionality](#video-of-functionality-link-to-youtube-4)
-		- [Issues](#issues-4)
-
-	- [Prototype 6 - Quest System, Last Player Abilitie, Finalise Level](#prototype-6---quest-system-last-player-abilitie-finalise-level)
-		- [Important Additions](#important-additions-3)
-		- [Video of Functionality](#video-of-functionality-link-to-youtube-4)
-		- [Issues](#issues-4)
-
-- [Reflection](#reflection)
-  	- [How is the overall design](#how-is-the-overall-design)
-	- [How far through my plan did i get](#how-far-through-my-plan-did-i-get)
-  	- [What changes could i make](#what-changes-could-i-make)
-  	- [What would i do diffirently](#what-would-i-do-diffirently)
-  	- [Issues I Encountered](#issues-i-encountered)
-  	- [What have i learnt](#what-have-i-learnt)
-
-## How to Play
-
-### Controls
+### **Controls**
 
 W, A, S, D for movement. <br>
 Left Click is your basic attack. <br>
@@ -71,7 +46,7 @@ Left shift for dash. <br>
 ESC to enter the menu <br>
 
 
-## Preplanning
+## **Preplanning**
 
 ### **What Made the Original a Game Great**
 
@@ -79,9 +54,15 @@ The Legend of Zelda revolutionised video game design with its expansive open wor
 
 Zelda was groundbreaking. It was the first console game to use battery-backed memory, allowing players to save their progress without passwords. This, along with clever use of memory management, enabled a world much larger and deeper than what was typical for the NES. Critically acclaimed and commercially successful, The Legend of Zelda sold over 6.5 million copies worldwide and set the standard for action-adventure games. Its influence is still seen today in open-world design, and it remains one of gaming’s most iconic and celebrated titles.
 
-### **How My Game is Diffirent**
+### **How My Game is Different**
 
-It is not Zelda.
+My game takes the top-down style of the original Legend of Zelda but changes a lot to make the experience more modern and structured. The original game had minimal guidance and dropped players into the world to figure things out themselves. In contrast, mine starts with a tutorial that teaches movement, combat, interaction, and UI step by step.
+
+Movement is also more dynamic. In Zelda, the player could only move in four directions and was locked to a grid. My game allows full eight-directional movement with smoother control and no grid constraints, which makes exploration and combat feel faster and more responsive.
+
+Combat has been expanded a lot, the player can use light, heavy, and fire attacks. Enemies aren’t just random walkers, they have patrol routes, attack phases, and even elite versions with variations. I’ve also included respawn points (instead of restarting at the beginning), a quest system to track objectives, a health and energy bar, and damage popups for better feedback.
+
+The overall structure is more narrative-driven too. There’s an actual questline with objectives, interactions, and boss battles that use mechanics across multiple phases. While the game keeps the top-down exploration vibe, it’s built with modern design features that make it feel more complete and player-friendly.
 
 ### **Story and Gameplay Plan**
 
@@ -197,7 +178,7 @@ Background music for the boss battles, https://alkakrab.itch.io/fantasy-boss-bat
 SFX for the ork enemies, https://johncarroll.itch.io/orc-voice-pack <br>
 SFX for player movement, https://nebula-audio.itch.io/character-footsteps-rock-grass-pack-1 <br>
 
-## Prototypes
+## **Prototypes**
 
 ### **Prototype 1 - Core Systems**
 
@@ -305,7 +286,7 @@ else:
 [![Prototype 1 26 May](https://img.youtube.com/vi/DqD7hDQ_Xno/0.jpg)](https://www.youtube.com/watch?v=DqD7hDQ_Xno)
 
 #### Issues
-
+Enemies would sometimes get stuck on terrain while patrolling because the navigation wasn’t perfect. Dashing could let the player clip through walls, which broke some areas. Attacking also locked movement, and if you pressed a button during an animation it would sometimes just ignore the input, which made combat feel a bit clunky.
 
 ### **Prototype 2 - Enemies, world layout, ui**
 
@@ -355,6 +336,8 @@ func update_energy_bar(energy):
 [![Prototype 2 7 June](https://img.youtube.com/vi/eBECJ2ZKu4k/0.jpg)](https://www.youtube.com/watch?v=eBECJ2ZKu4k)
 
 #### Issues 
+Some of the new UI elements didn’t scale properly with different screen sizes, so things like the health and energy bars ended up in the wrong spots. I also never fixed sprite layering, so sometimes characters show up behind trees or rocks when they shouldn’t, which makes things look a bit off.
+
 
 ### **Prototype 3 - Tutorial, damage popups and new attacks**
 
@@ -450,6 +433,7 @@ func use_heavy_attack():
 [![Prototype 3 8 June](https://img.youtube.com/vi/au8M1duLbQ8/0.jpg)](https://www.youtube.com/watch?v=au8M1duLbQ8)
 
 #### Issues 
+Some tutorial prompts could trigger more than once if the player backtracked through the area, which sometimes caused them to overlap or progress out of order. This could break the flow or softlock the tutorial if triggers got hit in the wrong sequence.	
 
 ### **Prototype 4 - Interactions, Puzzels and Ui updates**
 
@@ -562,7 +546,7 @@ func checkOrder():
 [![Prototype 4 8 June](https://img.youtube.com/vi/4y8tH9JwVWE/0.jpg)](https://www.youtube.com/watch?v=4y8tH9JwVWE)
 
 #### Issues 
-
+When multiple interactables overlapped, the system sometimes picked the wrong one, even if it was further away which made interactions feel inconsistent. The lily pad puzzle also didn’t reset its visuals properly after a wrong input, so players couldn’t tell if their progress had been wiped or not.
 
 ### **Prototype 5 - More Enemie Attacks, Lighting and health regen**
 
@@ -659,6 +643,7 @@ if time_since_last_damage > regen_delay and health < max_health and !is_dead:
 [![Prototype 5 9 June](https://img.youtube.com/vi/SzGvsq4UhoA/0.jpg)](https://www.youtube.com/watch?v=SzGvsq4UhoA)
 
 #### Issues 
+The health bar updated in big jumps instead of smoothly, but I fixed it by ticking a setting checkbox in the UI options. The sweep attack hitboxes also stayed active after the animation ended, which caused damage even when it looked like the attack was over.
 
 
 ### **Prototype 6 - Quest System, Last Player Abilitie, Finalise Level**
@@ -781,19 +766,10 @@ func use_fire_attack():
 
 
 #### Issues 
+Players could break the intended story sequence by slipping through terrain gaps near the boss arena, letting them reach the fight early without completing the required objectives.
 
 
-### Prototype 7 - 
-
-#### Important Additions 
-
-
-#### Video of Functionality (link to youtube)
-
-#### Issues 
-
-
-## Reflection 
+## **Reflection**
 
 ### **How is the overall design**
 I think the overall design works well. The structure and flow of the game feels solid and plays how I wanted it to. The tutorial cave at the start is probably my favourite part. That said, the combat system still needs some polish to feel smoother and more responsive. 
@@ -805,7 +781,7 @@ I didn’t end up starting level two, so none of the stuff I planned for that ma
 
 #### Flowchart Comparison
 ![Flowchart Comparison](<documentation_images/Screenshot 2025-06-12 143323wfwfw.png>)
-The crosses out ones are completed 
+The crosses out ones are completed. 
 
 #### Map Comparison
 ![screenshot](documentation_images/Screenshot%202025-06-11%20003709.png)
