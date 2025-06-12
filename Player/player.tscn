@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=4 uid="uid://b6t5cfj5tmylk"]
+[gd_scene load_steps=96 format=4 uid="uid://b6t5cfj5tmylk"]
 
 [ext_resource type="Script" uid="uid://b1ercubrfme7w" path="res://Player/player.gd" id="1_pop16"]
 [ext_resource type="Texture2D" uid="uid://dyj7bej3tbv7d" path="res://raw assets/Tiny RPG Character Pack/Characters(100x100)/Knight/Knight/Knight-Attack01.png" id="3_x3vf3"]
@@ -1068,6 +1068,10 @@ shadow_color = Color(0.917647, 0, 0, 0.670588)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dkpta"]
 bg_color = Color(0.368627, 0.639216, 0.768627, 0.176471)
 
+[sub_resource type="LabelSettings" id="LabelSettings_n471f"]
+font = ExtResource("11_apopc")
+font_size = 50
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_pop16")
@@ -1470,6 +1474,20 @@ offset_top = 17.0
 offset_right = 280.0
 offset_bottom = 247.0
 scale = Vector2(0.95, 0.95)
+
+[node name="EndOFGame" type="Label" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 10.0
+offset_top = 85.0
+offset_right = 682.0
+offset_bottom = 188.0
+scale = Vector2(0.4, 0.4)
+text = "Thanks for Playing 
+This is the end of the demo"
+label_settings = SubResource("LabelSettings_n471f")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true

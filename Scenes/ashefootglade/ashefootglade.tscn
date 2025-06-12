@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=4 uid="uid://b41lqhbxhiqf2"]
+[gd_scene load_steps=94 format=4 uid="uid://b41lqhbxhiqf2"]
 
 [ext_resource type="Texture2D" uid="uid://clhdhfsqcbh7h" path="res://raw assets/TopDownFantasy-Forest/Tiles/Tileset.png" id="1_8gq75"]
 [ext_resource type="Script" uid="uid://l1efdhmfbkbk" path="res://Scenes/ashefootglade/ashefootglade.gd" id="1_anj4x"]
@@ -17,10 +17,11 @@
 [ext_resource type="PackedScene" uid="uid://cjhaq1848wmn6" path="res://Objects/interaction_area.tscn" id="12_jy1cj"]
 [ext_resource type="PackedScene" uid="uid://bc2dbshj02xhc" path="res://Objects/small_fire.tscn" id="14_yu7ka"]
 [ext_resource type="Texture2D" uid="uid://x6thmmjanp1x" path="res://raw assets/64x64 textures (31).png" id="15_g5dfc"]
+[ext_resource type="AudioStream" uid="uid://fkkiggh4ftw8" path="res://raw assets/success-340660.mp3" id="16_34iye"]
 [ext_resource type="PackedScene" uid="uid://dqqts6bhh0xwn" path="res://Objects/decorativeCandle.tscn" id="17_wyat5"]
 [ext_resource type="AudioStream" uid="uid://cekpluvmqgg7y" path="res://raw assets/Ambient 5.mp3" id="18_x2a5s"]
 [ext_resource type="AudioStream" uid="uid://cd0eavt88pvs" path="res://raw assets/7. Twilight of the Harbinger.mp3" id="19_anj4x"]
-[ext_resource type="AudioStream" uid="uid://xwcjbyvbcnon" path="res://raw assets/New Recording 26.wav" id="21_jf6dh"]
+[ext_resource type="PackedScene" uid="uid://dfd0a26uk7ilo" path="res://Objects/explosion_vicroy.tscn" id="22_34iye"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j45go"]
 texture = ExtResource("1_8gq75")
@@ -1705,6 +1706,9 @@ color = Color(0, 0, 0, 0.0784314)
 [node name="waterPuzzle" type="Node2D" parent="."]
 script = ExtResource("9_asxyi")
 
+[node name="Success-340660" type="AudioStreamPlayer" parent="waterPuzzle"]
+stream = ExtResource("16_34iye")
+
 [node name="single lily" parent="waterPuzzle" instance=ExtResource("12_jy1cj")]
 position = Vector2(1081, -138)
 collision_mask = 1
@@ -1885,14 +1889,20 @@ parameters/looping = true
 stream = ExtResource("19_anj4x")
 parameters/looping = true
 
-[node name="Victory Speach" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("21_jf6dh")
-pitch_scale = 4.0
+[node name="Victory Eplosion" parent="." instance=ExtResource("22_34iye")]
+position = Vector2(1163, 618)
+
+[node name="Victory Eplosion2" parent="." instance=ExtResource("22_34iye")]
+position = Vector2(1163, 461)
+
+[node name="Victory Eplosion3" parent="." instance=ExtResource("22_34iye")]
+position = Vector2(983, 544)
 
 [connection signal="child_exiting_tree" from="Enemies/Pack 1" to="Questlog" method="_on_pack_1_child_exiting_tree"]
 [connection signal="Aggroed" from="Enemies/Boss/RiderBoss" to="Questlog" method="_on_rider_boss_aggroed"]
 [connection signal="BossDied" from="Enemies/Boss/RiderBoss" to="." method="_on_rider_boss_boss_died"]
 [connection signal="BossDied" from="Enemies/Boss/RiderBoss" to="Questlog" method="_on_rider_boss_boss_died"]
+[connection signal="BossDied" from="Enemies/Boss/RiderBoss" to="Player" method="_on_rider_boss_boss_died"]
 [connection signal="area_entered" from="tutorialsections/Navigate area" to="Questlog" method="_on_navigate_area_area_entered"]
 [connection signal="area_entered" from="tutorialsections/Navigate area" to="Player" method="_on_navigate_area_area_entered"]
 [connection signal="area_entered" from="tutorialsections/firstcombat" to="Questlog" method="_on_firstcombat_area_entered"]

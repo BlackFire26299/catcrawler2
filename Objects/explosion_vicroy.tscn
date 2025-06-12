@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfd0a26uk7ilo"]
+
+[sub_resource type="Curve" id="Curve_qudo0"]
+_data = [Vector2(0.0113636, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.224719), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Victory Eplosion" type="CPUParticles2D"]
+emitting = false
+amount = 80
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_qudo0")
+color = Color(0.745523, 0.244122, 0.134465, 1)

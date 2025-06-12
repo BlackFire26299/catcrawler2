@@ -35,13 +35,13 @@ func get_active_quests() -> Array[Quest]:
 	return active_quests # Just returns active quest (helper func )
 
 func get_quest_by_name(quest_name: String) -> Quest:
-	for q in active_quests:
+	for q in active_quests: #Checks if the quest is in active quests
 		if q.name == quest_name:
 			return q
-	for q in completed_quests:
+	for q in completed_quests: #Checks if the quest is in completed quests
 		if q.name == quest_name:
 			return q
-	return null
+	return null 
 
 func _has_quest(quest_name: String) -> bool: # just checks if the quest exists in the manager either in 
 	return get_quest_by_name(quest_name) != null

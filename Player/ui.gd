@@ -110,3 +110,7 @@ func _on_respawn_pressed():
 
 func _on_restart_pressed():
 	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
+
+func _on_rider_boss_boss_died() -> void:
+	await get_tree().create_timer(1).timeout
+	$EndOFGame.show()

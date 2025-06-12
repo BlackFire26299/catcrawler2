@@ -1,11 +1,11 @@
 extends Node2D
 
 # Create a quest
-var awaken = Quest.new()
-var scout = Quest.new()
-var followTrail = Quest.new()
-var trial = Quest.new()
-var sideQ = Quest.new()
+var awaken = Quest.new() # First quest
+var scout = Quest.new() # Second quest
+var followTrail = Quest.new() #third quest
+var trial = Quest.new() #last quest
+var sideQ = Quest.new() #side quest
 
 func _ready():
 	# First Quest
@@ -49,72 +49,84 @@ func _ready():
 	sideQ.objectives.append("Try new abilitie (middle mouse button)")
 	
 	# Add the first quest to manager
-	QuestManager.add_quest(awaken)
+	QuestManager.add_quest(awaken) # adds the first quest to the active quests
 
 
 func _on_navigate_area_area_entered(area):
+	# Progresses the quest when the area is entered
 	QuestManager.advance_quest_objective(awaken)
-	$"../tutorialsections/Navigate area".queue_free()
+	$"../tutorialsections/Navigate area".queue_free() #deletes the node
 
 func _on_firstcombat_area_entered(area):
+	# Progresses the quest when the area is entered
 	QuestManager.advance_quest_objective(awaken)
-	$"../tutorialsections/firstcombat".queue_free()
+	$"../tutorialsections/firstcombat".queue_free() #deletes the node
 
-var awaken_num_orks = 3
+var awaken_num_orks = 3 # sets the number of orks in the training area
 
 func _on_pack_1_child_exiting_tree(node):
-	awaken_num_orks -= 1
+	# updates when a ork in the trial area is deleted
+	awaken_num_orks -= 1 #updates remaining orks
 	if awaken_num_orks == 0:
-		QuestManager.advance_quest_objective(awaken)
+		QuestManager.advance_quest_objective(awaken) # advances the quest
 
 
 func _on_tile_map_layer_tree_exiting():
+	#Progresses the quest when player destroys the rock infront of the cave
 	QuestManager.advance_quest_objective(awaken)
 	QuestManager.complete_quest(awaken)
-	QuestManager.add_quest(scout)
+	QuestManager.add_quest(scout) # Starts the next quest
 
 
 func _on_near_cave_body_entered(body):
 	if body is Player:
+		# Checks if the player entered the area and updates quest
 		QuestManager.advance_quest_objective(scout)
-		$"../ScoutQuestAreas/nearCave".queue_free()
+		$"../ScoutQuestAreas/nearCave".queue_free() #deletes the node
 
 
 func _on_southof_cave_body_entered(body):
 	if body is Player:
 		QuestManager.advance_quest_objective(scout)
-		$"../ScoutQuestAreas/southofCave".queue_free()
+		$"../ScoutQuestAreas/southofCave".queue_free()#deletes the node
 
-var ready_return_to_pond = false
+var ready_return_to_pond = false # if the player is able to return to pond and progress the quests
 
 func _on_north_of_cave_body_entered(body):
 	if body is Player:
 		if QuestManager._has_quest("Scout the Grove"):
+			# if in the scouting quest progress that and start th next section
 			QuestManager.advance_quest_objective(scout)
 			QuestManager.add_quest(followTrail)
 		if ready_return_to_pond:
+			# progresses the quest if the player has gone to the entrace
 			QuestManager.advance_quest_objective(followTrail)
-			$"../ScoutQuestAreas/NorthOfCave".queue_free()
+			$"../ScoutQuestAreas/NorthOfCave".queue_free() #deletes the node
 
 
 func _on_entrance_body_entered(body):
 	if body is Player:
+		# Checks if the player entered the area and updates quest
 		QuestManager.advance_quest_objective(followTrail)
 		ready_return_to_pond = true
 
 
 func _on_boss_entrance_tree_exited():
+	# Checks if the player entered the area and updates quest
 	QuestManager.advance_quest_objective(followTrail)
 	
-var usedLily = false
+var usedLily = false # if the player has used the lilypads to progress
 func _on_water_puzzle_water_puzzle():
+	# Triggers when the player finished the puzzle
 	if !usedLily:
 		QuestManager.advance_quest_objective(followTrail)
+		# Progres the quest
 		usedLily = true
-		QuestManager.add_quest(trial)
+		QuestManager.add_quest(trial) #Start next quest
 
 func _on_pastentrance_body_entered(body):	
 	if body is Player:
+		# Checks if the player entered the area and updates quest
 		QuestManager.advance_quest_objective(trial)
 		
 
@@ -122,24 +134,34 @@ var enteredBossarea = false
 
 func _on_boss_area_body_entered(body):
 	if body is Player && !enteredBossarea:
+		# Checks if the player entered the area and updates quest
 		QuestManager.advance_quest_objective(trial)
 		enteredBossarea = true
 		
 
-
+var firstaggro = false
 func _on_rider_boss_aggroed():
-	QuestManager.advance_quest_objective(trial)
+	# Triggered when the boss is aggroed 
+	# Now i heal the boss when player dies i had to add a check thay this wasn't a second aggro
+	if firstaggro == true:
+		pass
+	else:
+		firstaggro = true
+		QuestManager.advance_quest_objective(trial)
 	
 
 
 func _on_rider_boss_boss_died():
+	# Advances quest when boss dies
 	QuestManager.advance_quest_objective(trial)
 	
 func fire_snuffed():
+	# Triggered when interact with campfires
 	if QuestManager._has_quest("Why not put them out"):
+		# Progresses quest
 		QuestManager.advance_quest_objective(sideQ)
 	else:
-		QuestManager.add_quest(sideQ)
+		QuestManager.add_quest(sideQ) #adds quest
 
 
 func _on_small_fire_2_fire_snuffed():
@@ -179,6 +201,7 @@ func _on_small_fire_fire_snuffed():
 
 var used_fireAtt = false
 func _on_player_fire_attack():
+	# Checks if the player has used their attack
 	if !used_fireAtt:
 		QuestManager.advance_quest_objective(sideQ)
 		used_fireAtt = true
