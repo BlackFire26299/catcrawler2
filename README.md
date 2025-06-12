@@ -796,9 +796,12 @@ func use_fire_attack():
 ## Reflection 
 
 ### **How is the overall design**
-Overall the desing of the 
+I think the overall design works well. The structure and flow of the game feels solid and plays how I wanted it to. The tutorial cave at the start is probably my favourite part. That said, the combat system still needs some polish to feel smoother and more responsive. 
 
 ### **How far through my plan did i get**
+I finished pretty much all of the first level and the core systems I wanted: movement, the three player attacks, enemy AI with patrol and attacks, terrain and level layout, UI for health and energy, a basic quest system, the tutorial section with on-screen text and interactables, and the first boss fight (plus an elite enemy with the same attacks but less damage). I also added sound effects, puzzles, a death screen, and checkpoints that update your respawn point.
+
+I didn’t end up starting level two, so none of the stuff I planned for that made it in. That includes the Bjarni boss fight, which was going to have multiple phases and a system where collecting spirit shards made the fight easier. It would’ve been a big moment in the game, but i had to prioritise the polishing of the game and other assignments.
 
 #### Flowchart Comparison
 ![Flowchart Comparison](<documentation_images/Screenshot 2025-06-12 143323wfwfw.png>)
@@ -808,5 +811,10 @@ The crosses out ones are completed
 ![screenshot](documentation_images/Screenshot%202025-06-11%20003709.png)
 
 ### **What changes could i make and what would i do diffirently**
+If I had more time, I would’ve liked to finish level two and get the full story in. Combat and puzzle systems definitely still need some work and both could be more clear and better balanced. The tutorial is solid and teaches the basics well, so I’d keep that mostly the same.
+
+### **What issues did i encounter**
+A few annoying problems came up. When I added respawning, enemies would stay aggroed after the player died, which broke things. I couldn’t get hitbox rotation working properly either, so I just made separate left and right hitboxes. I also lost a full lesson of work because of a merge error. The UI, especially the quest part, still feels rough and a bit buggy. I fixed most stuff by trial and error or just worked around it if I couldn’t find a clean solution.
 
 ### **What have I learnt**
+This was my first time making a game this big in Godot, so I learnt a lot. Signals ended up being super useful. I also figured out how to manage files properly and use global scripts. The flowchart and questlines I planned out early made everything easier to build later on. If I did this again, I might try to start earlier, I don’t think time management was a big issue.
