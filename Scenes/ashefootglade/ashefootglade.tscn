@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=4 uid="uid://b41lqhbxhiqf2"]
+[gd_scene load_steps=95 format=4 uid="uid://b41lqhbxhiqf2"]
 
 [ext_resource type="Texture2D" uid="uid://clhdhfsqcbh7h" path="res://raw assets/TopDownFantasy-Forest/Tiles/Tileset.png" id="1_8gq75"]
 [ext_resource type="Script" uid="uid://l1efdhmfbkbk" path="res://Scenes/ashefootglade/ashefootglade.gd" id="1_anj4x"]
@@ -22,6 +22,7 @@
 [ext_resource type="AudioStream" uid="uid://cekpluvmqgg7y" path="res://raw assets/Ambient 5.mp3" id="18_x2a5s"]
 [ext_resource type="AudioStream" uid="uid://cd0eavt88pvs" path="res://raw assets/7. Twilight of the Harbinger.mp3" id="19_anj4x"]
 [ext_resource type="PackedScene" uid="uid://dfd0a26uk7ilo" path="res://Objects/explosion_vicroy.tscn" id="22_34iye"]
+[ext_resource type="PackedScene" uid="uid://daqsxxcuxq7q4" path="res://Objects/day_night_cycle.tscn" id="23_fsj48"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j45go"]
 texture = ExtResource("1_8gq75")
@@ -1141,6 +1142,7 @@ radius = 58.0775
 
 [node name="Ashefootglade" type="Node2D"]
 y_sort_enabled = true
+texture_filter = 1
 script = ExtResource("1_anj4x")
 
 [node name="Questlog" type="Node2D" parent="."]
@@ -1803,14 +1805,6 @@ position = Vector2(102, -88)
 [node name="Victory Eplosion3" parent="bossArena" instance=ExtResource("22_34iye")]
 position = Vector2(-78, -5)
 
-[node name="Player" parent="." node_paths=PackedStringArray("respawn_point", "respawn_point_after_tutorial", "respawn_point_boss") instance=ExtResource("3_1pww4")]
-top_level = true
-position = Vector2(-9, 1)
-collision_layer = 3
-respawn_point = NodePath("../Questlog")
-respawn_point_after_tutorial = NodePath("../respawn point")
-respawn_point_boss = NodePath("../bossArena/bossArenaRespawn")
-
 [node name="respawn point" type="Node2D" parent="."]
 position = Vector2(700, 9)
 
@@ -1901,6 +1895,18 @@ offset_right = 2180.0
 offset_bottom = 1021.0
 color = Color(0, 0, 0, 0.0784314)
 
+[node name="DayNightCycle" parent="." instance=ExtResource("23_fsj48")]
+visible = false
+INGAME_SPEED = 10.0
+
+[node name="Player" parent="." node_paths=PackedStringArray("respawn_point", "respawn_point_after_tutorial", "respawn_point_boss") instance=ExtResource("3_1pww4")]
+top_level = true
+position = Vector2(-9, 1)
+collision_layer = 3
+respawn_point = NodePath("../Questlog")
+respawn_point_after_tutorial = NodePath("../respawn point")
+respawn_point_boss = NodePath("../bossArena/bossArenaRespawn")
+
 [connection signal="child_exiting_tree" from="Enemies/Pack 1" to="Questlog" method="_on_pack_1_child_exiting_tree"]
 [connection signal="Aggroed" from="Enemies/Boss/RiderBoss" to="Questlog" method="_on_rider_boss_aggroed"]
 [connection signal="BossDied" from="Enemies/Boss/RiderBoss" to="." method="_on_rider_boss_boss_died"]
@@ -1920,11 +1926,11 @@ color = Color(0, 0, 0, 0.0784314)
 [connection signal="body_entered" from="bossArena/BossArea" to="Questlog" method="_on_boss_area_body_entered"]
 [connection signal="body_entered" from="bossArena/BossArea" to="Player" method="_on_boss_area_body_entered"]
 [connection signal="tree_exited" from="bossArena/Boss Entrance" to="Questlog" method="_on_boss_entrance_tree_exited"]
-[connection signal="fireAttack" from="Player" to="Questlog" method="_on_player_fire_attack"]
-[connection signal="player_died" from="Player" to="Enemies/Pack 1/OrkScout" method="_on_player_player_died"]
-[connection signal="player_died_boss" from="Player" to="." method="_on_player_player_died_boss"]
 [connection signal="body_entered" from="ScoutQuestAreas/nearCave" to="Questlog" method="_on_near_cave_body_entered"]
 [connection signal="body_entered" from="ScoutQuestAreas/southofCave" to="Questlog" method="_on_southof_cave_body_entered"]
 [connection signal="body_entered" from="ScoutQuestAreas/NorthOfCave" to="Questlog" method="_on_north_of_cave_body_entered"]
 [connection signal="body_entered" from="trailQuest/entrance" to="Questlog" method="_on_entrance_body_entered"]
 [connection signal="body_entered" from="trailQuest/pastentrance" to="Questlog" method="_on_pastentrance_body_entered"]
+[connection signal="fireAttack" from="Player" to="Questlog" method="_on_player_fire_attack"]
+[connection signal="player_died" from="Player" to="Enemies/Pack 1/OrkScout" method="_on_player_player_died"]
+[connection signal="player_died_boss" from="Player" to="." method="_on_player_player_died_boss"]

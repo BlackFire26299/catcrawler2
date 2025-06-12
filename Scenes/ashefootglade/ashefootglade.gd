@@ -24,3 +24,8 @@ func _on_rider_boss_boss_died() -> void:
 	$"Victory Eplosion".emitting = true
 	$"Victory Eplosion2".emitting = true
 	$"Victory Eplosion3".emitting = true
+
+func _input(event): 
+	if event.is_action_pressed("toggleDNC"):
+		$DayNightCycle.visible = !$DayNightCycle.visible
+	

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://daqsxxcuxq7q4"]
+
+[ext_resource type="Script" uid="uid://de7l78ksb682l" path="res://Objects/day_night_cycle.gd" id="1_mmu4x"]
+[ext_resource type="Texture2D" uid="uid://hp1h0yaiakqg" path="res://Objects/daynightcycle-gradient-texture.tres" id="2_3h8yi"]
+
+[node name="DayNightCycle" type="CanvasModulate"]
+scale = Vector2(19.6, 1)
+script = ExtResource("1_mmu4x")
+gradient_texture = ExtResource("2_3h8yi")
+INGAME_SPEED = 5.0
