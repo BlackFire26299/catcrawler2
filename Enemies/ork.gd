@@ -163,8 +163,8 @@ func face_player():
 	if abs(direction.x) > abs(direction.y):
 		animated_sprite.flip_h = direction.x < 0
 
-# Lost aggro timer
-func _on_lost_aggro_timeout():
+func lost_aggro():
+	# Resets aggro vars and sets target to the pathaad
 	is_aggroed = false
 	is_returning_to_patrol = true
 	var path_node = patrol_path_follow.get_parent() as Path2D
@@ -172,3 +172,11 @@ func _on_lost_aggro_timeout():
 	var closest_offset = curve.get_closest_offset(global_position)
 	var normalized_progress = closest_offset / curve.get_baked_length()
 	patrol_path_follow.progress = normalized_progress
+	
+# Lost aggro timer
+func _on_lost_aggro_timeout():
+	lost_aggro()
+
+func _on_player_player_died() -> void:
+	# Makes sure to update aggro when player dies
+	lost_aggro()

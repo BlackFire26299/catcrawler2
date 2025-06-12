@@ -46,7 +46,7 @@ var unlocked_fire_attack = false # if the player has unlocked fire attack
 @onready var ui = $UI
 
 signal fireAttack() #signal for using fireattack (to complete quest)
-
+signal player_died() #Signal for when the player dies (had bug after allowing respawn which kept enemies aggroed
 signal player_died_boss() #signals when the player dies and their respawn is in the boss area
 
 @export var respawn_point: Node2D # base respawnpoint
@@ -349,7 +349,7 @@ func _on_boss_area_body_entered(body):
 func _on_ui_respawn():
 	# Sets position to the respawn point 
 	global_position = respawn_point.global_position
-	
+	emit_signal("player_died")
 	# Resets health
 	health = max_health
 	#updates ui heath
