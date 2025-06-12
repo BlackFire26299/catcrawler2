@@ -166,9 +166,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oivk8")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack1",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -189,9 +189,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pa45h")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack2",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -206,7 +206,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_570db")
 }],
-"loop": true,
+"loop": false,
 "name": &"Death",
 "speed": 5.0
 }, {
@@ -223,9 +223,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5326q")
 }],
-"loop": true,
+"loop": false,
 "name": &"Hurt",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -297,8 +297,7 @@ attack_damage = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_40vy5")
-animation = &"Attack1"
-frame_progress = 0.0436554
+animation = &"Attack2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_vwljc")
@@ -331,5 +330,5 @@ shape = SubResource("CircleShape2D_jit7v")
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_00npw")
 
-[node name="lightAttack" type="AudioStreamPlayer2D" parent="."]
+[node name="lightAttck" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_jit7v")
