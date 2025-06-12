@@ -4,7 +4,6 @@
 
 - [How to Play](#how-to-play)
 	- [Controls](#controls)
-   	- [How to Run](#how-to-run)
 
 - [Preplanning](#preplanning)
   	- [What Made the Original a Game Great](#what-made-the-original-a-game-great)
@@ -71,10 +70,6 @@ E Interact <br>
 Left shift for dash. <br>
 ESC to enter the menu <br>
 
-### How to run
-
-Navigate to the releases folder and execute the file within.
-To play prototype version navigate to the prototype folder and execute the file of the version you wish to play.
 
 ## Preplanning
 
@@ -801,10 +796,13 @@ func use_fire_attack():
 ## Reflection 
 
 ### **How is the overall design**
+Overall the desing of the 
 
 ### **How far through my plan did i get**
 
 #### Flowchart Comparison
+![Flowchart Comparison](<documentation_images/Screenshot 2025-06-12 143323wfwfw.png>)
+The crosses out ones are completed 
 
 #### Map Comparison
 ![screenshot](documentation_images/Screenshot%202025-06-11%20003709.png)
@@ -812,6 +810,3 @@ func use_fire_attack():
 ### **What changes could i make and what would i do diffirently**
 
 ### **What have I learnt**
-
-
- 
