@@ -1140,6 +1140,7 @@ radius = 125.782
 radius = 58.0775
 
 [node name="Ashefootglade" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_anj4x")
 
 [node name="Questlog" type="Node2D" parent="."]
@@ -1696,13 +1697,6 @@ shape = SubResource("CircleShape2D_yu7ka")
 [node name="smallFire" parent="tutorialsections" instance=ExtResource("14_yu7ka")]
 position = Vector2(445, 28)
 
-[node name="DarkenWorld" type="ColorRect" parent="."]
-offset_left = -449.0
-offset_top = -369.0
-offset_right = 2180.0
-offset_bottom = 1021.0
-color = Color(0, 0, 0, 0.0784314)
-
 [node name="waterPuzzle" type="Node2D" parent="."]
 script = ExtResource("9_asxyi")
 
@@ -1800,6 +1794,15 @@ tile_set = SubResource("TileSet_jf6dh")
 [node name="bossArenaRespawn" type="Node2D" parent="bossArena"]
 position = Vector2(305, -209)
 
+[node name="Victory Eplosion" parent="bossArena" instance=ExtResource("22_34iye")]
+position = Vector2(102, 69)
+
+[node name="Victory Eplosion2" parent="bossArena" instance=ExtResource("22_34iye")]
+position = Vector2(102, -88)
+
+[node name="Victory Eplosion3" parent="bossArena" instance=ExtResource("22_34iye")]
+position = Vector2(-78, -5)
+
 [node name="Player" parent="." node_paths=PackedStringArray("respawn_point", "respawn_point_after_tutorial", "respawn_point_boss") instance=ExtResource("3_1pww4")]
 position = Vector2(-9, 1)
 collision_layer = 3
@@ -1889,14 +1892,13 @@ parameters/looping = true
 stream = ExtResource("19_anj4x")
 parameters/looping = true
 
-[node name="Victory Eplosion" parent="." instance=ExtResource("22_34iye")]
-position = Vector2(1163, 618)
-
-[node name="Victory Eplosion2" parent="." instance=ExtResource("22_34iye")]
-position = Vector2(1163, 461)
-
-[node name="Victory Eplosion3" parent="." instance=ExtResource("22_34iye")]
-position = Vector2(983, 544)
+[node name="DarkenWorld" type="ColorRect" parent="."]
+top_level = true
+offset_left = -449.0
+offset_top = -369.0
+offset_right = 2180.0
+offset_bottom = 1021.0
+color = Color(0, 0, 0, 0.0784314)
 
 [connection signal="child_exiting_tree" from="Enemies/Pack 1" to="Questlog" method="_on_pack_1_child_exiting_tree"]
 [connection signal="Aggroed" from="Enemies/Boss/RiderBoss" to="Questlog" method="_on_rider_boss_aggroed"]
