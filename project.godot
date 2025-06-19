@@ -10,10 +10,9 @@ config_version=5
 
 [application]
 
-config/name="Defence Of Thronvail"
+config/name="CatCrawler"
 run/main_scene="uid://detla1d8ps820"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="uid://vdw6rfkr2810"
 
 [autoload]
 
