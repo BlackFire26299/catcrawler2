@@ -1691,7 +1691,6 @@ script = ExtResource("10_yu7ka")
 
 [node name="interaction_area" parent="tutorialsections/TileMapLayer" instance=ExtResource("12_jy1cj")]
 position = Vector2(627, -22)
-action_name = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tutorialsections/TileMapLayer/interaction_area"]
 shape = SubResource("CircleShape2D_yu7ka")
@@ -1708,7 +1707,6 @@ stream = ExtResource("16_34iye")
 [node name="single lily" parent="waterPuzzle" instance=ExtResource("12_jy1cj")]
 position = Vector2(1081, -138)
 collision_mask = 1
-action_name = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="waterPuzzle/single lily"]
 position = Vector2(2, 1)
@@ -1722,7 +1720,6 @@ texture = ExtResource("15_g5dfc")
 [node name="double lily" parent="waterPuzzle" instance=ExtResource("12_jy1cj")]
 position = Vector2(1151, -162)
 collision_mask = 1
-action_name = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="waterPuzzle/double lily"]
 position = Vector2(6, 9)
