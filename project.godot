@@ -20,6 +20,10 @@ QuestManager="*res://universal scripts/quest_manager.gd"
 DamageRenderer="*res://universal scripts/damage_renderer.tscn"
 InteractionManager="*res://Objects/interaction_manager.tscn"
 
+[dotnet]
+
+project/assembly_name="CatCrawler"
+
 [global_group]
 
 enemies=""
