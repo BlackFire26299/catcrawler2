@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://22gimmx0lm66"]
+[gd_scene load_steps=5 format=3 uid="uid://22gimmx0lm66"]
 
 [ext_resource type="Texture2D" uid="uid://b2ulgb3unj0n1" path="res://CatCrawlerAssets/heart pick-up.png" id="1_d3ud2"]
+[ext_resource type="Script" uid="uid://b7osqhh4llvyf" path="res://Objects/heart_pickup.gd" id="1_ge4n2"]
 [ext_resource type="Script" uid="uid://gbykjakkocia" path="res://Objects/interaction_area.gd" id="2_h6tt7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h6tt7"]
 radius = 1090.05
 
 [node name="Heart Pickup" type="Node2D"]
+script = ExtResource("1_ge4n2")
 
 [node name="HeartPick-up" type="Sprite2D" parent="." groups=["interactable"]]
 scale = Vector2(0.2, 0.2)
