@@ -15,6 +15,7 @@ size = Vector2(1184, 147.75)
 size = Vector2(144, 670)
 
 [node name="Test Room" type="Node2D"]
+scale = Vector2(3, 3)
 
 [node name="AbandonedRoom" type="Sprite2D" parent="."]
 texture = ExtResource("1_ljoxb")

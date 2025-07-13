@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://22gimmx0lm66"]
+
+[ext_resource type="Texture2D" uid="uid://b2ulgb3unj0n1" path="res://CatCrawlerAssets/heart pick-up.png" id="1_d3ud2"]
+
+[node name="Heart Pickup" type="Node2D"]
+
+[node name="HeartPick-up" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_d3ud2")
