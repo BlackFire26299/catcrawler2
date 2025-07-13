@@ -61,6 +61,8 @@ var max_health: float = 100 # to cap regen
 
 var interactable_in_range = null #stores any interactalbes in range
 
+# make a keymanager that will then be connected onready @onready var keyManager 
+
 func _ready():
 	hitbox_left.disabled = true 
 	hitbox_right.disabled = true
