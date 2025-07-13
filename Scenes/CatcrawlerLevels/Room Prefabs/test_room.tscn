@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://cf500ojf0lqrf"]
+
+[ext_resource type="Texture2D" uid="uid://bbqs6lbg4saa5" path="res://Scenes/CatcrawlerLevels/Room Prefabs/AbandonedRoom.png" id="1_ljoxb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljoxb"]
+size = Vector2(824, 467)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfc1e"]
+size = Vector2(146, 354)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gyld"]
+size = Vector2(1184, 147.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8m2ew"]
+size = Vector2(144, 670)
+
+[node name="Test Room" type="Node2D"]
+
+[node name="AbandonedRoom" type="Sprite2D" parent="."]
+texture = ExtResource("1_ljoxb")
+
+[node name="Object Area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Object Area"]
+position = Vector2(-74, 3.5)
+shape = SubResource("RectangleShape2D_ljoxb")
+debug_color = Color(0.906642, 0.000127065, 0.742668, 0.42)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Object Area"]
+position = Vector2(410, -54)
+shape = SubResource("RectangleShape2D_hfc1e")
+debug_color = Color(0.924424, 0.0674693, 0.651008, 0.42)
+
+[node name="Walls" type="Area2D" parent="."]
+
+[node name="Topwaal" type="CollisionShape2D" parent="Walls"]
+position = Vector2(0, -326.875)
+shape = SubResource("RectangleShape2D_1gyld")
+
+[node name="Bottomwall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(0, 337.75)
+shape = SubResource("RectangleShape2D_1gyld")
+
+[node name="Leftwall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-592, 1)
+shape = SubResource("RectangleShape2D_8m2ew")
+
+[node name="Rightwall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(589, 1)
+shape = SubResource("RectangleShape2D_8m2ew")
