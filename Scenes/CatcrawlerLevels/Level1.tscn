@@ -7,7 +7,7 @@
 
 [node name="LevelGenerator" type="Node2D" parent="."]
 script = ExtResource("1_fxvjc")
-map = Array[int]([0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+map = Array[int]([0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0])
 mapWidth = 4
 mapHeight = 4
 metadata/_custom_type_script = "uid://ce3wugcrw58m5"

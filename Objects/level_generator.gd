@@ -2,12 +2,10 @@ class_name LevelGenerator
 extends Node2D
 
 @onready var roomScene = preload("res://Scenes/CatcrawlerLevels/Room Prefabs/normal_room.tscn")
-
 @onready var roomChnager = preload("res://Objects/room_changer.tscn")
 
 @export var dirtPiles: DirtPile
-
-@export var map: Array[GlobalEnums.RoomType] = [GlobalEnums.RoomType.normal,GlobalEnums.RoomType.normal,GlobalEnums.RoomType.normal,GlobalEnums.RoomType.normal]
+@export var map: Array[GlobalEnums.RoomType] = [GlobalEnums.RoomType.normal, GlobalEnums.RoomType.normal, GlobalEnums.RoomType.normal, GlobalEnums.RoomType.normal]
 @export var mapWidth: int = 2
 @export var mapHeight: int = 2
 
@@ -63,7 +61,7 @@ func generateLevel():
 			var current_pos = Vector2(x, y)
 
 			if room_type == GlobalEnums.RoomType.normal:
-				# Generate doors in all valid directions
+				# Generate doors only to other normal rooms
 				for dir_name in directions.keys():
 					var offset = directions[dir_name]
 					var nx = x + int(offset.x)
@@ -75,6 +73,11 @@ func generateLevel():
 					if neighbor_index >= map.size():
 						continue
 
+					var neighbor_type = map[neighbor_index]
+					if neighbor_type != GlobalEnums.RoomType.normal:
+						continue
+
+					# Place door
 					var door = roomChnager.instantiate()
 					current_room.add_child(door)
 					door.position = get_door_offset(dir_name)
@@ -87,7 +90,9 @@ func generateLevel():
 			elif room_type == GlobalEnums.RoomType.reward or room_type == GlobalEnums.RoomType.boss:
 				# Only connect to one normal room
 				var paired = false
-				for dir_name in directions.keys():
+				var dir_list := directions.keys()
+				dir_list.shuffle()
+				for dir_name in dir_list:
 					if paired:
 						break
 
@@ -128,14 +133,13 @@ func generateLevel():
 
 						paired = true
 
-
 func get_door_offset(dir_name: String) -> Vector2:
 	var half_width = 800 / 2
 	var half_height = 450 / 2
 
 	match dir_name:
 		"left":
-			return Vector2(-half_width , 0)
+			return Vector2(-half_width, 0)
 		"right":
 			return Vector2(half_width, 0)
 		"up":
