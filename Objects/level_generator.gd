@@ -25,18 +25,14 @@ func generateLevel():
 				continue
 			
 			var roomData: GlobalEnums.RoomType = map[index]
-			if roomData == null:
-				continue
 			
 			var roomInstance = roomScene.instantiate()
 			add_child(roomInstance)
 			
-			# Positioning (adjust scaling as needed)
-			roomInstance.position = Vector2(x * 1000, y * 1000)
+			roomInstance.position = Vector2(x * 5000, y * 5000)
 			
-			# Spawn enemies and objects using room_data
 			spawnThingsInRoom(roomInstance, roomData)
 			
 			
-func spawnThingsInRoom(room: Room, data: GlobalEnums.RoomType):
+func spawnThingsInRoom(room: Room, type: GlobalEnums.RoomType):
 	pass
