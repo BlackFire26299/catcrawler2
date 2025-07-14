@@ -4,10 +4,7 @@ extends Node2D
 @export var roomScene: Room
 @export var dirtPiles: DirtPile
 
-# Room types 
-enum RoomType {normal, boss, reward} # Will extend when needed
-
-@export var map: Array[RoomType] = []
+@export var map: Array[GlobalEnums.RoomType] = []
 @export var mapWidth: int
 @export var mapHeight: int
 
@@ -27,7 +24,7 @@ func generateLevel():
 			if index >= map.size():
 				continue
 			
-			var roomData: RoomType = map[index]
+			var roomData: GlobalEnums.RoomType = map[index]
 			if roomData == null:
 				continue
 			
@@ -41,5 +38,5 @@ func generateLevel():
 			spawnThingsInRoom(roomInstance, roomData)
 			
 			
-func spawnThingsInRoom(room: Room, data: RoomType):
+func spawnThingsInRoom(room: Room, data: GlobalEnums.RoomType):
 	pass
