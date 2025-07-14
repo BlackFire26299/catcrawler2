@@ -14,14 +14,17 @@ scale = Vector2(0.4, 0.4)
 script = ExtResource("1_3s30t")
 
 [node name="Dirt1" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-26, -203)
 texture = ExtResource("1_pmdak")
 
 [node name="Dirt2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(5, -196)
 texture = ExtResource("2_vsx7x")
 
 [node name="Dirt3" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-6, -204)
 texture = ExtResource("3_3s30t")
 
