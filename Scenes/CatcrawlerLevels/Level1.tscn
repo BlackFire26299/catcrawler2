@@ -11,7 +11,7 @@ metadata/_custom_type_script = "uid://ce3wugcrw58m5"
 
 [node name="Player" parent="." instance=ExtResource("1_ioi5e")]
 scale = Vector2(4, 4)
-move_speed = 10000.0
+move_speed = 1000.0
 
 [node name="Camera2D" parent="Player" index="2"]
 zoom = Vector2(1, 1)

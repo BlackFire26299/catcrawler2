@@ -2,7 +2,7 @@ class_name Room
 extends Node2D 
 
 @export var type: GlobalEnums.RoomType 
-@export var minNumDirt: int = 1
+@export var minNumDirt: int = 2
 @export var maxNumDirt: int = 6
 
 @export var minEnemies: int
@@ -20,7 +20,6 @@ func spawnRoomObjects():
 	var spawnpoints = spawnPointparent.get_children()
 	var rngNumOfObjects = randi_range(minNumDirt,maxNumDirt)
 	for object in rngNumOfObjects:
-		print("this code ran")
 		var spawnindex = randi() % spawnpoints.size()
 		var rngChild = spawnpoints[spawnindex]
 		var pile = dirtpile.instantiate()
