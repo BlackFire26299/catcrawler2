@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crye1ualwtrmb"
-path="res://.godot/imported/yarn_balleffect.png-9c7eb3d7974b0ea2fea6e04fe9c0c350.ctex"
+uid="uid://lspgbxi86iyj"
+path="res://.godot/imported/yarn_ball+effect.png-6a9c275b5f3e256b8e56d6006eb71280.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://yarn_balleffect.png"
-dest_files=["res://.godot/imported/yarn_balleffect.png-9c7eb3d7974b0ea2fea6e04fe9c0c350.ctex"]
+source_file="res://CatCrawlerAssets/yarn_ball+effect.png"
+dest_files=["res://.godot/imported/yarn_ball+effect.png-6a9c275b5f3e256b8e56d6006eb71280.ctex"]
 
 [params]
 
