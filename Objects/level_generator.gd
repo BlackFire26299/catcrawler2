@@ -29,6 +29,6 @@ func generateLevel():
 			var roomInstance = roomScene.instantiate()
 			add_child(roomInstance)
 			
-			roomInstance.position = Vector2(x * 5000, y * 5000)
+			roomInstance.position = Vector2(x * 3000, y * 2000)
 			
 			roomInstance.spawnRoomObjects()
