@@ -7,6 +7,9 @@
 
 [node name="LevelGenerator" type="Node2D" parent="."]
 script = ExtResource("1_fxvjc")
+map = Array[int]([0, 0, 0, 0, 0, 0, 0, 0, 0])
+mapWidth = 3
+mapHeight = 3
 metadata/_custom_type_script = "uid://ce3wugcrw58m5"
 
 [node name="Player" parent="." instance=ExtResource("1_ioi5e")]
