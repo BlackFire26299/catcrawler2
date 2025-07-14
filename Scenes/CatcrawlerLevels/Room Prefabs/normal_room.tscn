@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cp2sjgour2ig0"]
 
-[ext_resource type="Script" uid="uid://4net8kvwqd7" path="res://Scenes/CatcrawlerLevels/Room Prefabs/room.gd" id="1_1gyld"]
-[ext_resource type="Texture2D" uid="uid://bbqs6lbg4saa5" path="res://Scenes/CatcrawlerLevels/Room Prefabs/AbandonedRoom.png" id="1_ljoxb"]
+[ext_resource type="Script" uid="uid://4net8kvwqd7" path="res://Scenes/CatcrawlerLevels/Room Prefabs/room.gd" id="1_ygsyk"]
+[ext_resource type="Texture2D" uid="uid://bbqs6lbg4saa5" path="res://Scenes/CatcrawlerLevels/Room Prefabs/AbandonedRoom.png" id="2_1nt5f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1gyld"]
 size = Vector2(1184, 147.75)
@@ -9,12 +9,12 @@ size = Vector2(1184, 147.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8m2ew"]
 size = Vector2(144, 670)
 
-[node name="Normal Room" type="Node2D"]
-script = ExtResource("1_1gyld")
+[node name="NormalRoom" type="Node2D"]
+script = ExtResource("1_ygsyk")
 metadata/_custom_type_script = "uid://4net8kvwqd7"
 
 [node name="AbandonedRoom" type="Sprite2D" parent="."]
-texture = ExtResource("1_ljoxb")
+texture = ExtResource("2_1nt5f")
 
 [node name="Walls" type="Area2D" parent="."]
 

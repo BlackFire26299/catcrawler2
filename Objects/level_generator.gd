@@ -1,12 +1,12 @@
 class_name LevelGenerator
 extends Node2D
 
-@export var roomScene: Room
+@onready var roomScene = preload("res://Scenes/CatcrawlerLevels/Room Prefabs/normal_room.tscn")
 @export var dirtPiles: DirtPile
 
-@export var map: Array[GlobalEnums.RoomType] = []
-@export var mapWidth: int
-@export var mapHeight: int
+@export var map: Array[GlobalEnums.RoomType] = [GlobalEnums.RoomType.normal,GlobalEnums.RoomType.normal,GlobalEnums.RoomType.normal,GlobalEnums.RoomType.normal]
+@export var mapWidth: int = 2
+@export var mapHeight: int = 2
 
 var levelRooms = []
 
@@ -31,8 +31,4 @@ func generateLevel():
 			
 			roomInstance.position = Vector2(x * 5000, y * 5000)
 			
-			spawnThingsInRoom(roomInstance, roomData)
-			
-			
-func spawnThingsInRoom(room: Room, type: GlobalEnums.RoomType):
-	pass
+			roomInstance.spawnRoomObjects()
