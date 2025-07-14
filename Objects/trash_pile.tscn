@@ -7,10 +7,10 @@
 [ext_resource type="Script" uid="uid://gbykjakkocia" path="res://Objects/interaction_area.gd" id="4_vsx7x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vsx7x"]
-radius = 782.5
+radius = 460.772
 
 [node name="Trash Pile" type="Node2D" groups=["interactable"]]
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.3, 0.3)
 script = ExtResource("1_3s30t")
 
 [node name="Dirt1" type="Sprite2D" parent="."]
