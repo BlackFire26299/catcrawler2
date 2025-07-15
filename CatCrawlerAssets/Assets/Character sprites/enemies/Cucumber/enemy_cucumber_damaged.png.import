@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh1gfoy0ugy8y"
-path="res://.godot/imported/heart pick-up_1.png-adb03d1479f780a7d7ee49fe9eb3ca06.ctex"
+uid="uid://dtjmpak2bk400"
+path="res://.godot/imported/enemy_cucumber_damaged.png-f7ddf2e5f979f8658ba30309bf3db0ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CatCrawlerAssets/Assets/Pick-ups/Hearts/heart pick-up_1.png"
-dest_files=["res://.godot/imported/heart pick-up_1.png-adb03d1479f780a7d7ee49fe9eb3ca06.ctex"]
+source_file="res://CatCrawlerAssets/Assets/Character sprites/enemies/Cucumber/enemy_cucumber_damaged.png"
+dest_files=["res://.godot/imported/enemy_cucumber_damaged.png-f7ddf2e5f979f8658ba30309bf3db0ac.ctex"]
 
 [params]
 

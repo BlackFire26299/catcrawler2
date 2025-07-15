@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh1gfoy0ugy8y"
-path="res://.godot/imported/heart pick-up_1.png-adb03d1479f780a7d7ee49fe9eb3ca06.ctex"
+uid="uid://bj6llnymioj6h"
+path="res://.godot/imported/player_damaged.png-c4ea06f9bfa99737644a1c8898ea4718.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CatCrawlerAssets/Assets/Pick-ups/Hearts/heart pick-up_1.png"
-dest_files=["res://.godot/imported/heart pick-up_1.png-adb03d1479f780a7d7ee49fe9eb3ca06.ctex"]
+source_file="res://CatCrawlerAssets/Assets/Character sprites/player/player_damaged.png"
+dest_files=["res://.godot/imported/player_damaged.png-c4ea06f9bfa99737644a1c8898ea4718.ctex"]
 
 [params]
 

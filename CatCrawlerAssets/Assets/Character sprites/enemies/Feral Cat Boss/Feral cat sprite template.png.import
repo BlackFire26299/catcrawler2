@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh1gfoy0ugy8y"
-path="res://.godot/imported/heart pick-up_1.png-adb03d1479f780a7d7ee49fe9eb3ca06.ctex"
+uid="uid://d3bfpg367qbvd"
+path="res://.godot/imported/Feral cat sprite template.png-aee468825f4210421c49f559e60280cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CatCrawlerAssets/Assets/Pick-ups/Hearts/heart pick-up_1.png"
-dest_files=["res://.godot/imported/heart pick-up_1.png-adb03d1479f780a7d7ee49fe9eb3ca06.ctex"]
+source_file="res://CatCrawlerAssets/Assets/Character sprites/enemies/Feral Cat Boss/Feral cat sprite template.png"
+dest_files=["res://.godot/imported/Feral cat sprite template.png-aee468825f4210421c49f559e60280cc.ctex"]
 
 [params]
 

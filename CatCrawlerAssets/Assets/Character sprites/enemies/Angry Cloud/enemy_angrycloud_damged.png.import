@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh1gfoy0ugy8y"
-path="res://.godot/imported/heart pick-up_1.png-adb03d1479f780a7d7ee49fe9eb3ca06.ctex"
+uid="uid://essumtc4sjr7"
+path="res://.godot/imported/enemy_angrycloud_damged.png-9f195156e33584d7694145b5dc03b17b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CatCrawlerAssets/Assets/Pick-ups/Hearts/heart pick-up_1.png"
-dest_files=["res://.godot/imported/heart pick-up_1.png-adb03d1479f780a7d7ee49fe9eb3ca06.ctex"]
+source_file="res://CatCrawlerAssets/Assets/Character sprites/enemies/Angry Cloud/enemy_angrycloud_damged.png"
+dest_files=["res://.godot/imported/enemy_angrycloud_damged.png-9f195156e33584d7694145b5dc03b17b.ctex"]
 
 [params]
 

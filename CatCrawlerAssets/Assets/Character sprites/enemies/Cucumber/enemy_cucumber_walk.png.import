@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvdo3bycpet6f"
-path="res://.godot/imported/Cucumber walk.png-b1a254b4f224af25af2fae41aedce49e.ctex"
+path="res://.godot/imported/enemy_cucumber_walk.png-270729b1d6920d6f1b33d5052480be6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CatCrawlerAssets/ARTBETA/Character sprites/Enemy Sprites/Cucumber/Cucumber walk.png"
-dest_files=["res://.godot/imported/Cucumber walk.png-b1a254b4f224af25af2fae41aedce49e.ctex"]
+source_file="res://CatCrawlerAssets/Assets/Character sprites/enemies/Cucumber/enemy_cucumber_walk.png"
+dest_files=["res://.godot/imported/enemy_cucumber_walk.png-270729b1d6920d6f1b33d5052480be6f.ctex"]
 
 [params]
 
