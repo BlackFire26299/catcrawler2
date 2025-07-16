@@ -1,9 +1,9 @@
-class_name RewardRoom
+class_name NormalRoom
 extends Room
 
 @export var type: GlobalEnums.RoomType 
-@export var minNumDirt: int = 1
-@export var maxNumDirt: int = 4
+@export var minNumDirt: int = 2
+@export var maxNumDirt: int = 6
 
 @export var minEnemies: int
 @export var maxEnemies: int

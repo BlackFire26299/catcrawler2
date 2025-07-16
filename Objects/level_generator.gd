@@ -12,6 +12,13 @@ extends Node2D
 @export var mapWidth: int = 2
 @export var mapHeight: int = 2
 
+@onready var roomScenes = {
+	GlobalEnums.RoomType.normal: regularRoomScene,
+	GlobalEnums.RoomType.reward: rewardRoomScene,
+	GlobalEnums.RoomType.boss: bossRoomScene,
+	GlobalEnums.RoomType.puzzle: puzzleRoomScene
+}
+
 func _ready():
 	if mapWidth * mapHeight != map.size():
 		print("Map Width and map Height have to multiply to the length of the map array!!!!")
@@ -33,7 +40,9 @@ func generateLevel():
 				continue
 
 			var room_data = map[index]
-			var room_instance = regularRoomScene.instantiate()
+			print(room_data)
+			var room_scene = roomScenes.get(room_data)
+			var room_instance = room_scene.instantiate()
 			add_child(room_instance)
 
 			var room_pos = Vector2(x * 3000, y * 2000)

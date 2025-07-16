@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://g8m6bkmgy0l"]
+[gd_scene load_steps=6 format=3 uid="uid://g8m6bkmgy0l"]
 
 [ext_resource type="Script" uid="uid://dldbplkrs6v5o" path="res://Scenes/CatcrawlerLevels/Room Prefabs/reward_room.gd" id="1_sqxft"]
 [ext_resource type="Texture2D" uid="uid://cksm4hsseibtm" path="res://CatCrawlerAssets/Assets/Rooms/Test Room 2.png" id="2_sqxft"]
+[ext_resource type="PackedScene" uid="uid://c3gx4mnb1fgaj" path="res://Objects/reward_point.tscn" id="3_m5ep0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m5ep0"]
 size = Vector2(893, 80.25)
@@ -35,4 +36,18 @@ shape = SubResource("RectangleShape2D_01xqc")
 position = Vector2(448.5, 0)
 shape = SubResource("RectangleShape2D_01xqc")
 
-[node name="RewardPoint" type="Node2D" parent="."]
+[node name="ObjectSpawns" type="Node2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="ObjectSpawns"]
+position = Vector2(-234, -193)
+
+[node name="Node2D2" type="Node2D" parent="ObjectSpawns"]
+position = Vector2(227, -198)
+
+[node name="Node2D3" type="Node2D" parent="ObjectSpawns"]
+position = Vector2(231, 204)
+
+[node name="Node2D4" type="Node2D" parent="ObjectSpawns"]
+position = Vector2(-238, 215)
+
+[node name="RewardPoint" parent="." instance=ExtResource("3_m5ep0")]

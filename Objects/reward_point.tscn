@@ -1,6 +1,6 @@
 [gd_scene load_steps=39 format=3 uid="uid://c3gx4mnb1fgaj"]
 
-[ext_resource type="Texture2D" uid="uid://lspgbxi86iyj" path="res://CatCrawlerAssets/yarn_ball+effect.png" id="1_dymwo"]
+[ext_resource type="Texture2D" uid="uid://b205gwaehym7g" path="res://CatCrawlerAssets/Assets/Pick-ups/Ball of Yarn/yarn_ball+effect.png" id="1_dymwo"]
 [ext_resource type="Script" uid="uid://gbykjakkocia" path="res://Objects/interaction_area.gd" id="1_gsouf"]
 [ext_resource type="Script" uid="uid://c2rbuashhsdlr" path="res://Objects/reward_point.gd" id="1_xskbl"]
 
@@ -247,6 +247,7 @@ animations = [{
 }]
 
 [node name="RewardPoint" type="Node2D"]
+scale = Vector2(0.1, 0.1)
 script = ExtResource("1_xskbl")
 
 [node name="InteractionArea" type="Area2D" parent="."]
