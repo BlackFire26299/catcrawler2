@@ -2,7 +2,7 @@ class_name LevelGenerator
 extends Node2D
 
 @onready var roomScene = preload("res://Scenes/CatcrawlerLevels/Room Prefabs/normal_room.tscn")
-@onready var roomChnager = preload("res://Objects/room_changer.tscn")
+@onready var roomChanger = preload("res://Objects/room_changer.tscn")
 
 @export var dirtPiles: DirtPile
 @export var map: Array[GlobalEnums.RoomType] = [GlobalEnums.RoomType.normal, GlobalEnums.RoomType.normal, GlobalEnums.RoomType.normal, GlobalEnums.RoomType.normal]
@@ -78,7 +78,7 @@ func generateLevel():
 						continue
 
 					# Place door
-					var door = roomChnager.instantiate()
+					var door = roomChanger.instantiate()
 					current_room.add_child(door)
 					door.position = get_door_offset(dir_name)
 
@@ -111,7 +111,7 @@ func generateLevel():
 						var neighbor_room = room_grid[ny][nx]
 
 						# Door from current (boss/reward) room → normal
-						var door_out = roomChnager.instantiate()
+						var door_out = roomChanger.instantiate()
 						current_room.add_child(door_out)
 						door_out.position = get_door_offset(dir_name)
 
@@ -122,7 +122,7 @@ func generateLevel():
 
 						# Door from normal → current
 						var reverse_dir = get_opposite_direction(dir_name)
-						var door_in = roomChnager.instantiate()
+						var door_in = roomChanger.instantiate()
 						neighbor_room.add_child(door_in)
 						door_in.position = get_door_offset(reverse_dir)
 
