@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bst4tt0abfcw"]
 
-[ext_resource type="Script" uid="uid://4net8kvwqd7" path="res://Scenes/CatcrawlerLevels/Room Prefabs/room.gd" id="1_acmcu"]
+[ext_resource type="Script" uid="uid://d35687qgpjkq5" path="res://Scenes/CatcrawlerLevels/Room Prefabs/boss_room.gd" id="1_2fayc"]
 [ext_resource type="Texture2D" uid="uid://cksm4hsseibtm" path="res://CatCrawlerAssets/Assets/Rooms/Test Room 2.png" id="2_2fayc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13g15"]
@@ -10,7 +10,7 @@ size = Vector2(893, 80.25)
 size = Vector2(109, 670)
 
 [node name="BossRoom" type="Node2D"]
-script = ExtResource("1_acmcu")
+script = ExtResource("1_2fayc")
 metadata/_custom_type_script = "uid://4net8kvwqd7"
 
 [node name="TestRoom2" type="Sprite2D" parent="."]
