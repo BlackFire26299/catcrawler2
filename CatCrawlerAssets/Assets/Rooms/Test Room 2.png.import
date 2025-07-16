@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh1gfoy0ugy8y"
-path="res://.godot/imported/heart pick-up_1.png-adb03d1479f780a7d7ee49fe9eb3ca06.ctex"
+uid="uid://cksm4hsseibtm"
+path="res://.godot/imported/Test Room 2.png-02f038450195fb7afb6fb898c5dd4d0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CatCrawlerAssets/Assets/Pick-ups/Hearts/heart pick-up_1.png"
-dest_files=["res://.godot/imported/heart pick-up_1.png-adb03d1479f780a7d7ee49fe9eb3ca06.ctex"]
+source_file="res://CatCrawlerAssets/Assets/Rooms/Test Room 2.png"
+dest_files=["res://.godot/imported/Test Room 2.png-02f038450195fb7afb6fb898c5dd4d0a.ctex"]
 
 [params]
 

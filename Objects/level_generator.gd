@@ -134,8 +134,8 @@ func generateLevel():
 						paired = true
 
 func get_door_offset(dir_name: String) -> Vector2:
-	var half_width = 800 / 2
-	var half_height = 450 / 2
+	var half_width = 1000 /2
+	var half_height = 500 / 2
 
 	match dir_name:
 		"left":

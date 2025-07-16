@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh1gfoy0ugy8y"
-path="res://.godot/imported/heart pick-up_1.png-adb03d1479f780a7d7ee49fe9eb3ca06.ctex"
+uid="uid://bk5ytjwt5bgx2"
+path="res://.godot/imported/catfood_open_purple.png-539616c28713c45e297a34a8aa5f2806.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CatCrawlerAssets/Assets/Pick-ups/Hearts/heart pick-up_1.png"
-dest_files=["res://.godot/imported/heart pick-up_1.png-adb03d1479f780a7d7ee49fe9eb3ca06.ctex"]
+source_file="res://CatCrawlerAssets/Assets/Pick-ups/Cat Food/Open tins/catfood_open_purple.png"
+dest_files=["res://.godot/imported/catfood_open_purple.png-539616c28713c45e297a34a8aa5f2806.ctex"]
 
 [params]
 

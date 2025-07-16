@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nb0il5faf2i4"
-path="res://.godot/imported/Alleyway.png-71f0677bea0365d8cc0152603ccb33bf.ctex"
+path="res://.godot/imported/Alleyway.png-70938f75611bf4c5fbd803e28e3d5ebb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CatCrawlerAssets/ARTBETA/Rooms/Alleyway.png"
-dest_files=["res://.godot/imported/Alleyway.png-71f0677bea0365d8cc0152603ccb33bf.ctex"]
+source_file="res://CatCrawlerAssets/Assets/Rooms/Alleyway.png"
+dest_files=["res://.godot/imported/Alleyway.png-70938f75611bf4c5fbd803e28e3d5ebb.ctex"]
 
 [params]
 

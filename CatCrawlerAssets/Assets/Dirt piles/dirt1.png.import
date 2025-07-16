@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://kmhufsy8aule"
-path="res://.godot/imported/dirt1.png-1115b4a4923d89fa805ae4ca64ba651f.ctex"
+path="res://.godot/imported/dirt1.png-3176e1b60e51e926417f18cbae1315ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CatCrawlerAssets/ARTBETA/Dirt piles/dirt1.png"
-dest_files=["res://.godot/imported/dirt1.png-1115b4a4923d89fa805ae4ca64ba651f.ctex"]
+source_file="res://CatCrawlerAssets/Assets/Dirt piles/dirt1.png"
+dest_files=["res://.godot/imported/dirt1.png-3176e1b60e51e926417f18cbae1315ee.ctex"]
 
 [params]
 

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://duts1ms2e2cwr"
+path="res://.godot/imported/CatCrawler Main Theme (90% complete).wav-be33b20c3aa5caa943e8e2203e7bc41f.sample"
+
+[deps]
+
+source_file="res://CatCrawlerAssets/Assets/Audio/Music/CatCrawler Main Theme (90% complete).wav"
+dest_files=["res://.godot/imported/CatCrawler Main Theme (90% complete).wav-be33b20c3aa5caa943e8e2203e7bc41f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dw88jfdl42bp5"
-path="res://.godot/imported/key1.png-7e3661eaf69cb81deda981c191f33acb.ctex"
+path="res://.godot/imported/key1.png-2d8ffd8f46fe6812b8834447d6faa1c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CatCrawlerAssets/ARTBETA/Pick-ups/Keys/key1.png"
-dest_files=["res://.godot/imported/key1.png-7e3661eaf69cb81deda981c191f33acb.ctex"]
+source_file="res://CatCrawlerAssets/Assets/Pick-ups/Keys/key1.png"
+dest_files=["res://.godot/imported/key1.png-2d8ffd8f46fe6812b8834447d6faa1c3.ctex"]
 
 [params]
 
