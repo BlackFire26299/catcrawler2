@@ -10,7 +10,7 @@
 radius = 460.772
 
 [node name="Trash Pile" type="Node2D" groups=["interactable"]]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.2, 0.2)
 script = ExtResource("1_3s30t")
 
 [node name="Dirt1" type="Sprite2D" parent="."]

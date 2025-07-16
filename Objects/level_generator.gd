@@ -1,15 +1,16 @@
 class_name LevelGenerator
 extends Node2D
 
-@onready var roomScene = preload("res://Scenes/CatcrawlerLevels/Room Prefabs/normal_room.tscn")
+@onready var regularRoomScene = preload("res://Scenes/CatcrawlerLevels/Room Prefabs/normal_room.tscn")
+@onready var rewardRoomScene = preload("res://Scenes/CatcrawlerLevels/Room Prefabs/reward_room.tscn")
+@onready var bossRoomScene = preload("res://Scenes/CatcrawlerLevels/Room Prefabs/boss_room.tscn")
+@onready var puzzleRoomScene = preload("res://Scenes/CatcrawlerLevels/Room Prefabs/puzzle_room.tscn")
+
 @onready var roomChanger = preload("res://Objects/room_changer.tscn")
 
-@export var dirtPiles: DirtPile
 @export var map: Array[GlobalEnums.RoomType] = [GlobalEnums.RoomType.normal, GlobalEnums.RoomType.normal, GlobalEnums.RoomType.normal, GlobalEnums.RoomType.normal]
 @export var mapWidth: int = 2
 @export var mapHeight: int = 2
-
-var levelRooms = []
 
 func _ready():
 	if mapWidth * mapHeight != map.size():
@@ -32,7 +33,7 @@ func generateLevel():
 				continue
 
 			var room_data = map[index]
-			var room_instance = roomScene.instantiate()
+			var room_instance = regularRoomScene.instantiate()
 			add_child(room_instance)
 
 			var room_pos = Vector2(x * 3000, y * 2000)
@@ -134,8 +135,8 @@ func generateLevel():
 						paired = true
 
 func get_door_offset(dir_name: String) -> Vector2:
-	var half_width = 1000 /2
-	var half_height = 500 / 2
+	var half_width = 800 /2
+	var half_height = 600 / 2
 
 	match dir_name:
 		"left":
