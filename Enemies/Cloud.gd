@@ -1,4 +1,4 @@
-class_name Cucumber
+class_name Cloud
 extends Enemy
 
 # Unique or semi unique function for orkscout 

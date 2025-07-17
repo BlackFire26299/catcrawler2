@@ -1,7 +1,7 @@
-class_name rangedOrk
-extends Ork
+class_name Cucumber
+extends Enemy
 
 # unique functions for archer or overwriten super functions
 func die():
-	print("Archer Dead") # Just changed what prints
+	print("Cucumber Dead") # Just changed what prints
 	super()
