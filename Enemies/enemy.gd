@@ -1,4 +1,4 @@
-class_name Ork
+class_name Enemy
 extends CharacterBody2D
 
 # Exports only used for scout and archer 

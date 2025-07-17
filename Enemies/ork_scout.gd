@@ -1,5 +1,5 @@
-class_name OrkScout
-extends Ork
+class_name Cucumber
+extends Enemy
 
 # Unique or semi unique function for orkscout 
 func attack():

@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://dlckwodnjwcv8"]
 
 [ext_resource type="Script" uid="uid://cqy6hdn22uaw1" path="res://Objects/trash_pile.gd" id="1_3s30t"]
-[ext_resource type="Texture2D" uid="uid://cdu8xxw5emfl4" path="res://CatCrawlerAssets/dirt1.png" id="1_pmdak"]
-[ext_resource type="Texture2D" uid="uid://bek5d55crlgdq" path="res://CatCrawlerAssets/dirt2.png" id="2_vsx7x"]
-[ext_resource type="Texture2D" uid="uid://d3pn7lnvrgit7" path="res://CatCrawlerAssets/dirt3.png" id="3_3s30t"]
+[ext_resource type="Texture2D" uid="uid://kmhufsy8aule" path="res://CatCrawlerAssets/Assets/Dirt piles/dirt1.png" id="1_pmdak"]
+[ext_resource type="Texture2D" uid="uid://ctpvb77q2tyut" path="res://CatCrawlerAssets/Assets/Dirt piles/dirt2.png" id="2_vsx7x"]
+[ext_resource type="Texture2D" uid="uid://4eex02yrcsdy" path="res://CatCrawlerAssets/Assets/Dirt piles/dirt3.png" id="3_3s30t"]
 [ext_resource type="Script" uid="uid://gbykjakkocia" path="res://Objects/interaction_area.gd" id="4_vsx7x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vsx7x"]
