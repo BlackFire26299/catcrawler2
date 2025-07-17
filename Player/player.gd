@@ -151,7 +151,7 @@ func _process(delta):
 			runningSfx.play()
 		elif !walkingSfx.playing:
 			walkingSfx.play()
-		sprite.play("Walk")
+		sprite.play("Walk side")
 	else:
 		# Play idle anim
 		sprite.play("Idle")
