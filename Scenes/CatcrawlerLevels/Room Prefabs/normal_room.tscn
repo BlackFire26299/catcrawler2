@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cp2sjgour2ig0"]
+[gd_scene load_steps=6 format=3 uid="uid://cp2sjgour2ig0"]
 
 [ext_resource type="Script" uid="uid://dx5h3oqddrlwt" path="res://Scenes/CatcrawlerLevels/Room Prefabs/normal_room.gd" id="1_ygsyk"]
 [ext_resource type="Texture2D" uid="uid://cksm4hsseibtm" path="res://CatCrawlerAssets/Assets/Rooms/Test Room 2.png" id="2_ygsyk"]
@@ -8,6 +8,9 @@ size = Vector2(893, 80.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8m2ew"]
 size = Vector2(109, 670)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygsyk"]
+size = Vector2(1008, 757)
 
 [node name="NormalRoom" type="Node2D"]
 script = ExtResource("1_ygsyk")
@@ -126,3 +129,11 @@ position = Vector2(-140, 213)
 
 [node name="Node2D28" type="Node2D" parent="ObjectSpawns"]
 position = Vector2(-231, -241)
+
+[node name="SeenArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeenArea"]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_ygsyk")

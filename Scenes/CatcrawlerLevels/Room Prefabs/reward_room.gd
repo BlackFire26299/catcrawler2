@@ -14,7 +14,7 @@ var dirtpile = preload("res://Objects/trash_pile.tscn")
 
 var rng = RandomNumberGenerator.new()
 
-var seenRoom = false
+@onready var seenArea = $SeenArea
 
 func spawnRoomObjects():
 	var spawnpoints = spawnPointparent.get_children()
@@ -26,6 +26,4 @@ func spawnRoomObjects():
 		rngChild.add_child(pile)
 
 func spawnRoomEnemies():
-	if !seenRoom:
-		seenRoom = true
-		pass
+	pass

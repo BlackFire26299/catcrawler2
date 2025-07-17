@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://g8m6bkmgy0l"]
+[gd_scene load_steps=7 format=3 uid="uid://g8m6bkmgy0l"]
 
 [ext_resource type="Script" uid="uid://dldbplkrs6v5o" path="res://Scenes/CatcrawlerLevels/Room Prefabs/reward_room.gd" id="1_sqxft"]
 [ext_resource type="Texture2D" uid="uid://cksm4hsseibtm" path="res://CatCrawlerAssets/Assets/Rooms/Test Room 2.png" id="2_sqxft"]
@@ -9,6 +9,9 @@ size = Vector2(893, 80.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01xqc"]
 size = Vector2(109, 670)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6lhdg"]
+size = Vector2(1008, 757)
 
 [node name="RewardRoom" type="Node2D"]
 script = ExtResource("1_sqxft")
@@ -51,3 +54,13 @@ position = Vector2(231, 204)
 position = Vector2(-238, 215)
 
 [node name="RewardPoint" parent="." instance=ExtResource("3_m5ep0")]
+
+[node name="SeenArea" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeenArea"]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_6lhdg")
+
+[connection signal="body_entered" from="SeenArea" to="." method="_on_seen_area_body_entered"]
