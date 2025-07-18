@@ -1,0 +1,254 @@
+[gd_scene load_steps=7 format=3 uid="uid://i7uukxrtga0e"]
+
+[ext_resource type="Texture2D" uid="uid://bag4m00fdt1b4" path="res://icon.svg" id="1_qkqmk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgbnx"]
+bg_color = Color(0.32549, 0.054902, 0.301961, 0.376471)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.411782, 0.0808822, 0.382921, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_vgbnx"]
+font_size = 80
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yikq4"]
+bg_color = Color(0.90499, 0.384619, 0.670163, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_qkqmk"]
+font_size = 27
+
+[sub_resource type="LabelSettings" id="LabelSettings_yikq4"]
+font_size = 20
+
+[node name="UpgradeUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -61.0
+offset_right = 875.0
+offset_bottom = 639.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.174)
+theme_override_styles/panel = SubResource("StyleBoxFlat_vgbnx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 26
+
+[node name="chose" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Chose Your Upgrade"
+label_settings = SubResource("LabelSettings_vgbnx")
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 0
+
+[node name="Options" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Option 1" type="PanelContainer" parent="PanelContainer/VBoxContainer/MarginContainer/Options"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_yikq4")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 1"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 1/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="upgradeimage" type="TextureRect" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 1/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_qkqmk")
+stretch_mode = 3
+
+[node name="Upgradename" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 1/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+text = "TestText"
+label_settings = SubResource("LabelSettings_qkqmk")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Upgradedesc" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 1/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+text = "TestText"
+label_settings = SubResource("LabelSettings_yikq4")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 1/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+
+[node name="Upgradeamount" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 1/MarginContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+text = "TestText"
+label_settings = SubResource("LabelSettings_yikq4")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 1/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Accept button" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 1/MarginContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Choose"
+
+[node name="Option 2" type="PanelContainer" parent="PanelContainer/VBoxContainer/MarginContainer/Options"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_yikq4")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 2"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="upgradeimage" type="TextureRect" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_qkqmk")
+stretch_mode = 3
+
+[node name="Upgradename" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 2/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+text = "TestText"
+label_settings = SubResource("LabelSettings_qkqmk")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Upgradedesc" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 2/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+text = "TestText"
+label_settings = SubResource("LabelSettings_yikq4")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+
+[node name="Upgradeamount" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 2/MarginContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+text = "TestText"
+label_settings = SubResource("LabelSettings_yikq4")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Accept button" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 2/MarginContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Choose"
+
+[node name="Option 3" type="PanelContainer" parent="PanelContainer/VBoxContainer/MarginContainer/Options"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_yikq4")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 3"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 3/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="upgradeimage" type="TextureRect" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 3/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_qkqmk")
+stretch_mode = 3
+
+[node name="Upgradename" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 3/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+text = "TestText"
+label_settings = SubResource("LabelSettings_qkqmk")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Upgradedesc" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 3/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+text = "TestText"
+label_settings = SubResource("LabelSettings_yikq4")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 3/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+
+[node name="Upgradeamount" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 3/MarginContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+text = "TestText"
+label_settings = SubResource("LabelSettings_yikq4")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 3/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Accept button" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/Options/Option 3/MarginContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Choose"

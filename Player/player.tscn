@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=4 uid="uid://b6t5cfj5tmylk"]
+[gd_scene load_steps=102 format=4 uid="uid://b6t5cfj5tmylk"]
 
 [ext_resource type="Script" uid="uid://b1ercubrfme7w" path="res://Player/player.gd" id="1_pop16"]
 [ext_resource type="Texture2D" uid="uid://bes2i837n4ve4" path="res://CatCrawlerAssets/Assets/Character sprites/player/Cat Spin Attack.png" id="2_gu6f8"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bqpxm3pluoojh" path="res://raw assets/GUI.png" id="12_5htga"]
 [ext_resource type="LabelSettings" uid="uid://dbf3fqfa5vhun" path="res://Player/player.res" id="12_gu6f8"]
 [ext_resource type="Script" uid="uid://cevp2y6iqmo55" path="res://Player/questlogPanel.gd" id="14_ko42m"]
+[ext_resource type="PackedScene" uid="uid://i7uukxrtga0e" path="res://Player/upgrade_ui.tscn" id="15_dkpta"]
 [ext_resource type="AudioStream" uid="uid://b6nsosnx61kev" path="res://raw assets/Grass - Walk 4.wav" id="15_lfmf2"]
 [ext_resource type="AudioStream" uid="uid://dstcauqwbjqfq" path="res://raw assets/Grass - Run.wav" id="16_lfmf2"]
 
@@ -1566,6 +1567,8 @@ stream = ExtResource("15_lfmf2")
 
 [node name="running" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_lfmf2")
+
+[node name="UpgradeUI" parent="." instance=ExtResource("15_dkpta")]
 
 [connection signal="body_entered" from="base_attack" to="." method="_on_base_attack_body_entered"]
 [connection signal="timeout" from="EnergyReplenish" to="." method="_on_energy_replenish_timeout"]
