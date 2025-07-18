@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c17ogs58lfqh"]
+
+[ext_resource type="Texture2D" uid="uid://jaiwmn3ecttb" path="res://CatCrawlerAssets/key1.png" id="1_13sy0"]
+[ext_resource type="Script" uid="uid://b4cf15srnxm7o" path="res://Objects/key.gd" id="1_63mlb"]
+[ext_resource type="Script" uid="uid://gbykjakkocia" path="res://Objects/interaction_area.gd" id="2_i3axr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i3axr"]
+radius = 606.671
+
+[node name="Key Pickup" type="Node2D" groups=["interactable"]]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_63mlb")
+
+[node name="Key1" type="Sprite2D" parent="."]
+texture = ExtResource("1_13sy0")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+script = ExtResource("2_i3axr")
+action_name = "Collect"
+metadata/_custom_type_script = "uid://gbykjakkocia"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_i3axr")

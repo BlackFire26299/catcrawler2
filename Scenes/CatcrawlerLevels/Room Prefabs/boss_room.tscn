@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bst4tt0abfcw"]
+
+[ext_resource type="Script" uid="uid://d35687qgpjkq5" path="res://Scenes/CatcrawlerLevels/Room Prefabs/boss_room.gd" id="1_2fayc"]
+[ext_resource type="Texture2D" uid="uid://cksm4hsseibtm" path="res://CatCrawlerAssets/Assets/Rooms/Test Room 2.png" id="2_2fayc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13g15"]
+size = Vector2(893, 80.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbvfv"]
+size = Vector2(109, 670)
+
+[node name="BossRoom" type="Node2D"]
+script = ExtResource("1_2fayc")
+metadata/_custom_type_script = "uid://4net8kvwqd7"
+
+[node name="TestRoom2" type="Sprite2D" parent="."]
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("2_2fayc")
+
+[node name="Walls" type="Area2D" parent="."]
+
+[node name="Topwaal" type="CollisionShape2D" parent="Walls"]
+position = Vector2(0, -338.5)
+shape = SubResource("RectangleShape2D_13g15")
+
+[node name="Bottomwall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(0, 334.125)
+shape = SubResource("RectangleShape2D_13g15")
+
+[node name="Leftwall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-450, 0)
+shape = SubResource("RectangleShape2D_cbvfv")
+
+[node name="Rightwall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(448.5, 0)
+shape = SubResource("RectangleShape2D_cbvfv")

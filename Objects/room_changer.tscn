@@ -7,6 +7,7 @@
 size = Vector2(25, 43)
 
 [node name="Room Changer" type="Node2D" groups=["interactable"]]
+scale = Vector2(5, 5)
 script = ExtResource("1_g1q2f")
 
 [node name="InteractionArea" type="Area2D" parent="."]

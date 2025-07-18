@@ -8,6 +8,10 @@ const base_text = "[E] to " # base text for label
 var active_areas = [] # list of active interactable areas
 var can_interact = true # that you can interact
 
+func _ready() -> void:
+	label.scale.x = 2
+	label.scale.y = 2
+
 func register_area(area: InteractionArea): # Adds interaction area to the list of active areas
 	active_areas.push_back(area)
 	
@@ -21,8 +25,6 @@ func _process(delta):
 		active_areas.sort_custom(_sort_by_distance_to_player)
 		label.text = base_text + active_areas[0].action_name # Chnages the label to include the full ([E] to bla bla)
 		label.global_position = active_areas[0].global_position #plases it near the interaction area
-		#label.global_position.y -= 20
-		#label.global_position.x -= label.size.x / 2
 		label.show() #shows the label
 	else:
 		label.hide() # if not close to the a interactable area or already interacted with it

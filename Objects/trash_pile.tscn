@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://dlckwodnjwcv8"]
+
+[ext_resource type="Script" uid="uid://cqy6hdn22uaw1" path="res://Objects/trash_pile.gd" id="1_3s30t"]
+[ext_resource type="Texture2D" uid="uid://kmhufsy8aule" path="res://CatCrawlerAssets/Assets/Dirt piles/dirt1.png" id="1_pmdak"]
+[ext_resource type="Texture2D" uid="uid://ctpvb77q2tyut" path="res://CatCrawlerAssets/Assets/Dirt piles/dirt2.png" id="2_vsx7x"]
+[ext_resource type="Texture2D" uid="uid://4eex02yrcsdy" path="res://CatCrawlerAssets/Assets/Dirt piles/dirt3.png" id="3_3s30t"]
+[ext_resource type="Script" uid="uid://gbykjakkocia" path="res://Objects/interaction_area.gd" id="4_vsx7x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vsx7x"]
+radius = 460.772
+
+[node name="Trash Pile" type="Node2D" groups=["interactable"]]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_3s30t")
+
+[node name="Dirt1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-26, -203)
+texture = ExtResource("1_pmdak")
+
+[node name="Dirt2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(5, -196)
+texture = ExtResource("2_vsx7x")
+
+[node name="Dirt3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-6, -204)
+texture = ExtResource("3_3s30t")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+script = ExtResource("4_vsx7x")
+metadata/_custom_type_script = "uid://gbykjakkocia"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_vsx7x")

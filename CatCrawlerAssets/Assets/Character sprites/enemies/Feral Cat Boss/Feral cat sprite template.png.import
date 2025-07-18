@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://d3bfpg367qbvd"
+path="res://.godot/imported/Feral cat sprite template.png-aee468825f4210421c49f559e60280cc.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://CatCrawlerAssets/Assets/Character sprites/enemies/Feral Cat Boss/Feral cat sprite template.png"
+dest_files=["res://.godot/imported/Feral cat sprite template.png-aee468825f4210421c49f559e60280cc.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

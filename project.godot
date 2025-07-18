@@ -11,14 +11,16 @@ config_version=5
 [application]
 
 config/name="CatCrawler"
-run/main_scene="uid://b41lqhbxhiqf2"
+run/main_scene="uid://nnfv1prqipuc"
 config/features=PackedStringArray("4.4", "Mobile")
+boot_splash/minimum_display_time=200
 
 [autoload]
 
 QuestManager="*res://universal scripts/quest_manager.gd"
 DamageRenderer="*res://universal scripts/damage_renderer.tscn"
 InteractionManager="*res://Objects/interaction_manager.tscn"
+GlobalEnums="*res://universal scripts/enums.gd"
 
 [dotnet]
 
@@ -92,10 +94,6 @@ toggleDNC={
 ]
 }
 
-[physics]
-
-2d/physics_engine="GodotPhysics2D"
-
 [rendering]
 
 textures/canvas_textures/default_texture_filter=3
@@ -103,6 +101,7 @@ renderer/rendering_method="mobile"
 lights_and_shadows/use_physical_light_units=true
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=4
 lights_and_shadows/positional_shadow/soft_shadow_filter_quality=4
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
 
 [xr]
 

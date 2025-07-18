@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d4n2aw0nsb161"
+path="res://.godot/imported/CatCrawler Boss Theme.wav-be7abb2e7402b4cb8592ea2da5ab16d9.sample"
+
+[deps]
+
+source_file="res://CatCrawlerAssets/Assets/Audio/Music/CatCrawler Boss Theme.wav"
+dest_files=["res://.godot/imported/CatCrawler Boss Theme.wav-be7abb2e7402b4cb8592ea2da5ab16d9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

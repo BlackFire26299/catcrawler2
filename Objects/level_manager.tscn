@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cwcdifnfkcp6r"]
+
+[node name="level Manager" type="Node2D"]
