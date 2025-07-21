@@ -12,4 +12,4 @@ func attack():
 	lightAttackSfx.play()
 	
 	player.take_damage(damage)
-	print("Scout attacked player")
+	print("Cloud attacked player")

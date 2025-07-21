@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://i7uukxrtga0e"]
+[gd_scene load_steps=8 format=3 uid="uid://i7uukxrtga0e"]
 
 [ext_resource type="Texture2D" uid="uid://bag4m00fdt1b4" path="res://icon.svg" id="1_qkqmk"]
+[ext_resource type="Script" uid="uid://cr0p4b4i5m0bg" path="res://Player/upgrade_ui.gd" id="1_yikq4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgbnx"]
 bg_color = Color(0.32549, 0.054902, 0.301961, 0.376471)
@@ -34,6 +35,7 @@ font_size = 20
 [node name="UpgradeUI" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_yikq4")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1

@@ -6,6 +6,11 @@ extends CharacterBody2D
 @export var dash_duration: float = 0.2 #the duration of the dash
 @export var dash_cooldown: float = 0.5 # Cooldown for dashing
 @export var health: float = 100 # Health
+@export var healthmodif = 1
+@export var attackmodif = 1
+@export var defencemodif = 1
+@export var speedmodif = 1
+
 var energy = 7 #Energy
 
 @onready var walkingSfx = $walking #SFX for walking
